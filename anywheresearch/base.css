@@ -1,0 +1,5 @@
+body {font-family: arial}
+
+.wrapper {width:360px; margin:0 auto}
+
+@media only screen and (max-width: 600px) {}
