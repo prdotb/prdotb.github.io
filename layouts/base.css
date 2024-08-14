@@ -51,7 +51,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .card .price .total {font-weight:900; font-size:32px; color:#17317F}
 .continue {width:100%; border:0; background-color:#FEDC07; color:#17317F; font-weight:800; padding:12px 0; font-size:16px; border-radius:4px; margin-top:12px; text-align: center;}
 .continue span {position:display:inline-block; vertical-align: top;}
-.continue img {position:display:inline-block; vertical-align: top; margin-top:3px; margin-left:8px;}
+.continue img {position:display:inline-block; vertical-align: top; margin-top:3px; height:16px; margin-left:8px;}
 .atol {position:absolute; top:20px; right:16px}
 
 .footer {height:100px; background-color: #1A73E8;}
