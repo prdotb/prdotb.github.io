@@ -25,7 +25,7 @@ h1 {font-weight: 800; margin-bottom: 20px;}
 box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 
 .tools {padding:16px 20px;}
-.tools .holdbags {border: 1px solid #1A73E8; padding:4px 8px; background-color:#fff; margin-bottom:8px; border-radius:4px;}
+.tools .holdbags {border: 1px solid #1A73E8; padding:4px 8px; background-color:#fff; margin-bottom:8px; border-radius:4px; font-size:14px;}
 .tools .tools-container {display: flex; flex-direction: row;}
 .tools .tools-container > div {border: 1px solid #1A73E8; flex-grow: 1; padding:4px; text-align:center; font-size:14px; border-radius:4px;}
 .sort {margin-left:4px; color:#1A73E8; }
@@ -37,14 +37,18 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .card .images .controls {position:absolute; bottom:8px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; font-size:13px;}
 .card .content {padding:12px;}
 .card .content .name {font-size:18px; font-weight:700}
+
 .card .content .rating {margin-bottom:12px;}
 .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
 .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
 .rating .stars {margin-top:1px} 
+
 .card .content .detail {margin-bottom:8px; position:relative; padding-left: 24px;}
 .detail .icon {position:absolute; top:2px; left:0;}
-.card .price {border-top:solid 1px #ddd; padding:12px;}
+
+.card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
 .card .price .total {font-weight:900; font-size:32px; color:#17317F}
+.atol {position:absolute; top:20px; right:16px}
 
 @media only screen and (min-width: 500px) {
 	.wrapper {width:360px; margin:0 auto; background-color: #fff;}
