@@ -32,8 +32,9 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .filter {margin-right:4px;color:#fff; background-color:#1A73E8;}
 
 .card .images {height:215px; background-color:#EDF4FF; border-top-left-radius: 4px; border-top-right-radius: 4px; position:relative}
-.card .images .perk {position:absolute; top:8px;left:8px; background-color:#D91677; padding:4px 8px; font-size: 13px; border-radius:4px; color:#fff; font-weight:800;}
-.card .images .controls {position:absolute; bottom:8px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; font-size:12px;}
+.card .images .perk {position:absolute; height:26px; top:8px;left:8px; background-color:#D91677; padding:4px 8px; font-size: 14px; border-radius:4px; color:#fff; font-weight:800;}
+.card .images .save {position: absolute; top:8px; right:8px; border-radius:4px; background-color:#fff; height:26px; width:30px; padding-top:5px; padding-left:4PX;}
+.card .images .controls {position:absolute; bottom:8px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; font-size:13px;}
 .card .content {padding:12px;}
 .card .content .name {font-size:18px; font-weight:700}
 .card .content .rating {margin-bottom:12px;}
