@@ -48,6 +48,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 
 .card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
 .card .price .total {font-weight:900; font-size:32px; color:#17317F}
+.continue {width:100%; border:0; background-color:#FEDC07; color:#17317F; font-weight:800; padding:12px 0; font-size:16px; border-radius:4px; margin-top:12px; text-align: center;}
 .atol {position:absolute; top:20px; right:16px}
 
 @media only screen and (min-width: 500px) {
