@@ -27,25 +27,46 @@
           .filters > div {float:left; width:33.3%;}
           .filters > div > div {background-color:#fff; padding:6px; font-size:12px; border-radius:4px; border:solid 1px #1A73E8}
           .filters .select {font-weight:bold; font-size:16px;}
+          .select select {border:0; font-weight:bold; font-size:16px; padding:0; width:80px; font-family:'Nunito Sans';}
         </style>
 
         <div class="filters" style="overflow:hidden;">
           <div>
             <div style="margin-right:8px;">
               <div>Weather</div>
-              <div class="select">Any</div>
+              <div class="select">
+                 <select>
+                    <option value="0">Any</option>
+                    <option value="1">Cool (20-25)</option>
+                    <option value="2">Toasty (25-30)</option>
+                    <option value="3">Scorchio (30+)</option>
+                </select>
+              </div>
           </div>
           </div>
           <div>
             <div style="margin-left:4px; margin-right:4px;">
-              <div>Flight times</div>
-              <div class="select">Any</div>
+              <div>Flight duration</div>
+              <div class="select">
+                <select>
+                    <option value="0">Any</option>
+                    <option value="1">Short Haul</option>
+                    <option value="2">Long Haul</option>
+                </select>
+              </div>
             </div>
           </div>
           <div>
             <div  style="margin-left:8px;">
               <div>Prices from</div>
-              <div class="select">Any</div>
+              <div class="select">
+                <select>
+                    <option value="0">Any</option>
+                    <option value="1">< 250pp</option>
+                    <option value="2">250 - 500</option>
+                    <option value="2">500 +</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -306,8 +327,16 @@
             </div>
           </div>
         </div>
-
+        <div style="height:100px;"></div>
       </div>
+
+
+      <div class="search-block">
+        <a href="srp.html">Search for holidays <span class="material-symbols-outlined">
+arrow_forward
+</span></a>
+      </div>
+
     </div>
   	
     <script src="index.js"></script>

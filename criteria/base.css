@@ -1,0 +1,22 @@
+* {margin:0; box-sizing: border-box;}
+body {font-family:'Nunito Sans'; font-size:14px; background-color:#eee; color:#313137; margin:0; padding:0}
+.wrapper {background-color:#F8FAFF; min-height: 1000px;}
+.page {padding:20px;}
+
+.col-2 {display: flex; flex-wrap: wrap;} 
+.col-2 > div {flex: 50%; text-align:center}
+.col-2 > div > div {background-color:#fff; border:solid 1px #1A73E8; padding:8px 0; border-radius: 4px; margin-bottom:12px;}
+.col-2 > div:nth-child(even) > div {margin-left:6px;}
+.col-2 > div:nth-child(odd) > div {margin-right:6px;}
+
+.col-3 {overflow:hidden;}
+.col-3 > div {float:left; width:33.3%; }
+.col-3 > div > div {background-color:#fff; border:solid 1px #1A73E8; padding:8px 0; border-radius: 4px; margin-bottom:12px; text-align:center;}
+.head {font-size:18px; font-weight:bold; color:#1A73E8}
+
+
+h1 {font-size:24px; line-height: 28px;}
+h2 {font-size:20px; like-height:24px; margin-bottom:12px}
+@media only screen and (min-width: 500px) {
+	.wrapper {width:360px; margin:0 auto; }
+}
