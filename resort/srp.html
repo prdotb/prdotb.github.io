@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SRP layout</title>
+    <link rel="stylesheet" href="srp.css">
+    <link rel="stylesheet" href="resort.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        
+        $(".resorts-link a").click(function(){
+          $(".resorts").show();
+        });
+
+        $(".resorts .nav .close").click(function(){
+          $(".resorts").hide();
+        });
+
+        $(".buttons .yes").click(function(){
+          $(this).addClass("selected"); 
+        })
+
+        $(".buttons .no").click(function(){
+          $(this).addClass("selected"); 
+        })
+        
+      });
+</script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header" style="padding:12px 20px;">
+        <img src="icons/logo.png" />
+      </div>
+      <div class="search" style="padding:12px 20px; color:#fff;">
+        <div style="font-weight:800; font-size:16px; ">Tenerife</div>
+        <div style="font-size:13px;">13 Aug 2004 (7 nights) • 2 Adults, 1 room </div>
+      </div>
+      <div class="tools">
+        <div class="tools-container">
+          <div class="filter" style="font-weight:800; font-size: 14px;">Filter</div>
+          <div class="sort" style="font-weight:800; font-size: 14px;">Sort</div>
+        </div>
+      </div>
+      <div class="list">
+        <h1>189 holidays</h1>
+
+
+        <style type="text/css">
+          .resorts-link {background-color:#fff; border-radius:8px; margin-bottom:16px;-webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
+.resorts-link a {font-weight: bold}
+        </style>
+
+        <div class="resorts-link">
+          <a href="#">Where to stay</a>
+          <p>Compare Tenerife's popular resorts</p>
+        </div>
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/iberostarselection.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Iberostar Selection Anthelia</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">2203 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Costa Adeje, Tenerife Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£837 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/atlantida.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Checkin Bungalows Atlantida</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">2203 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Los Cristianos, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Self Catering
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£390 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/sol.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Sol Tenerife</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">6217 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Playa De Las Americas, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£615 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/columbus.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/21</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Columbus Aparthotel</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">2345 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Playa De Las Americas, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Half Board
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£688 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/sabila.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/22</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Iberostar Selection Sábila - Adults Only</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">2967 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Costa Adeje, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£971 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/melia.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/20</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Melia Jardines del Teide - Adults Only</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">331 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Costa Adeje, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£916 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/laguna.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/23</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Laguna Park II</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">4332 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Costa Adeje, Tenerife, Spain</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£332 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- card -->
+
+        <div class="card">
+          <div class="images" style="background-image: url('photos/gara.png'); background-size:cover">
+            <div class="perk">FREE Mobile Data</div>
+            <div class="save"><img src="icons/save.png" /></div>
+            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/21</span><img src="icons/arrow-sm-right.png" /></div>
+          </div>
+          <div class="content">
+            <div class="name"><a href="#" class="navy">Gara Suites</a></div>
+            <div class="rating"><img src="icons/stars.png" class="stars" /> <img src="icons/ta.png" class="ta"/><span class="reviews">993 reviews</span></div>
+            <div class="detail">
+              <img src="icons/map.png" class="icon" />
+              <a href="#" class="inline">Playa De Las Americas, Tenerife, Spain
+
+
+</a>
+            </div>
+            <div class="detail">
+              <img src="icons/cal.png" class="icon" />
+              <span>2 Sep 2024 • 7 nights</span>
+            </div>
+            <div class="detail">
+              <img src="icons/flight.png" class="icon" />
+              <a href="#" class="inline">London Gatwick</a> • <a href="#" class="inline">Hold bags included</a> 
+            </div>
+            <div class="detail">
+              <img src="icons/board.png" class="icon" />
+              Bed & Breakfast
+            </div>
+          </div>
+          <div class="price">
+            <div>
+              <div>Prices from</div>
+              <div class="total">£465 pp</div>
+              <div class="continue"><span>See more details</span> <img src="icons/arrow-big-right.png"/></div>
+             
+              <div class="atol"><img src="icons/atol.png" /></div>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="footer"></div>
+
+      <!-- Resort guide overlay -->
+
+      <style type="text/css">
+
+        .resorts {position:fixed; top:0; bottom:0; left:0; right:0; display:none;}
+        .overlay {position:absolute; top:0px; bottom:0; left:0; right:0; background-color:#000; opacity: 0.9;}
+        .nav {position:absolute; top:0; left:0; right:0; height:40px; border-bottom:solid 1px #ddd; background-color:#fff; font-size: 18px; font-weight: bold; padding: 6px 12px}
+        .nav .close {position:absolute; top:6px; right:20px}
+        .frame {position:absolute; top:40px; bottom:0; left:0; right:0; background-color:#fff; overflow-y: scroll;}
+        .slider {overflow: auto; white-space: nowrap; padding:12px 0;}
+        .slider > div {width:300px; display:inline-block; margin-left:12px; height:260px; background-color: #eee; border-radius:4px}
+
+        .resort {padding:0 0 12px 0; border-bottom: solid 1px #ddd;}
+        .resort .content {padding:12px 20px;}
+        .tags > div {display:inline-block; background-color: #EDF4FF; padding:6px; margin-bottom:6px; margin-right:6px; border-radius:4px;}
+
+        .data {margin:12px 0}
+        .data .transfers {padding:0 0 12px 0;}
+        .prices {overflow: hidden; background-color: #EDF4FF; padding:12px 0; border-radius:4px; }
+        .prices > div {float:left; width:33.3%; text-align: center}
+        .prices .total {font-size: 18px; font-weight: bold;}
+        .resorts h3 {margin-bottom:12px;}
+        .resorts .add {border:solid 1px #ddd; text-align: center; padding:8px 0; border-radius:4px; margin-top:8px;}
+      
+        .buttons {overflow:hidden; margin-top:12px;}
+        .buttons > div {float:left; width:50%;}
+        .buttons > div > div {border-radius: 4px; border:solid 1px #1A73E8; padding:8px 0; text-align: center;  font-weight: bold;}
+        .buttons > div > .no {margin-right:6px; color:#1A73E8;}
+        .buttons > div > .yes {margin-left:6px; color:#1A73E8;}
+        .selected {background-color:#1A73E8; color:#fff !important; }
+
+        @media only screen and (min-width: 500px) {
+          .resorts {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:360px;}
+        }
+      </style>
+      <div class="resorts">
+        <div class="overlay"></div>
+        <div class="nav">
+          <div class="title">Resorts in Tenerife</div>
+          <div class="close">X</div>
+        </div>
+        <div class="frame">
+          
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/costaadeje/Playa-del-Duque.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/costaadeje/town.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/costaadeje/waterpark.jpg'); background-size:cover">.</div>
+              <div>.</div>
+              <div>.</div>
+            </div>
+
+            <div class="content">
+
+
+              <h2>Costa Adeje</h2>
+              <p>A luxurious resort known for its upscale amenities, golden beaches, and stunning ocean views.</p>
+
+              <div class="data">
+
+                <div class="transfers">30m - 45m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£334</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£536</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">£809</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Wellness and Spa resorts</div>
+                <div>Sandy beaches</div>
+                <div>Watersports</div>
+                <div>Water parks</div>
+                <div>Upscale restaurants</div>
+                <div>Shopping</div>
+              </div>
+
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/lesamericas/beach2.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/lesamericas/beach1.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/lesamericas/waterpark.jpg'); background-size:cover">.</div>
+              <div>.</div>
+              <div>.</div>
+            </div>
+
+            <div class="content">
+
+
+              <h2>Playa de las Américas</h2>
+              <p>A vibrant, bustling hotspot famous for its lively nightlife, sandy beaches, and extensive entertainment options.</p>
+
+              <div class="data">
+
+                <div class="transfers">40m - 50m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£377</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£388</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">£774</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Nightlife</div>
+                <div>Sandy beaches</div>
+                <div>Watersports</div>
+                <div>Water parks</div>
+              </div>
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/loschristianos/beach1.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/loschristianos/beach2.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/loschristianos/harbour.jpeg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/loschristianos/nighttime2.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/loschristianos/town.jpg'); background-size:cover">.</div>
+            </div>
+
+            <div class="content">
+
+
+              <h2>Los Cristianos</h2>
+              <p>A laid-back resort with a relaxed atmosphere, beautiful beaches, and a quaint, historic town center.</p>
+
+              <div class="data">
+
+                <div class="transfers">20m - 40m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£348</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£458</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">NA</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Sandy beaches</div>
+                <div>Boat trips</div>
+                <div>Shopping</div>
+                 <div>Traditional cuisine</div>
+                 <div>Walking tours</div>
+              </div>
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/puertadelacruz/beach.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/puertadelacruz/nightlife.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/puertadelacruz/town.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/puertadelacruz/promenade.jpeg'); background-size:cover">.</div>
+
+              <div style="background-image: url('photos/puertadelacruz/town2.jpeg'); background-size:cover">.</div>
+            
+            </div>
+
+            <div class="content">
+
+
+              <h2>Puerto de la Cruz</h2>
+              <p>A charming coastal town featuring a blend of traditional Canarian architecture, lush gardens, and a picturesque harbor.</p>
+
+              <div class="data">
+
+                <div class="transfers">15m - 45m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£222</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£290</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">£454</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Sandy beaches</div>
+                <div>Boat trips</div>
+                <div>Shopping</div>
+                 <div>Traditional cuisine</div>
+                 <div>Nightlife</div>
+              </div>
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/elmedano/windsurfers.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/elmedano/beach1.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/elmedano/beach3.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/elmedano/town1.jpg'); background-size:cover">.</div>
+            </div>
+
+            <div class="content">
+
+
+              <h2>El Médano</h2>
+              <p>Renowned for its windsurfing and kiteboarding opportunities, this resort offers a laid-back vibe with a long sandy beach and scenic natural surroundings.</p>
+
+              <div class="data">
+
+                <div class="transfers">20m - 30m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£415</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£639</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">NA</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Sandy beaches</div>
+                <div>Boat trips</div>
+                <div>Shopping</div>
+                 <div>Traditional cuisine</div>
+                 <div>Nightlife</div>
+              </div>
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="resort">
+
+            <div class="slider">
+              <div style="background-image: url('photos/golf/vista.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/golf/hotel.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/golf/golf.jpg'); background-size:cover">.</div>
+              <div style="background-image: url('photos/golf/sandos.jpg'); background-size:cover">.</div>
+            </div>
+
+            <div class="content">
+
+
+              <h2>Gold De Sur</h2>
+              <p>A golfer's paradise with an array of courses, stunning coastal views, and a relaxed, resort-style ambiance.</p>
+
+              <div class="data">
+
+                <div class="transfers">20m - 30m transfer time</div>
+
+                <div class="prices">
+                  <div>
+                    <div>3* from</div>
+                    <div class="total">£469</div> 
+                  </div>
+                  <div>
+                    <div>4* from</div>
+                    <div class="total">£565</div> 
+                  </div>
+                  <div>
+                    <div>5* from</div>
+                    <div class="total">£754</div> 
+                  </div>
+                </div>
+
+              </div>
+              <h3>Great for</h3>
+              <div class="tags">
+                <div>Golf</div>
+                <div>Water sports</div>
+                <div>Extreme sports</div>
+              </div>
+
+              <div class="buttons">
+                <div>
+                  <div class="no">Not for me</div>
+                </div>
+                <div>
+                  <div class="yes">Interested</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+
+    </div>
+  	
+
+    
+
+  </body>
+</html>
