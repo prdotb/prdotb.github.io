@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anywhere search</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+        $(".options > div > div").click(function(){
+          $(this).toggleClass("selected"); 
+        })
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1 style="margin-left:40px;">Select a destination</h1>
+        <a href="#" style="position:absolute; top:20px; left:20px"><span  class="material-symbols-outlined">
+arrow_back
+</span></a>
+      </div>
+      <div class="page">
+      
+
+        <input type="text" class="destination" placeholder="Search destination or hotel" />
+
+
+        <div class="dest-options" style="margin-top:20px;">
+          <div>
+            <div class="name"><a href="selection.html">Unsure where to go? </a></div>
+            <div>We'll help you find the perfect destination</div>
+          </div>
+        </div>
+
+        <h2>Popular destinations</h2>
+        <div class="dest-options">
+          <div>
+            <div class="name"><a href="#">Tenerife, Canaries </a></div>
+            <div>(Playa De Las Americas, Costa Adeje, Los Cristianos) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Dalaman, Turkey </a></div>
+            <div>(Marmaris, Olu Deniz) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Costa Del Sol, Spain </a></div>
+            <div>(Benalmadena, Fuengirola, Malaga, Marbella, Torremolinos ) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Majorca, Balearics </a></div>
+            <div>(Alcudia, Magaluf, Palma Nova, Santa Ponsa, Mallorca) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Costa Blanca, Spain </a></div>
+            <div>(Alicante, Benidorm) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Antalya, Turkey </a></div>
+            <div>(Alanya, Belek, Lara Beach, Side) </div>
+          </div>
+          <div>
+            <div class="name"><a href="#">Lanarca, Cyprus </a></div>
+            <div>(Ayia Napa) </div>
+          </div>
+        </div>
+
+        
+
+        
+       
+       
+      </div>
+
+      
+
+    </div>
+  	
+    <script src="index.js"></script>
+  </body>
+</html>

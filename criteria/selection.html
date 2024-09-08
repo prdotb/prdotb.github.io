@@ -6,15 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anywhere search</title>
     <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+        $(".options > div > div").click(function(){
+          $(this).toggleClass("selected"); 
+        })
+        
+      });
+    </script>
   </head>
   <body>
     <div class="wrapper">
+      <div class="header"><h1>Destination criteria</h1></div>
       <div class="page">
-      <h1>Anywhere search</h1>
+      
 
         <h2>Weather</h2>
-        <div class="col-3">
+        <div class="col-3 options">
           <div>
             <div style="margin-right:8px">
               <div class="head">Cool</div>
@@ -36,33 +49,70 @@
         </div>
 
         <h2>Travel time</h2>
-        <div class="col-2">
+        <div class="col-2 options">
           <div>
-            <div>Quick hop</div>
+            <div>
+              <div class="head">Quick hop</div>
+              <div>under 5 hours</div>
+            </div>
           </div>
           <div>
-            <div>Further afield</div>
+            <div>
+              <div class="head">Further afield</div>
+              <div>under 5 hours</div>
+            </div>
           </div>
         </div>
       
         <h2>Destination</h2>
-        <div class="col-2">
+        <div class="col-2 options">
           <div>
-            <div>1</div>
+            <div>Relaxing</div>
           </div>
           <div>
-            <div>2</div>
+            <div>Nightlife</div>
           </div>
           <div>
-            <div>3</div>
+            <div>Watersports</div>
           </div>
           <div>
-            <div>4</div>
+            <div>Sandy Beaches</div>
+          </div>
+          <div>
+            <div>Arts and Culture</div>
+          </div>
+          <div>
+            <div>Nature and Wildlife</div>
+          </div>
+          <div>
+            <div>Outdoor activities</div>
+          </div>
+          <div>
+            <div>Shopping</div>
+          </div>
+        </div>
+        <h2>Hotel</h2>
+        <div class="col-2 options">
+          <div>
+            <div>Adults Only</div>
+          </div>
+          <div>
+            <div>Family Friendly</div>
+          </div>
+          <div>
+            <div>Spa and Wellness</div>
+          </div>
+          <div>
+            <div>Luxury</div>
           </div>
         </div>
       </div>
 
-      
+      <div class="search-block">
+        <a href="srp.html">Search for holidays <span class="material-symbols-outlined">
+arrow_forward
+</span></a>
+      </div>
 
     </div>
   	
