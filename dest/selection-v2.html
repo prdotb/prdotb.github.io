@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destination Selection</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header" style="padding:8px 20px;">
+        <img src="../img/logo.png" />
+      </div>
+      <div class="search" style="padding:12px 20px; color:#fff;">
+        <div style="font-weight:800; font-size:16px; ">Anywhere</div>
+        <div style="font-size:13px;">13 Aug 2004 (7 nights) • 2 Adults, 1 room </div>
+      </div>
+      <div class="page">
+        <h1>Select holiday destinations</h1>
+
+
+        <style type="text/css">
+          .filters {margin-top:16px;}
+          .filters > div {float:left; width:33.3%;}
+          .filters > div > div {background-color:#fff; padding:6px; font-size:12px; border-radius:4px; border:solid 1px #1A73E8}
+          .filters .select {font-weight:bold; font-size:16px;}
+          .select select {border:0; font-weight:bold; font-size:16px; padding:0; width:80px; font-family:'Nunito Sans'; background-color: #fff;}
+        </style>
+
+        <div class="filters" style="overflow:hidden;">
+          <div>
+            <div style="margin-right:8px;">
+              <div>Weather</div>
+              <div class="select">
+                 <select>
+                    <option value="0">Any</option>
+                    <option value="1">Cool (20-25)</option>
+                    <option value="2">Toasty (25-30)</option>
+                    <option value="3">Scorchio (30+)</option>
+                </select>
+              </div>
+          </div>
+          </div>
+          <div>
+            <div style="margin-left:4px; margin-right:4px;">
+              <div>Flight duration</div>
+              <div class="select">
+                <select>
+                    <option value="0">Any</option>
+                    <option value="1">Short Haul</option>
+                    <option value="2">Long Haul</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div  style="margin-left:8px;">
+              <div>Prices from</div>
+              <div class="select">
+                <select>
+                    <option value="0">Any</option>
+                    <option value="1">< 250pp</option>
+                    <option value="2">250 - 500</option>
+                    <option value="2">500 +</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style type="text/css">
+          .country {border-bottom: solid 1px #ddd; padding:8px 12px;}
+          .title {font-size:24px;  font-weight: bold; margin-bottom: 4px;}
+          .details{font-size:18px; overflow:hidden}
+          .details > div {float:left; width:50%}
+
+          .area > div {padding:8px 12px;}
+          .area .name {width:65%; white-space: nowrap; overflow: hidden;}
+          .area .name .checkbox {margin-right:6px; padding-top:1px;}
+          .area .prices {width:30%; text-align: right}
+          
+        </style>
+
+
+        <div class="destination">
+          <div class="img" style="background-image: url('img/canaries.png'); background-size:cover">
+          </div>
+          <div class="country">
+            <div class="title">Canaries</div>
+            <div class="details">
+              <div class="temp"><span class="material-symbols-outlined icon">sunny</span> 26 - 29&deg;C</div>
+              <div class="duration"><span class="material-symbols-outlined icon">travel</span> 4h - 4h 30min</div>
+            </div>
+          </div>
+          <div class="area-list">
+            <div class="area">
+              <div class="name"><span class="checkbox" style=""><input type="checkbox" /></span><span>Fuerteventura</span></div>
+              
+              <div class="prices"><span>from £285</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox"><input type="checkbox" /></span>Gran Canaria</div>
+              
+              <div class="prices"><span>from £272</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox"><input type="checkbox" /></span>La Palma</div>
+              
+              <div class="prices"><span>from £520</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox"><input type="checkbox" /></span>Lanzarote</div>
+              
+              <div class="prices"><span>from £328</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Tenerife</div>
+              <div class="prices"><span>from £281</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox"><input type="checkbox" /></span><span style="font-weight: bold;">All Canaries</span></div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="destination">
+          <div class="img" style="background-image: url('img/balearics.png'); background-size:cover">
+          </div>
+          <div class="country">
+            <div class="title">Balearics</div>
+            <div class="details">
+              <div class="temp"><span class="material-symbols-outlined icon">sunny</span> 27&deg;C</div>
+              <div class="duration"><span class="material-symbols-outlined icon">travel</span> 2h 30min</div>
+            </div>
+          </div>
+          <div class="area-list">
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span>Ibiza</span></div>
+              <div class="prices"><span>from £345</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span> Majorca</div>
+              <div class="prices"><span>from £216</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Menorca</div>
+              <div class="prices"><span>from £301</span></div>
+            </div>
+            
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span style="font-weight: bold;">All Balearics</span></div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="destination">
+          <div class="img" style="background-image: url('img/turkey.png'); background-size:cover">
+          </div>
+          <div class="country">
+            <div class="title">Turkey</div>
+            <div class="details">
+              <div class="temp"><span class="material-symbols-outlined icon">sunny</span> 25 - 31&deg;C</div>
+              <div class="duration"><span class="material-symbols-outlined icon">travel</span> 4h - 4h 20min</div>
+            </div>
+          </div>
+          <div class="area-list">
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span>Antalya</span></div>
+              <div class="prices"><span>from £206</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span> Bodrum</div>
+              <div class="prices"><span>from £217</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Dalaman</div>
+             <div class="prices"><span>from £203</span></div>
+            </div>
+            
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span style="font-weight: bold;">All Turkey</span></div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="destination">
+          <div class="img" style="background-image: url('img/spain.png'); background-size:cover">
+          </div>
+          <div class="country">
+            <div class="title">Spain</div>
+            <div class="details">
+              <div class="temp"><span class="material-symbols-outlined icon">sunny</span> 26 - 30&deg;C</div>
+              <div class="duration"><span class="material-symbols-outlined icon">travel</span> 2h - 3h</div>
+            </div>
+          </div>
+          <div class="area-list">
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span>Costa Almeria</span></div>
+              
+              <div class="prices"><span>from £438</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Blanca</div>
+              
+              <div class="prices"><span>from £243</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Brava</div>
+              
+              <div class="prices"><span>from £165</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Calida</div>
+              
+              <div class="prices"><span>from £342</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa De La Luz</div>
+              
+              <div class="prices"><span>from £305</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Del Azahar</div>
+              
+              <div class="prices"><span>from £295</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Del Sol</div>
+             
+              <div class="prices"><span>from £241</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Costa Dorado</div>
+              
+              <div class="prices"><span>from £155</span></div>
+            </div>
+            
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span style="font-weight: bold;">All Spain</span></div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="destination">
+          <div class="img" style="background-image: url('img/greece.png'); background-size:cover">
+            <div class="destination-name">Greece</div>
+          </div>
+          <div class="country">
+            <div class="title">Greece</div>
+            <div class="details">
+              <div class="temp"><span class="material-symbols-outlined icon">sunny</span> 30&deg;C</div>
+              <div class="duration"><span class="material-symbols-outlined icon">travel</span> 3h 15 - 4h</div>
+            </div>
+          </div>
+          <div class="area-list">
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span>Corfu</span></div>
+              
+              <div class="prices"><span>from £211</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Crete</div>
+             
+              <div class="prices"><span>from £307</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Halkidiki</div>
+             
+              <div class="prices"><span>from £294</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Kefalonia</div>
+            
+              <div class="prices"><span>from £327</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Kos</div>
+              
+              <div class="prices"><span>from £516</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Mykonos</div>
+             
+              <div class="prices"><span>from £938</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Peloponnese</div>
+             
+              <div class="prices"><span>from £660</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Preveza Area</div>
+              <div class="prices"><span>from £431</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Rhodes</div>
+              <div class="prices"><span>from £198</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Samos</div>
+              <div class="prices"><span>from £392</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Santorini</div>
+              <div class="prices"><span>from £399</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Skiathos</div>
+              <div class="prices"><span>from £867</span></div>
+            </div>
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span>Zante</div>
+              <div class="prices"><span>from £209</span></div>
+            </div>
+            
+            <div class="area">
+              <div class="name"><span class="checkbox" style="margin-right:4px; padding-top:1px;"><input type="checkbox" /></span><span style="font-weight: bold;">All Greece</span></div>
+              
+            </div>
+          </div>
+        </div>
+        <div style="height:100px;"></div>
+      </div>
+
+
+      <div class="search-block">
+        <a href="srp.html">Search for holidays <span class="material-symbols-outlined">
+arrow_forward
+</span></a>
+      </div>
+
+    </div>
+  	
+    <script src="index.js"></script>
+  </body>
+</html>
