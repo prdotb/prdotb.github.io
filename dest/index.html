@@ -6,7 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>OTB Home</title>
     <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="base.css">
+    <style type="text/css">
+      .icon-search {position:absolute; top:12px; left:12px; color:#1A73E8;}
+      .content {padding:20px;}
+      .slider {overflow: auto; white-space: nowrap; padding:12px 0;}
+      .slider > div {width:300px; display:inline-block; margin-left:20px;}
+      .slider > div img {width:300px;}
+      h2 {color: #17317F; font-size:20px;}
+    </style>
   </head>
   <body>
   	<div class="wrapper">
@@ -22,22 +31,39 @@
         </div>
         <div class="search-form">
           <div class="form-field">
-            Any destination 
+            <span class="material-symbols-outlined icon-search">location_on</span>Any destination 
           </div>
           <div class="form-field">
-            Any airport 
+            <span class="material-symbols-outlined icon-search">travel</span> Any airport 
           </div>
           <div class="form-field">
-            7 Sep 2024, 7 nights
+            <span class="material-symbols-outlined icon-search">calendar_month</span> 7 Sep 2024, 7 nights
           </div>
           <div class="form-field">
-            2 adults, 1 room
+            <span class="material-symbols-outlined icon-search">group_add</span> 2 adults, 1 room
           </div>
           <a href="selection-v2.html" class="search-button">
             Search
           </a>
         </div>
       </div>
+
+      <div class="campaign" style="height:180px; background-image: url('../img/campaign.avif'); background-size:cover; background-position: center;">
+        
+      </div>
+      <div class="content">
+        <div>Holidays for booking geniuses, like you!</div>
+        <h2>We think you might like...</h2>
+      </div>
+      <div class="slider">
+        <div>
+          <img src="../img/cmpsm1.avif" />
+        </div>
+        <div>
+          <img src="../img/cmpsm2.avif" />
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
