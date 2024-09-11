@@ -21,13 +21,19 @@
           $(".resorts").hide();
         });
 
+        $(".resorts .apply > div").click(function(){
+          $(".resorts").hide();
+        });
+
         $(".buttons .yes").click(function(){
           $(this).toggleClass("selected"); 
         })
 
         $(".buttons .no").click(function(){
           $(this).toggleClass("selected"); 
-        })
+        }); 
+
+
         
       });
 </script>
@@ -423,6 +429,9 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
         .buttons > div > .yes {margin-left:6px; color:#1A73E8;}
         .selected {background-color:#1A73E8; color:#fff !important; }
 
+        .apply {position:absolute; bottom:0; left:0; right:0; background-color:#fff; padding:20px; z-index:1000; border-top:solid 1px #ddd;}
+        .apply > div {background-color:#eee; border-radius:4px; padding:12px 0; font-size:16px; font-weight:bold; text-align:center; color:#17317F; background-color:#FEDC07;}
+
         @media only screen and (min-width: 500px) {
           .resorts {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:360px;}
         }
@@ -433,6 +442,9 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
           <div class="title">Resort towns</div>
           <div class="close">X</div>
         </div>
+
+        
+
         <div class="frame">
           <div style="padding:20px;">
               <h2 style-="font-size:20px; line-height:24px; margin-bottom:8px;"> Where to stay in Tenerife</h2>
@@ -651,11 +663,10 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
               </div>
               <h3>Great for</h3>
               <div class="tags">
-                <div>Sandy beaches</div>
-                <div>Boat trips</div>
-                <div>Shopping</div>
-                 <div>Traditional cuisine</div>
-                 <div>Nightlife</div>
+                <div>Eclectic nightlife</div>
+                <div>Local culture</div>
+                 <div>Black-silted beaches</div>
+                 <div>Taditional architecture</div>
               </div>
 
               <div class="buttons">
@@ -709,10 +720,8 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
               <h3>Great for</h3>
               <div class="tags">
                 <div>Sandy beaches</div>
-                <div>Boat trips</div>
-                <div>Shopping</div>
-                 <div>Traditional cuisine</div>
-                 <div>Nightlife</div>
+                <div>Windsurfing</div>
+                <div>Chilled vibe</div>
               </div>
 
               <div class="buttons">
@@ -782,6 +791,9 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08); padding:12px;}
             </div>
           </div>
 
+        </div>
+        <div class="apply">
+          <div>Apply</div>
         </div>
       </div>
       
