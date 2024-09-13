@@ -1,0 +1,64 @@
+/* 
+Colours 
+
+Charcoal #313137
+Navy #17317F
+Blue #1A73E8
+Light Blue #EDF4FF
+
+*/
+
+
+* {margin:0; box-sizing: border-box;}
+body {font-family:'Nunito Sans'; font-size:14px; background-color:#eee; color:#313137}
+a {color:#1A73E8; text-decoration: none;}
+a.navy {color:#17317F;}
+a.inline {border-bottom: 1px dotted #1A73E8;}
+
+.wrapper {background-color: #fff; position:relative}
+.header {background-color:#fff; padding:12px 20px;}
+.search {background-color:#1A73E8; padding:12px 20px; color:#fff;}
+h1 {font-weight: 800; margin-bottom: 20px;}
+.list {padding:0 20px; background-color:#F8FAFF; min-height:1000px;}
+.card {min-height:450px; background-color:#fff; border-radius:8px; margin-bottom:16px;-webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
+
+.tools {padding:16px 20px;}
+.tools .holdbags {border: 1px solid #1A73E8; padding:4px 8px; background-color:#fff; margin-bottom:8px; border-radius:4px; font-size:14px;}
+.tools .tools-container {display: flex; flex-direction: row;}
+.tools .tools-container > div {border: 1px solid #1A73E8; flex-grow: 1; padding:4px; text-align:center; font-size:14px; border-radius:4px;}
+.sort {margin-left:4px; color:#1A73E8; }
+.filter {margin-right:4px;color:#fff; background-color:#1A73E8;}
+
+.card .images {height:215px; background-color:#EDF4FF; border-top-left-radius: 4px; border-top-right-radius: 4px; position:relative}
+.card .images .perk {position:absolute; height:26px; top:8px;left:8px; background-color:#D91677; padding:4px 8px; font-size: 14px; border-radius:4px; color:#fff; font-weight:800;}
+.card .images .save {position: absolute; top:8px; right:8px; border-radius:4px; background-color:#fff; height:26px; width:30px; padding-top:5px; padding-left:4PX;}
+.card .images .controls {position:absolute; bottom:8px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; font-size:13px;}
+.controls span {display:inline-block; margin:0 8px;}
+.card .content {padding:12px;}
+.card .content .name {font-size:18px; font-weight:700}
+
+.card .content .rating {margin-bottom:12px;}
+.rating > img {display: inline-block; margin-right:8px; vertical-align: top}
+.rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+.rating .stars {margin-top:1px} 
+
+.card .content .detail {margin-bottom:8px; position:relative; padding-left: 24px;}
+.detail .icon {position:absolute; top:2px; left:0;}
+
+.card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
+.card .price .total {font-weight:900; font-size:32px; color:#17317F}
+.continue {width:100%; border:0; background-color:#FEDC07; color:#17317F; font-weight:800; padding:12px 0; font-size:16px; border-radius:4px; margin-top:12px; text-align: center;}
+.continue span {position:display:inline-block; vertical-align: top;}
+.continue img {position:display:inline-block; vertical-align: top; margin-top:3px; height:16px; margin-left:8px;}
+.atol {position:absolute; top:20px; right:16px}
+
+.footer {height:100px; background-color: #1A73E8;}
+
+@media only screen and (min-width: 500px) {
+	.wrapper {width:360px; margin:0 auto; background-color: #fff;}
+}
+
+
+
