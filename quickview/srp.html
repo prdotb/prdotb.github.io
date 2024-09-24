@@ -11,10 +11,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
-        $(".quick a").click(function(){
+        $(".quick a").click(function(event){
+          event.preventDefault();
           $(".qv-window").show();
         });
-        $(".qv-close a").click(function(){
+        $(".qv-close a").click(function(event){
+          event.preventDefault();
           $(".qv-window").hide();
         });
       });
