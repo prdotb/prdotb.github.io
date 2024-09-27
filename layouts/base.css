@@ -46,6 +46,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 
 .card .content .detail {margin-bottom:8px; position:relative; padding-left: 24px;}
 .detail .icon {position:absolute; top:2px; left:0;}
+.detail a {font-size: 14px;}
 
 .card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
 .card .price .total {font-weight:900; font-size:32px; color:#17317F}
