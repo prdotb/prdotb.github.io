@@ -13,7 +13,7 @@ Light Blue #EDF4FF
 body {font-family:'Nunito Sans'; font-size:14px; background-color:#eee; color:#313137}
 a {color:#1A73E8; text-decoration: none;}
 a.navy {color:#17317F;}
-a.inline {border-bottom: 1px dotted #1A73E8;}
+.inline {border-bottom: 1px dotted #1A73E8; font-size: 14px; color:#1A73E8;}
 
 .wrapper {background-color: #fff;}
 .header {background-color:#fff; padding:12px 20px;}
@@ -46,7 +46,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 
 .card .content .detail {margin-bottom:8px; position:relative; padding-left: 24px;}
 .detail .icon {position:absolute; top:2px; left:0;}
-.detail a {font-size: 14px;}
+.detail  {font-size: 14px!important; }
 
 .card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
 .card .price .total {font-weight:900; font-size:32px; color:#17317F}
