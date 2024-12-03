@@ -6,16 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SRP layout</title>
     <link rel="stylesheet" href="base.css">
-    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <div class="header" style="padding:12px 20px;">
-        <img src="icons/logo.png" />
+      <div class="header" style="padding:12px 20px 0;">
+        <img src="icons/logo.png" style="height:36px;"/>
       </div>
-      <div class="search" style="padding:12px 20px; color:#fff;">
-        <div style="font-weight:800; font-size:16px; ">Tenerife</div>
-        <div style="font-size:13px;">13 Aug 2004 (7 nights) • 2 Adults, 1 room </div>
+      <div class="search" style="padding:6px 20px 12px;">
+        <div style="background-color:#fff; padding: 8px 12px; border-radius:4px; color:#1A73E8">
+          <div style="font-weight:800; font-size:16px; margin-bottom: 4px">Tenerife</div>
+          <div style="font-size:12px;">13 Aug 2004 (7 nights) • 2 Adults, 1 room </div>
+        </div>
+        
+      </div>
+      <div class="tools">
+        <div>
+          <div><a href="#"><span class="material-symbols-outlined icon">tune</span><span>Filters</span></a></div>
+          <div><a href="#"><span class="material-symbols-outlined icon">sort</span><span>Sort</span></a></div>
+          <div><a href="#"><span class="material-symbols-outlined icon">map</span><span>Map</span></a></div>
+        </div>
       </div>
       <!--<div class="tools">
         <div class="holdbags" style="font-weight:800; font-size: 14px;">Add Hold Bags</div>
@@ -25,7 +37,20 @@
         </div>
       </div>-->
       <div class="list" style="padding-top:20px">
-        <h1>189 holidays</h1>
+        <div class="page-title" style="position:relative">
+          <h1>189 holidays</h1>
+          <div style="position:absolute; right:0; top:0; border:solid 2px #EDF4FF; border-radius:4px; padding:4px; font-size:14px; ">
+            Hold bags
+            <select style="border:0; font-weight: bold; color:#1A73E8">
+              <option selected>0</option>
+              <option selected>1</option>
+              <option selected>2</option>
+              <option selected>3</option>
+              <option selected>4</option>
+            </select>
+          </div>
+        </div>
+        
         <div class="card">
           <div class="images" style="background-image: url('photos/iberostarselection.png'); background-size:cover">
             <div class="perk">FREE Mobile Data</div>
