@@ -24,11 +24,11 @@ h1 {font-weight: 800; margin-bottom: 20px; font-size: 20px;}
 -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);
 box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 
-.tools {border-bottom: solid 2px #EDF4FF; padding:12px 20px;}
+.tools {border-bottom: solid 2px #EDF4FF; padding:12px 20px; background-color: #EDF4FF}
 .tools > div {overflow: hidden;}
 .tools > div > div {float:left; width:33.33%; text-align: center; font-weight: bold;}
-.tools > div > div span {display:inline-block; vertical-align: top;}
-.tools > div > div .icon {font-size:16px; margin-right:4px;}
+.tools > div > div span {display:inline-block; vertical-align: top; font-size: 16px;}
+.tools > div > div .icon {font-size:18px; margin-right:4px;}
 
 .card .images {height:200px; background-color:#EDF4FF; border-top-left-radius: 4px; border-top-right-radius: 4px; position:relative}
 .card .images .perk {position:absolute; height:26px; top:8px;left:8px; background-color:#D91677; padding:4px 8px; font-size: 14px; border-radius:4px; color:#fff; font-weight:800;}
@@ -48,7 +48,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .detail  {font-size: 14px!important; }
 
 .card .price {border-top:solid 1px #ddd; padding:12px; position:relative;}
-.card .price .total {font-weight:900; font-size:32px; color:#17317F}
+.card .price .total {font-weight:900; font-size:32px; color:#1A73E8}
 .continue {width:100%; border:0; background-color:#FEDC07; color:#17317F; font-weight:800; padding:12px 0; font-size:16px; border-radius:4px; margin-top:12px; text-align: center;}
 .continue span {position:display:inline-block; vertical-align: top;}
 .continue img {position:display:inline-block; vertical-align: top; margin-top:3px; height:16px; margin-left:8px;}
