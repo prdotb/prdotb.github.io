@@ -32,9 +32,9 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .tools > div > div .icon {font-size:18px; margin-right:4px;}
 
 .card .images {height:200px; background-color:#EDF4FF; border-top-left-radius: 4px; border-top-right-radius: 4px; position:relative}
-.card .images .perk {position:absolute; height:26px; top:8px;left:8px; background-color:#D91677; padding:4px 8px; font-size: 14px; border-radius:4px; color:#fff; font-weight:800;}
-.card .images .save {position: absolute; top:8px; right:8px; border-radius:4px; background-color:#fff; height:26px; width:30px; padding-top:5px; padding-left:4PX;}
-.card .images .controls {position:absolute; bottom:8px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; font-size:13px;}
+.card .images .perk {position:absolute; top:8px;right:8px; background-color:#D91677; padding:4px 8px; font-size: 13px; border-radius:4px; color:#fff; font-weight:800;}
+.card .images .save {position: absolute; top:8px; right:8px; border-radius:4px; background-color:#fff; height:26px; width:30px; padding-top:5px; padding-left:4PX; display:none;}
+.card .images .controls {position:absolute; bottom:0px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color:#fff; padding:4px 8px; border-radius:4px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; font-size:13px; opacity:0.8}
 .controls span {display:inline-block; margin:0 8px;}
 .card .content {padding:16px;}
 .card .content .name {font-size:18px; font-weight:700; margin-bottom: 4px;}
@@ -121,7 +121,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
   top: 2px;
   width: 3px;
   height: 8px;
-  border: solid yellow;
+  border: solid #FEDC07;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
