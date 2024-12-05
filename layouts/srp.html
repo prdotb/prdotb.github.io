@@ -20,7 +20,22 @@
 
         $(".filters-panel .close").click(function(){
           $(".filters-overlay").hide();
-        })
+        });
+
+        $(".sort").click(function(){
+          $(".opaque-overlay").show();
+          $(".sort-overlay").show();
+        });
+
+        $(".sort-overlay .close").click(function(){
+          $(".opaque-overlay").hide();
+          $(".sort-overlay").hide();
+        });
+
+        $(".sort-overlay .apply").click(function(){
+          $(".opaque-overlay").hide();
+          $(".sort-overlay").hide();
+        });
         
       });
   </script>
@@ -462,12 +477,12 @@
         .fill {font-variation-settings: 'FILL' 1,'wght' 400, 'GRAD' 0,'opsz' 24}
         .icon-star {font-size:16px; color:#1A73E8}
 
-        .buttons {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 2px #EDF4FF; padding:12px 20px; overflow:hidden}
-        .buttons > div {float:left; width:calc(50% - 6px)}
-        .buttons div:first-child {margin-right:6px;}
-        .buttons div:last-child {margin-left:6px;}
+        .filters-panel .buttons {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 2px #EDF4FF; padding:12px 20px; overflow:hidden}
+        .filters-panel .buttons > div {float:left; width:calc(50% - 6px)}
+        .filters-panel .buttons div:first-child {margin-right:6px;}
+        .filters-panel .buttons div:last-child {margin-left:6px;}
         .buttons .apply {border:0; height:36px; background-color:#FEDC07; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:8px;}
-        .buttons .clear {border:2px solid #EDF4FF; height:36px; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:6px;}
+        .filters-panel .buttons .clear {border:2px solid #EDF4FF; height:36px; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:6px;}
 
         .more {display: inline-block; margin-top:8px;}
         .more > span {display: inline-block; vertical-align: top; font-size:16px;}
@@ -583,6 +598,54 @@
             <div class="apply">Apply</div>
           </div>
         </div>
+      </div>
+
+      <style type="text/css">
+        .opaque-overlay {background-color: #000; opacity:0.8; position:fixed; top:0; left:0; bottom:0; right:0; display:none;}
+        .sort-overlay {position:fixed; height:auto; bottom:0; left:0; right:0; background-color:#fff; border-top-left-radius: 12px; border-top-right-radius: 12px; display:none;}
+        .sort-overlay .head {border-bottom:solid 2px #EDF4FF; padding:12px 20px 12px;}
+        .sort-overlay .sort-options {padding:20px;}
+        @media only screen and (min-width: 500px) {
+          .sort-overlay {position:fixed; height:auto; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:380px;}
+          .opaque-overlay {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:380px;}
+         
+        }
+
+      </style>
+
+
+      <div class="opaque-overlay"></div>
+      <div class="sort-overlay">
+        <div class="head">
+          <h2>Sort</h2>
+          <a class="close" href="#"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <div class="sort-options">
+          
+          <label class="radio-container">Recommended
+            <input type="radio" checked="checked" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container">Lowest price first
+            <input type="radio" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container">Highest price first
+            <input type="radio" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container">Star Rating
+            <input type="radio" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container">Tripadvisor Rating
+            <input type="radio" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+        </div>
+        <div class="buttons" style="padding:12px 20px; border-top:solid 2px #EDF4FF">
+            <div class="apply">Apply</div>
+          </div>
       </div>
 
     </div>
