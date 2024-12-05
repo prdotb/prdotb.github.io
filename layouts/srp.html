@@ -428,8 +428,16 @@
         .fill {font-variation-settings: 'FILL' 1,'wght' 400, 'GRAD' 0,'opsz' 24}
         .icon-star {font-size:16px; color:#1A73E8}
 
-        .apply {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 2px #EDF4FF; padding:12px 20px;}
-        .apply > div {display:block; width:100%; border:0; height:36px; background-color:#FEDC07; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:8px;}
+        .buttons {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 2px #EDF4FF; padding:12px 20px; overflow:hidden}
+        .buttons > div {float:left; width:calc(50% - 6px)}
+        .buttons div:first-child {margin-right:6px;}
+        .buttons div:last-child {margin-left:6px;}
+        .buttons .apply {border:0; height:36px; background-color:#FEDC07; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:8px;}
+        .buttons .clear {border:2px solid #EDF4FF; height:36px; border-radius:4px; text-align: center; color:#17317F; font-weight: bold; font-size:16px; padding-top:8px;}
+
+        .more {display: inline-block; margin-top:8px;}
+        .more > span {display: inline-block; vertical-align: top; font-size:16px;}
+        .more > span.material-symbols-outlined {font-size: 20px;}
 
         @media only screen and (min-width: 500px) {
           .filters-overlay {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:380px;}
@@ -446,10 +454,7 @@
             <div class="filter-group">
               <h3>Board Basis</h3>
               <div>
-                <label class="container">Any
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
+                
                 <label class="container">All-inclusive
                   <input type="checkbox">
                   <span class="checkmark"></span>
@@ -462,17 +467,27 @@
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
+                <label class="container">Half Board
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Room Only
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Self Catering
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
               </div>
+              
                 
             </div>
 
             <div class="filter-group">
               <h3>Departure dates</h3>
               <div>
-                <label class="container">Any
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
+                
                 <label class="container">Tue 27 Aug 2024
                   <input type="checkbox">
                   <span class="checkmark"></span>
@@ -486,15 +501,13 @@
                   <span class="checkmark"></span>
                 </label>
               </div>
+              <a href="#" class="more"><span>Show more</span> <span class="material-symbols-outlined">keyboard_arrow_down</span></a>
             </div>
 
             <div class="filter-group">
               <h3>Star rating</h3>
               <div>
-                <label class="container">Any
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
+                
                 <label class="container">
                   <span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span>
                   <input type="checkbox">
@@ -509,15 +522,12 @@
                   <span class="checkmark"></span>
                 </label>
               </div>
+              <a href="#" class="more"><span>Show more</span> <span class="material-symbols-outlined">keyboard_arrow_down</span></a>
             </div>
 
             <div class="filter-group">
               <h3>Destinations</h3>
               <div>
-                <label class="container">Any
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
                 <label class="container">Costa Adeje
                   <input type="checkbox">
                   <span class="checkmark"></span>
@@ -531,10 +541,12 @@
                   <span class="checkmark"></span>
                 </label>
               </div>
+              <a href="#" class="more"><span>Show more</span> <span class="material-symbols-outlined">keyboard_arrow_down</span></a>
             </div>        
           </div>
-          <div class="apply">
-            <div>Apply</div>
+          <div class="buttons">
+            <div class="clear">Clear</div>
+            <div class="apply">Apply</div>
           </div>
         </div>
       </div>
