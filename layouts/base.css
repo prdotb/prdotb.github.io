@@ -40,6 +40,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .card .content .name {font-size:18px; font-weight:700; margin-bottom: 4px;}
 
 .card .content .rating {margin-bottom:12px;}
+.card .content .rating .star {display:inline-block; margin-right:4px;}
 .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
 .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
 .rating .stars {margin-top:1px} 
@@ -55,7 +56,7 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.08);}
 .continue img {position:display:inline-block; vertical-align: top; margin-top:3px; height:16px; margin-left:8px;}
 .atol {position:absolute; top:20px; right:16px}
 
-.footer {height:100px; background-color: #1A73E8;}
+.footer {height:100px; background-color: #EDF4FF;}
 
 
         
