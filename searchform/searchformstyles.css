@@ -1,0 +1,28 @@
+
+/* 
+Colours 
+
+Charcoal #313137
+Navy #17317F
+Blue #1A73E8
+Light Blue #EDF4FF
+
+*/
+
+* {margin:0; box-sizing: border-box;}
+body {font-family:'Nunito Sans'; font-size:16px; background-color:#eee; color:#313137;}
+.wrapper {background-color: #fff; min-height: 1000px;}
+
+.header {background-color:#1A73E8; padding:12px 20px 6px; position:relative; color:#fff;}
+.tabs {background-color:#1A73E8; color:#fff; padding: 12px 20px 0px; border-bottom: solid 1px #8DB2E2;}
+.tabs ul {list-style-type: none; padding:0 0 0; }
+.tabs ul li {display: inline-block; margin-right: 12px; padding-bottom:8px;}
+.tabs ul li.selected {font-weight:bold; border-bottom: solid 2px #fff;}
+.searchform {background-color:#1A73E8; padding:12px 20px 12px;}    
+.searchform .field {background-color:#fff; border-radius:4px; padding:8px; margin-bottom: 12px; position:relative;}
+.searchform .field .icon {color:#1A73E8; position:absolute; top:6px; left:8px;}
+.searchform .field .label {display:block; margin-left:30px;}
+.searchform .submit {background-color:#FEDC07; border-radius:4px; padding:8px; margin-bottom: 12px; text-align:center; color:#17317F; font-weight:bold;}
+@media only screen and (min-width: 500px) {
+	.wrapper {width:380px; margin:0 auto; }
+}
