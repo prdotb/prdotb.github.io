@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTB Prototypes</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        
+        $(".change-flights").click(function(){
+          $(".flights").show();
+        });
+
+        $(".filters > div").click(function(){
+          var rel = $(this).attr('rel');
+          $(".overlay-filter").fadeIn() 
+          $(".filter-container").slideDown(200);
+        }); 
+
+        $(".close").click(function(){
+          $(".filter-container").slideUp(200);
+          $(".overlay-filter").fadeOut();
+        })
+
+        $(".button-apply").click(function(){
+          $(".filter-container").slideUp(200);
+          $(".overlay-filter").fadeOut();
+        })
+
+        $(".overlay-filter").click(function(){
+          $(this).fadeOut();
+          $(".filter-container").hide();
+        })
+        
+      });
+</script>
+
+    <style>
+      * {margin:0; box-sizing: border-box;}
+      body {font-family:'Nunito Sans'; font-size:18px; background-color:#eee; color:#313137; padding:28px; margin:0; padding:0;}
+      a {text-decoration:none; color:#1A73E8;}
+      .links > div {margin-bottom:16px; }
+      h1 {font-size:24px; color:#17317F}
+
+      .flights {position:fixed; top:0; bottom:0; left:0; right:0;}
+      .overlay, .overlay-filter {position:absolute; top:0px; bottom:0; left:0; right:0; background-color:#000; opacity: 0.8;}
+      .overlay-filter {display:none;}
+
+
+
+
+
+      .frame {position:absolute; top:0px; bottom:0; left:0; right:0; background-color:#fff;}
+      .head {position:absolute; top:0; left:0; right:0; height:50px; padding:12px 20px; border-bottom:solid 1px #ddd;}
+      .list {position: absolute; top:100px; left:0; right:0; bottom:0px; overflow-y: scroll;}
+      .filters {position:absolute; top:50px; left:0; right:0; height:30px; padding:12px 20px 0 0;}
+
+
+      .list {padding:20px;}
+      .item {min-height:160px; background-color:#fff; margin-bottom: 20px; border-radius:4px; -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);
+box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
+      
+      .filters > div {border:solid 1px #1A73E8; padding:6px 12px; border-radius: 4px; font-size:16px; font-weight:bold; color:#1A73E8; text-align:center;}
+      .filters > div:first-child {margin-left:20px;}
+      .filters > div:hover {cursor: pointer;}
+
+      
+      .flight {padding:12px 12px 12px 44px; border-bottom:solid 1px #ddd; position:relative}
+      .flight > div {position:relative; }
+      .flight > div:first-child {margin-bottom: 8px;}
+      .flight > div .date {font-size:14px;}
+      .flight .airline {position:absolute; right:0px; top:0; font-size: 14px;} 
+      .flight .airline img {height:20px;}
+      .flight .times {}
+      .flight .times .slot {display:inline-block; vertical-align:top;}
+      .flight .times .slot .time, .length {font-size: 16px; font-weight: bold;}
+      .flight .times .slot .code {font-size: 14px;}
+      .flight .duration {position:absolute; right:0px; top:0; font-size: 14px; text-align: right}
+
+      .outbound, .inbound {position:absolute; top:12px; left:12px; font-size: 20px; color:#1A73E8}
+      .inbound {-webkit-transform: scaleX(-1);
+  transform: scaleX(-1);}
+      .selected {padding:12px; text-align: right}
+      .selected > div {background-color:#EDF4FF; padding: 4px 8px; display: inline-block; border-radius:4px; font-size:14px; font-weight:bold;}
+
+      .select {padding:12px; }
+      .select > div {display: inline-block; width:49%; vertical-align: top;}
+      .select div.price-change {font-weight: bold; font-size: 20px;}
+      .select div.button {text-align: right}
+      .select div.button > div {display:inline-block; font-size:16px; background-color: #FED70B; color:#17317F; font-weight: bold; padding:6px 12px; border-radius:4px; }
+
+      @media only screen and (min-width: 500px) {
+        .wrapper {width:360px; margin:0 auto; min-height:1000px; background-color:#fff;}
+        .search-block {position:fixed; bottom:0; left:0; right:0; margin-right: auto;
+        margin-left: auto; width:360px; background-color:#fff; padding:20px; border-top: solid 1px #ddd;}
+        .flights {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:360px;}
+        .flight > div .date {font-size:14px;}
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header" style="padding:12px 20px;">
+        <img src="../img/logo.png" />
+      </div>
+      <!--<div class="search" style="padding:12px 20px; color:#fff; background-color:#1A73E8;">
+        <div style="font-weight:800; font-size:16px; ">Tenerife</div>
+        <div style="font-size:13px;">13 Aug 204 (7 nights) • 2 Adults, 1 room </div>
+      </div>-->
+      <div style="padding:12px 20px;">
+        <a href="#" class="change-flights">Change Flights</a>
+      </div>
+
+
+
+      <div class="flights">
+        <div class="overlay"></div>
+        <div class="frame">
+          <div class="head">
+            <h1>Change flights</h1>
+          </div>
+          <div></div>
+          <div class="filters">
+            <div rel="time">Filters</div>
+          </div>
+          <div class="list">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </div>
+
+
+        <style type="text/css">
+          .filter-container {display:none; position:absolute; bottom:0; left:0; right:0; background-color:#fff; height:calc(100% - 60px); overflow-y: scroll; border-top-left-radius: 8px; border-top-right-radius: 8px;}
+          
+          .container-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
+          .container-options {position:absolute; top:50px; left:0; right:0; bottom:60px; overflow-y:scroll;}
+          .container-actions {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:#dddddd solid 1px; padding:12px 20px}
+          .container-actions > div {display:inline-block;}
+
+          .filter-container .title, .checkbox-list, .apply, .radio-list {padding:12px 20px;}
+          .container-header a.close {position:absolute; right:20px; top:12px;}
+          .filter-container .title {position:relative; border-bottom:solid 1px #ddd;}
+          .container-header h2 {font-size:20px;}
+
+          .filter-group-title {background-color: #D0E3FE; color:#17317F; padding:12px 20px; font-weight:bold;}
+
+          .filter-container .checkbox-list > div {margin-bottom: 8px;}
+          label {font-size: 16px;}
+          
+          .checkbox-list > div > label, .checkbox-list > div > input {display: inline-block; vertical-align: top;}
+          .checkbox-list > div > input {margin-top:4px;}
+
+          .filter-container .apply {border-top: solid 1px #ddd;}
+          .filter-container .apply > div {padding:8px; text-align: center; background-color: #FED70B; color:#17317F; font-weight: bold; border-radius:4px;}
+
+          .radio-list > div {margin-bottom: 8px;}
+          .radio-list > div > label, .radio-list > div > input {display: inline-block; vertical-align: top;}
+          .radio-list > div > input {margin-top:4px; margin-right:8px;}
+          .group-title {margin-bottom:12px; font-weight:bold}
+
+          .button-apply:hover {cursor: pointer;}
+
+        </style>
+
+        <div class="overlay-filter"></div>
+        <div class="filter-container">
+          <div class="container-header">
+            <h2>Flight filters</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+          </div>
+          <div class="container-options">
+            <div class="filter-group">
+              <div class="filter-group-title">Departure airport</div>
+              <div class="checkbox-list">
+                <div><input type="checkbox" /> <label>Birmingham</label></div>
+                <div><input type="checkbox" /> <label>Bristol</label></div>
+                <div><input type="checkbox" /> <label>East Midlands</label></div>
+                <div><input type="checkbox" /> <label>Edinburgh</label></div>
+                <div><input type="checkbox" /> <label>Glasgow International</label></div>
+                <div><input type="checkbox" /> <label>Leeds Bradford</label></div>
+                <div><input type="checkbox" /> <label>London Gatwick</label></div>
+                <div><input type="checkbox" /> <label>London Stansted</label></div>
+                <div><input type="checkbox" /> <label>Manchester</label></div>
+                <div><input type="checkbox" /> <label>Newcastle</label></div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Arrival airport</div>
+              <div class="checkbox-list">
+                <div><input type="checkbox" /> <label>Rome Ciampino</label></div>
+                <div><input type="checkbox" /> <label>Rome Fiumicino</label></div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Departure time</div>
+              <div class="radio-list">
+                <div class="group-title">
+                  Outbound
+                </div>
+                <div><input type="radio" name="outbound"/><label>Any time</label></div>
+                <div><input type="radio" name="outbound"/><label>Morning (4am - 12pm)</label></div>
+                <div><input type="radio" name="outbound"/><label>Afternoon (12pm - 5pm)</label></div>
+                <div><input type="radio" name="outbound"/><label>Evening (5pm -12am)</label></div>
+                <div><input type="radio" name="outbound"/><label>Night (12am - 4am)</label></div>  
+              </div>
+
+              <div class="radio-list">
+            <div class="group-title">
+              Inbound
+            </div>
+            <div><input type="radio" name="outbound"/><label>Any time</label></div>
+            <div><input type="radio" name="outbound"/><label>Morning (4am - 12pm)</label></div>
+            <div><input type="radio" name="outbound"/><label>Afternoon (12pm - 5pm)</label></div>
+            <div><input type="radio" name="outbound"/><label>Evening (5pm -12am)</label></div>
+            <div><input type="radio" name="outbound"/><label>Night (12am - 4am)</label></div>  
+          </div>
+
+            </div>
+
+            <div class="filter-group">
+              <div class="filter-group-title">Stops</div>
+              <div class="checkbox-list">
+                <div><input type="checkbox" /> <label>Any</label></div>
+                <div><input type="checkbox" /> <label>Direct</label></div>
+                <div><input type="checkbox" /> <label>In-direct</label></div>
+              </div>
+            </div>
+          </div>
+          <div class="container-actions">
+            <div class="button-clear" style="width:calc(50% - 10px); text-align:center; border:solid 1px #1A73E8; padding:4px 0; border-radius:4px; color:#1A73E8; font-weight:bold;">Clear</div>
+            <div class="button-apply" style="width:calc(50% - 10px); text-align:center; border:solid 1px #FEDC07; margin-left:12px; padding:4px 0; border-radius:4px; color:#17317F; background-color:#FEDC07; font-weight:bold;">Apply</div>
+          </div>
+        </div>
+        <div class="sort-container"></div>
+
+        
+      </div>
+      
+    </div>
+  	
+    
+  </body>
+</html>
