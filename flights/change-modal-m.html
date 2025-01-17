@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
 
     <script>
       $(document).ready(function(){
         
         $(".change-flights").click(function(){
-          $(".flights").show();
+          $(".flights").show("slide", { direction: "right" }, 200); 
+        });
+
+        $(".close-flights").click(function(){
+          $(".flights").hide("slide", { direction: "right" }, 200); 
         });
 
         $(".filters > div").click(function(){
@@ -43,12 +49,12 @@
 
     <style>
       * {margin:0; box-sizing: border-box;}
-      body {font-family:'Nunito Sans'; font-size:18px; background-color:#eee; color:#313137; padding:28px; margin:0; padding:0;}
+      body {font-family:'Nunito Sans'; font-size:18px; background-color:#ffffff; color:#313137; padding:28px; margin:0; padding:0;}
       a {text-decoration:none; color:#1A73E8;}
       .links > div {margin-bottom:16px; }
       h1 {font-size:24px; color:#17317F}
 
-      .flights {position:fixed; top:0; bottom:0; left:0; right:0;}
+      .flights {position:fixed; top:0; bottom:0; left:0; right:0; display:none;}
       .overlay, .overlay-filter {position:absolute; top:0px; bottom:0; left:0; right:0; background-color:#000; opacity: 0.8;}
       .overlay-filter {display:none;}
 
@@ -57,9 +63,12 @@
 
 
       .frame {position:absolute; top:0px; bottom:0; left:0; right:0; background-color:#fff;}
-      .head {position:absolute; top:0; left:0; right:0; height:50px; padding:12px 20px; border-bottom:solid 1px #ddd;}
-      .list {position: absolute; top:100px; left:0; right:0; bottom:0px; overflow-y: scroll;}
-      .filters {position:absolute; top:50px; left:0; right:0; height:30px; padding:12px 20px 0 0;}
+      .head {position:absolute; top:0; left:0; right:0; height:60px; padding:16px 20px; border-bottom:solid 1px #ddd;}
+      .list {position: absolute; top:110px; left:0; right:0; bottom:0px; overflow-y: scroll;}
+      .filters {position:absolute; top:60px; left:0; right:0; height:30px; padding:12px 20px 0 0;}
+
+      .head h1 {margin-left:36px; font-size: 24px;}
+      .head .close-flights {position:absolute; left:20px; top:20px; color:#17317F}
 
 
       .list {padding:20px;}
@@ -85,8 +94,7 @@ box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
       .flight .duration {position:absolute; right:0px; top:0; font-size: 14px; text-align: right}
 
       .outbound, .inbound {position:absolute; top:12px; left:12px; font-size: 20px; color:#1A73E8}
-      .inbound {-webkit-transform: scaleX(-1);
-  transform: scaleX(-1);}
+      .inbound {-webkit-transform: scaleX(-1); transform: scaleX(-1);}
       .selected {padding:12px; text-align: right}
       .selected > div {background-color:#EDF4FF; padding: 4px 8px; display: inline-block; border-radius:4px; font-size:14px; font-weight:bold;}
 
@@ -102,6 +110,11 @@ box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
         margin-left: auto; width:360px; background-color:#fff; padding:20px; border-top: solid 1px #ddd;}
         .flights {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:360px;}
         .flight > div .date {font-size:14px;}
+
+
+
+
+
       }
 
     </style>
@@ -127,6 +140,7 @@ box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
         <div class="frame">
           <div class="head">
             <h1>Change flights</h1>
+            <a href="#" class="close-flights"><span class="material-symbols-outlined">chevron_left</span></a>
           </div>
           <div></div>
           <div class="filters">
@@ -156,17 +170,18 @@ box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
           .container-actions > div {display:inline-block;}
 
           .filter-container .title, .checkbox-list, .apply, .radio-list {padding:12px 20px;}
-          .container-header a.close {position:absolute; right:20px; top:12px;}
+          .container-header a.close {position:absolute; left:20px; top:12px;}
           .filter-container .title {position:relative; border-bottom:solid 1px #ddd;}
-          .container-header h2 {font-size:20px;}
+          .container-header h2 {font-size:20px; margin-left:36px;}
 
-          .filter-group-title {background-color: #D0E3FE; color:#17317F; padding:12px 20px; font-weight:bold;}
+          .filter-group-title {background-color: #D0E3FE; color:#17317F; padding:12px 20px; font-weight:bold; margin-bottom: 12px;}
 
-          .filter-container .checkbox-list > div {margin-bottom: 8px;}
+          .filter-container .checkbox-list > div {margin-bottom: 12px;}
           label {font-size: 16px;}
           
-          .checkbox-list > div > label, .checkbox-list > div > input {display: inline-block; vertical-align: top;}
-          .checkbox-list > div > input {margin-top:4px;}
+          
+          .checkbox-list > div > label, .checkbox-list > div > input {display: inline-block; vertical-align: top; margin-left:4px;}
+          .checkbox-list > div > input {width:20px; height:20px; border:solid 1px #17317F}
 
           .filter-container .apply {border-top: solid 1px #ddd;}
           .filter-container .apply > div {padding:8px; text-align: center; background-color: #FED70B; color:#17317F; font-weight: bold; border-radius:4px;}
@@ -187,7 +202,7 @@ box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.1);}
             <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
           </div>
           <div class="container-options">
-            <div class="filter-group">
+            <div class="filter-group" style="margin-top:20px;">
               <div class="filter-group-title">Departure airport</div>
               <div class="checkbox-list">
                 <div><input type="checkbox" /> <label>Birmingham</label></div>
