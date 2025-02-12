@@ -41,9 +41,14 @@ h2 {font-size:18px; font-weight: bold; margin-bottom:12px;}
 .about p {line-height:1.5}
 
 .facilities {margin-top:32px;}
-ul.facilites-list {overflow-hidden; margin: 0px 0px 0px 17px;
-   padding: 0px 0px 0px 0px}
+ul.facilites-list {overflow:hidden; padding-left:17px;}
 ul.facilites-list li {float:left; width:50%; margin-bottom: 8px;}
+
+.gallery {margin-top:32px;}
+.slider {overflow-x: auto; overflow-y: hidden; white-space: nowrap;}
+.slider .gallery-image {width:80px; border-radius:4px; display:inline-block;}
+.slider .gallery-image img {width:100%; border-radius:4px;}
+
 @media only screen and (min-width: 500px) {
 	body {background-color:#eee;}
 	.wrapper {width:360px; margin:0 auto; background-color: #fff; min-height: 1000px;}
