@@ -11,20 +11,36 @@ Light Blue #EDF4FF
 * {margin:0; box-sizing: border-box;}
 body {font-family:'Montserrat'; font-size:14px; background-color:#fff; color:#313137;}
 a {text-decoration:none; color:#1A73E8;}
+h1 {font-size:20px; font-weight: bold;}
+h2 {font-size:18px; font-weight: bold; margin-bottom:12px;}
 
 .fill {font-variation-settings: 'FILL' 1,'wght' 400, 'GRAD' 0,'opsz' 24}
-.icon-star {font-size:18px; color:#1A73E8}
+.icon-star {font-size:18px; color:#313137}
 
 .search {background-color: #1A73E8; padding:12px; color:#fff;}
 .image-container {position:relative;}
 .image-container img {width:100%}
-.image-container .image-count-container {position:absolute; bottom:16px; right:12px; background-color:#fff; opacity:0.8; padding:6px; border-radius:4px;}
-.image-container .image-count-container .image-count {font-size:12px; font-weight:bold;}
+.image-container .image-count-container {position:absolute; bottom:16px; right:20px; background-color:#fff; opacity:0.9; padding:6px 6px 2px 6px; border-radius:4px;}
+.image-container .image-count-container .image-count {font-size:14px; font-weight:bold; color:#1A73E8;}
+.action {padding:4px; background-color:#fff; border-radius:50%; display:inline-block; height:28px; width:28px;}
+.back {position:absolute; top:12px; left:20px; border:solid 1px #1A73E8;}
+.back span {font-size:18px;}
+
+.share {position:absolute; top:12px; right:60px; border:solid 1px #1A73E8;}
+.share span {font-size:16px;}
+
+.save {position:absolute; top:12px; right:20px; border:solid 1px #DE1682;}
+.save {color:#DE1682;}
+.save span {font-size:18px;}
 
 .container {padding:12px 20px;}
+.more {margin-top:8px;}
+.more a > span {display: inline-block; vertical-align: top;}
+.more a {font-weight:bold}
 
-h1 {font-size:20px; font-weight: bold;}
-h2 {font-size:18px; font-weight: bold; margin-bottom:12px;}
+.jumpto {display:none; overflow:hidden; padding:8px 20px; border-bottom:solid 1px #ddd;}
+.jumpto > div {float:left; font-size:14px; font-weight: bold; margin-right:16px;}
+
 
 .rating {margin-top:4px;}
 .rating .star {display:inline-block; margin-right:4px;}
@@ -32,24 +48,31 @@ h2 {font-size:18px; font-weight: bold; margin-bottom:12px;}
 .rating > span {display: inline-block; vertical-align: top; font-size:11px; color:#666; margin-top:3px;}
 .rating .stars {margin-top:1px} 
 
-.location {font-size:14px; margin-top:8px;}
+.location {font-size:14px; margin-top:8px; font-weight: bold;}
 
 .highlights-list {margin-top:20px;}
 .highlights-list > div {margin-bottom:8px; background-image: url('umbrella.svg'); background-repeat: no-repeat; padding-left:36px;}
 
-.about {margin-top:32px;}
+.about {margin-top:16px;}
 .about p {line-height:1.5}
 
 .facilities {margin-top:32px;}
 ul.facilites-list {overflow:hidden; padding-left:17px;}
 ul.facilites-list li {float:left; width:50%; margin-bottom: 8px;}
 
-.gallery {margin-top:32px;}
+.gallery {margin-top:32px; display:none;} 
 .slider {overflow-x: auto; overflow-y: hidden; white-space: nowrap;}
 .slider .gallery-image {width:80px; border-radius:4px; display:inline-block;}
 .slider .gallery-image img {width:100%; border-radius:4px;}
 
+.customise {margin-top:32px;border-top:solid 2px #ddd; padding-top:20px;}
+
+
+.overlay-photos {position:fixed; top:0; bottom:0; left:0; right:0; background-color:#fff; display:none;}
+
 @media only screen and (min-width: 500px) {
 	body {background-color:#eee;}
 	.wrapper {width:360px; margin:0 auto; background-color: #fff; min-height: 1000px;}
+	.overlay-photos {position:fixed; top:0; bottom:0; left:0; right:0; margin-right: auto; margin-left: auto; width:360px;}
+
 }
