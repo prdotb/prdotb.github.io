@@ -14,9 +14,10 @@
     <style type="text/css">
       * {margin:0; box-sizing: border-box;}
       body {font-family:'Montserrat'; font-size:16px; background-color:#eee; color:#313137;}
-      h2 {font-size:20px;}
-      .wrapper {background-color: #fff; min-height: 1000px; position:relative}
-
+      h2, h3 {font-size:20px;}
+      h3 {margin-bottom:4px;}
+      .wrapper {background-color: #fff; position:relative}
+      a {color:#1A73E8; text-decoration: none;}
       a.close > span {color:#313137;}
 
       .header {background-color:#1A73E8; padding:12px 20px 6px; position:relative; color:#fff;}
@@ -32,6 +33,7 @@
       .searchform .field .label {display:block; margin-left:34px;}
       .searchform .submit-wrapper {padding:12px;}
       .searchform .submit-button {background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold;}
+      .block {height:200px; background-color: #f0f0f0; margin-bottom:20px; border-radius: 4px;}
       @media only screen and (min-width: 500px) {
         .wrapper {width:380px; margin:0 auto; }
       }
@@ -100,6 +102,13 @@
           
         </div>
       </div>
+
+      <div style="padding:20px;">
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+      </div>
       
 
       <!-- Overlays for search -->
@@ -108,13 +117,27 @@
         
         #destination-selection {}
 
-        .modal-frame {position:absolute; bottom:0; left:0; right:0; top:0; background-color:#fff;}
+        .modal-frame {position:fixed; bottom:0; left:0; right:0; top:0; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
         .modal-header a.close {position:absolute; right:20px; top:12px;}
         .modal-options {position:absolute; top:50px; left:0; right:0; bottom:60px; overflow-y:scroll;}
+
+        .item {background-color: #f0f0f0; margin-bottom: 8px; padding:12px; border-radius: 4px; position:relative;}
+        .item a {margin-left:40px; font-weight:bold;}
+        .item .description {margin-left:40px; font-size: 14px; margin-top:4px;}
+        .item .icon {position:absolute; top:8px; left:16px;}
+        .item input {position:absolute; top:8px; left:16px;}
+
+        .item-cb {position:relative; background-color: #f0f0f0; padding:12px; border-radius:8ps; margin-bottom:8px; border-radius:4px;}
+        .cb-container span {color:#1A73E8; font-weight:bold}
+        .cb-container p {font-size: 14px; margin-top:4px;}
         
         .box {padding:20px;}
+        .box > .item:first-child {margin-top:16px;}
         #search-input input {width:100%; border:solid 1px #ddd; border-radius:4px; font-size:16px; padding:12px;}
+        @media only screen and (min-width: 500px) {
+          .modal-frame {width:380px; margin:0 auto; }
+        }
       </style>
 
       <div id="destination-selection" class="modal-frame">
@@ -126,6 +149,77 @@
               <div id="search-input" class="box">
                 <input type="text" name="destination-field" />
               </div>
+              <div class="box">
+                <h3>Unsure where to go?</h3>
+                <p>Explore our best deals</p>
+                <div class="item" style="margin-top:16px;"><span class="material-symbols-outlined icon">beach_access</span><a href="#">Beach holidays</a></div>
+                <div class="item"><span class="material-symbols-outlined icon"><span class="material-symbols-outlined">location_city</span></span><a href="#">City breaks</a></div>
+                <div class="item"><span class="material-symbols-outlined icon">globe</span><a href="#">Long haul destinations</a></div>
+              </div>
+
+              <div class="box">
+                <h3>Popular destinations</h3>
+                <div class="item-cb" style="margin-top:16px;">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Tenerife</span>
+                      <p>Playa De Las Americas, Costa Adeje, Los Cristianos</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="item-cb">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Dalaman</span>
+                      <p>Marmaris, Olu Deniz</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="item-cb">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Costa Del Sol</span>
+                      <p>Benalmadena, Fuengirola, Malaga, Marbella, Torremolinos</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="item-cb">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Majorca</span>
+                      <p>Alcudia, Magaluf, Palma Nova, Santa Ponsa, Mallorca</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="item-cb">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Costa Blanca</span>
+                      <p>Alicante, Benidorm</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="item-cb">
+                  <label class="cb-container">
+                    <div style="margin-left:40px;">
+                      <span class="dest-name">Antalya</span>
+                      <p>Alanya, Belek, Lara Beach, Side</p>
+                    </div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
           </div>
       </div>
 
@@ -133,4 +227,61 @@
 
     </div>
   </body>
+  <style type="text/css">
+
+
+    .cb-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+    /* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  height: 20px;
+  width: 21px;
+  background-color: #fff;
+  border-radius:4px;
+  border:solid 1px #1A73E8;
+}
+
+/* On mouse-over, add a grey background color */
+.cb-container:hover input ~ .checkmark {
+  background-color: #EDF4FF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb-container input:checked ~ .checkmark {
+  background-color: #1A73E8;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.cb-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb-container .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+  </style>
 </html>
