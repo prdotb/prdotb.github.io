@@ -120,7 +120,7 @@
         .modal-frame {position:fixed; bottom:0; left:0; right:0; top:0; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
         .modal-header a.close {position:absolute; right:20px; top:12px;}
-        .modal-options {position:absolute; top:50px; left:0; right:0; bottom:60px; overflow-y:scroll; padding-top:16px;}
+        .modal-options {position:absolute; top:50px; left:0; right:0; bottom:0px; overflow-y:scroll; padding-top:16px;}
 
         .item {background-color: #ffffff; padding:12px 0; border-radius: 4px; position:relative;}
         .item a {margin-left:40px; font-weight:bold; color:#313137; font-size:14px; }
@@ -132,7 +132,7 @@
         .cb-container span {color:#313137; font-weight:bold; font-size:14px;}
         .cb-container p {font-size: 13px; margin-top:4px; line-height: 20px;}
         
-        .box {padding:20px;}
+        .box {margin:0 20px; padding:20px 0;}
         .box > .item:first-child {margin-top:16px;}
         #search-input input {width:100%; border:solid 1px #ddd; border-radius:4px; font-size:16px; padding:16px 16px 16px 48px; background: url('img/search-icon.png') no-repeat 12px; background-size: 24px 24px;}
         @media only screen and (min-width: 500px) {
@@ -149,7 +149,7 @@
               <div id="search-input" class="box">
                 <input type="text" name="destination-field" placeholder="Where to?" />
               </div>
-              <div class="box">
+              <div class="box" style="border-bottom:solid 1px #f0f0f0;">
                 <h3>Unsure where to go?</h3>
                 <p style="font-size:14px;">Explore our best deals</p>
                 <div class="item" style="margin-top:16px;"><span class="material-symbols-outlined icon">beach_access</span><a href="#">Beach holidays</a></div>
