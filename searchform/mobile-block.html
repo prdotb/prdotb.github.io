@@ -53,7 +53,7 @@
       $(document).ready(function(){
         
         $(".searchform #destination").click(function(){
-           $("#destination-selection").show();
+           $("#destination-selection").fadeIn(200);
         });
 
         $("#destination-selection .close").click(function(){
@@ -117,7 +117,7 @@
         
         #destination-selection {}
 
-        .modal-frame {position:fixed; bottom:0; left:0; right:0; top:0; background-color:#fff;}
+        .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
         .modal-header a.close {position:absolute; right:20px; top:12px;}
         .modal-options {position:absolute; top:50px; left:0; right:0; bottom:0px; overflow-y:scroll; padding-top:16px;}
@@ -150,8 +150,7 @@
                 <input type="text" name="destination-field" placeholder="Where to?" />
               </div>
               <div class="box" style="border-bottom:solid 1px #f0f0f0;">
-                <h3>Unsure where to go?</h3>
-                <p style="font-size:14px;">Explore our best deals</p>
+                <h3>Explore our best deals</h3>
                 <div class="item" style="margin-top:16px;"><span class="material-symbols-outlined icon">beach_access</span><a href="#">Beach holidays</a></div>
                 <div class="item"><span class="material-symbols-outlined icon"><span class="material-symbols-outlined">location_city</span></span><a href="#">City breaks</a></div>
                 <div class="item"><span class="material-symbols-outlined icon">globe</span><a href="#">Long haul destinations</a></div>
