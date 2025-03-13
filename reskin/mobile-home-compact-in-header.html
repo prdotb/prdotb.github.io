@@ -27,15 +27,19 @@
       .tabs ul li.selected {border-bottom: solid 2px #fff; border-bottom: 2px solid #1A73E8; color:#1A73E8;}
 
       .searchform-wrapper {background-color:#1A73E8; padding:16px 20px; border-bottom: solid 2px #fff;}
-      .searchform {background-color:#ffffff; padding:0; border-radius:8px;}    
-      .searchform .field {background-color:#fff; padding:16px; position:relative; border-radius:4px;}
+      .searchform {background-color:#ffffff; padding:0; border-radius:8px;}  
+      .searchform .summary-field {background-color:#fff; padding:16px; position:relative; border-radius:4px;}  
+      .searchform .field {background-color:#fff; padding:16px; position:relative; border-radius:4px; border-bottom:solid 1px #f0f0f0;}
       .searchform .field:first-child {}
       .searchform .field .icon {color:#1A73E8; position:absolute; top:16px; left:16px; font-size: 22px;}
-      .searchform .field .label {display:block;}
-      .searchform .submit-button {display:inline-block; background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold; position:absolute; top:12px; right:12px; bottom:12px;}
+      .searchform .field .label {display:block; margin-left:34px;}
+      .searchform .submit-button-mini {display:inline-block; background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold; position:absolute; top:12px; right:12px; bottom:12px;}
+      .searchform .submit-button {background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold;}
       .block {height:200px; background-color: #f0f0f0; margin-bottom:20px; border-radius: 4px;}
 
       .promo-wrapper { background: url('img/promo-bg.jpg') no-repeat; background-size: cover; padding:20px 0;}
+
+      .form {display:none;}
       @media only screen and (min-width: 500px) {
         .wrapper {width:380px; margin:0 auto; }
       }
@@ -53,7 +57,42 @@
 
   <script>
       $(document).ready(function(){
-        
+        $(".summary-field").click(function(){
+           $(".summary-field").hide();
+           $(".searchform .form").show();
+        });
+
+        $(".searchform #destination").click(function(){
+           $("#destination-selection").fadeIn(200);
+        });
+
+        $("#destination-selection .close").click(function(){
+           $("#destination-selection").fadeOut(200);
+        });
+
+        $(".searchform #airport").click(function(){
+           $("#airport-selection").fadeIn(200);
+        });
+
+        $("#airport-selection .close").click(function(){
+           $("#airport-selection").fadeOut(200);
+        });
+
+        $(".searchform #dates").click(function(){
+           $("#dates-selection").fadeIn(200);
+        });
+
+        $("#dates-selection .close").click(function(){
+           $("#dates-selection").fadeOut(200);
+        });
+
+        $(".searchform #guests").click(function(){
+           $("#guests-selection").fadeIn(200);
+        });
+
+        $("#guests-selection .close").click(function(){
+           $("#guests-selection").fadeOut(200);
+        });
         
         
       });
@@ -80,14 +119,30 @@
               <li>Hotel Only</li>
             </ul>
           </div>
-          <div class="field" id="destination">
+          <div class="summary-field">
             <div style="font-size: 16px; font-weight:bold; margin-bottom:4px;">Anywhere</div>
             <div style="font-size:13px; color:#767676">5 Jul 2025 (7 nights), 4 Adult, 2 Room</div>
-            <div class="submit-button">
+            <div class="submit-button-mini">
               <span class="material-symbols-outlined">search</span>
             </div>
           </div>
-          
+          <div class="field form" id="destination">
+            <span class="material-symbols-outlined icon">location_on</span> <span class="label">Destination</span>
+          </div>
+          <div class="field form" id="airport">
+            <span class="material-symbols-outlined icon">travel</span> <span class="label">Departure airport</span>
+          </div>
+          <div class="field form" id="dates">
+            <span class="material-symbols-outlined icon">calendar_today</span> <span class="label">Dates</span>
+          </div>
+          <div class="field form" id="guests">
+            <span class="material-symbols-outlined icon">group</span> <span class="label">Guests</span>
+          </div>
+          <div class="submit-wrapper form" style="padding:12px;">
+            <div class="submit-button">
+              Search
+            </div>
+          </div>
         </div>
       </div>
 
@@ -109,7 +164,7 @@
 
       <style type="text/css">
         
-        #destination-selection {display:none}
+        #destination-selection, #airport-selection, #dates-selection, #guests-selection {display:none}
 
         .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
@@ -213,6 +268,25 @@
                   </label>
                 </div>
               </div>
+          </div>
+      </div>
+
+      <div id="airport-selection" class="modal-frame">
+        <div class="modal-header">
+            <h2>Departure airport</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+          </div>
+      </div>
+      <div id="dates-selection" class="modal-frame">
+        <div class="modal-header">
+            <h2>Travel dates</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+          </div>
+      </div>
+      <div id="guests-selection" class="modal-frame">
+        <div class="modal-header">
+            <h2>Guests</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
           </div>
       </div>
 
