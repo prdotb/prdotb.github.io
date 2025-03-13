@@ -59,6 +59,38 @@
         $(".search-module-frame .close").click(function(){
            $(".search-module-frame").fadeOut(200);
         });
+
+        $("#destination").click(function(){
+           $("#destination-selection").fadeIn(200);
+        });
+
+        $("#destination-selection .close").click(function(){
+           $("#destination-selection").fadeOut(200);
+        });
+
+        $("#airport").click(function(){
+           $("#airport-selection").fadeIn(200);
+        });
+
+        $("#airport-selection .close").click(function(){
+           $("#airport-selection").fadeOut(200);
+        });
+
+        $("#dates").click(function(){
+           $("#dates-selection").fadeIn(200);
+        });
+
+        $("#dates-selection .close").click(function(){
+           $("#dates-selection").fadeOut(200);
+        });
+
+        $("#guests").click(function(){
+           $("#guests-selection").fadeIn(200);
+        });
+
+        $("#guests-selection .close").click(function(){
+           $("#guests-selection").fadeOut(200);
+        });
         
       });
   </script>
@@ -111,6 +143,7 @@
       <style type="text/css">
         
         .search-module-frame {display:none;}
+        #destination-selection, #airport-selection, #dates-selection, #guests-selection {display:none;}
 
         .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
@@ -150,25 +183,53 @@
             <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
         </div>
         <div class="modal-options">
-          <div class="search-field">
+          <div class="search-field" id="destination">
             <div class="label">Destination or hotel name</div>
             <div class="selection">Anywhere</div>
           </div>
-          <div class="search-field">
+          <div class="search-field" id="airport">
             <div class="label">Departure airport</div>
             <div class="selection">Any</div>
           </div>
-          <div class="search-field">
+          <div class="search-field" id="dates">
             <div class="label">Travel dates</div>
             <div class="selection">Any</div>
           </div>
-          <div class="search-field">
+          <div class="search-field" id="guests">
             <div class="label">Guests</div>
             <div class="selection">2 adults, 1 room</div>
           </div>
           <div class="search-button">
             Search
           </div>
+        </div>
+      </div>
+
+      <div class="modal-frame" id="destination-selection">
+        <div class="modal-header">
+            <h2>Destination</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+      </div>
+
+      <div class="modal-frame" id="airport-selection">
+        <div class="modal-header">
+            <h2>Airport</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+      </div>
+
+      <div class="modal-frame" id="dates-selection">
+        <div class="modal-header">
+            <h2>Dates</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+      </div>
+
+      <div class="modal-frame" id="guests-selection">
+        <div class="modal-header">
+            <h2>Guests</h2>
+            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
         </div>
       </div>
 
