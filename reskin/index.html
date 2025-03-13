@@ -10,9 +10,20 @@
 
     <style>
       
-      body {font-family:'Nunito Sans'; font-size:18px; background-color:#fff; color:#313137; padding:28px;}
+      body {font-family:'Nunito Sans'; font-size:18px; background-color:#fff; color:#313137; padding:20px;}
       a {text-decoration:none; color:#1A73E8;}
-      .links > div {margin-bottom:16px; }
+      .links .link {margin-bottom:16px;}
+      .links .link .img {display: inline-block; vertical-align: top}
+      .links .link .title {display: inline-block; vertical-align: top; width:calc(100% - 130px); box-sizing: border-box; padding-left:12px;}
+      .links .link img {width:120px;}
+
+      @media only screen and (min-width: 500px) {
+        .links .link {margin-bottom:16px; width:200px; display: inline-block; vertical-align: top; margin-right: 32px;}
+        .links .link .img {display: block; }
+        .links .link .title {display: block;  width:auto; box-sizing: border-box; padding-left:0px;}
+        .links .link img {width:auto; height:200px;}
+        
+      }
 
     </style>
 
@@ -20,12 +31,22 @@
   <body>
   	<h1>UI RESKIN PROTOTYPES</h1>
 
-    <h2>SEARCH FORM</h2>
+    <h2>HOME PAGE - SEARCH FORM INTERACTIONS</h2>
     <div class="links"> 
-      <div><a href="mobile-block.html">Open / Home page / Attached to header </a></div>
-      <div><a href="mobile-home-compact.html">Compact / Home page / Integrated with marketing banner </a></div>
-      <div><a href="mobile-home-compact-in-header.html">Compact / Home page / Attached to header</a></div>
-      <div><a href="srp/srp.html">Compact / SRP / Attached to header</a></div>
+      <div class="link">
+        <div class="img"><a href="mobile-block.html"><img src="img/current.png"/></a></div>
+        <div class="title"><a href="mobile-block.html">Expanded search form (current pattern, re-skinned) </a></div>
+      </div>
+      <div class="link">
+        <div class="img"><a href="mobile-home-compact-in-header.html"><img src="img/compact-header.png"/></a></div>
+        <div class="title"><a href="mobile-home-compact-in-header.html">Compact search form / expand in page</a></div>
+      </div>
+      <div class="link">
+        <div class="img"><a href="mobile-home-compact.html"><img src="img/compact-integrated.png"/></a></div>
+        <div class="title"><a href="mobile-home-compact.html">Compact search form / full search overlay</a></div>
+      </div>
+      
+      <!--<div><a href="srp/srp.html">Compact / SRP / Attached to header</a></div>-->
     </div> 
   </body>
 </html>
