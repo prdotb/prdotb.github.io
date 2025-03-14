@@ -29,7 +29,7 @@
       .searchform-wrapper {background-color:#1A73E8; padding:16px 20px; height:380px; position:relative; background: url('img/promo-bg.jpg') no-repeat; background-size: cover;}
       .searchform {background-color:#ffffff; padding:0; border-radius:8px; position:absolute; bottom:16px; left:20px; right:20px;}    
       .searchform .field {background-color:#fff; padding:16px; position:relative; border-radius:4px;}
-      .searchform .field:first-child {}
+      .searchform .field:hover {cursor: pointer;}
       .searchform .field .icon {color:#1A73E8; position:absolute; top:16px; left:16px; font-size: 22px;}
       .searchform .field .label {display:block;}
       .searchform .submit-button {display:inline-block; background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold; position:absolute; top:12px; right:12px; bottom:12px;}
@@ -52,43 +52,53 @@
   <script>
       $(document).ready(function(){
         
-        $("#search-query").click(function(){
+        $("#search-query").click(function(e){
+           e.preventDefault()
            $(".search-module-frame").fadeIn(200);
         });
 
-        $(".search-module-frame .close").click(function(){
+        $(".search-module-frame .close").click(function(e){
+           e.preventDefault()
            $(".search-module-frame").fadeOut(200);
         });
 
-        $("#destination").click(function(){
+        $("#destination").click(function(e){
+           e.preventDefault()
            $("#destination-selection").fadeIn(200);
         });
 
-        $("#destination-selection .close").click(function(){
+        $("#destination-selection .close").click(function(e){
+           e.preventDefault()
            $("#destination-selection").fadeOut(200);
         });
 
-        $("#airport").click(function(){
+        $("#airport").click(function(e){
+           e.preventDefault()
            $("#airport-selection").fadeIn(200);
         });
 
-        $("#airport-selection .close").click(function(){
+        $("#airport-selection .close").click(function(e){
+           e.preventDefault()
            $("#airport-selection").fadeOut(200);
         });
 
-        $("#dates").click(function(){
+        $("#dates").click(function(e){
+           e.preventDefault()
            $("#dates-selection").fadeIn(200);
         });
 
-        $("#dates-selection .close").click(function(){
+        $("#dates-selection .close").click(function(e){
+           e.preventDefault()
            $("#dates-selection").fadeOut(200);
         });
 
-        $("#guests").click(function(){
+        $("#guests").click(function(e){
+           e.preventDefault()
            $("#guests-selection").fadeIn(200);
         });
 
-        $("#guests-selection .close").click(function(){
+        $("#guests-selection .close").click(function(e){
+           e.preventDefault()
            $("#guests-selection").fadeOut(200);
         });
         
@@ -167,6 +177,7 @@
         #search-input input {width:100%; border:solid 1px #ddd; border-radius:4px; font-size:16px; padding:16px 16px 16px 48px; background: url('img/search-icon.png') no-repeat 12px; background-size: 24px 24px;}
         
         .search-field {border:solid 1px #f0f0f0; border-radius:4px; padding:12px; margin:16px 20px;}
+        .search-field:hover {cursor: pointer;}
         .search-field .label {display:block; font-size:14px; margin-bottom:4px; color:#767676; }
         .search-field .selection {font-size:16px; color:#313137; font-weight: bold;}
         .search-button {padding:16px 0; text-align: center; background-color: #FEDC07; color:#17317F; font-weight: bold; border-radius:4px; font-size: 20px; margin:20px 20px;}
