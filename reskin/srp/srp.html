@@ -12,6 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style type="text/css">
+
+      /* light blue #EDF4FF */
+
       * {margin:0; box-sizing: border-box;}
       body {font-family:'Montserrat'; font-size:16px; background-color:#eee; color:#313137;}
       h2, h3 {font-size:20px;}
@@ -37,10 +40,14 @@
       .searchform .submit-button {display:inline-block; background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold; position:absolute; top:12px; right:12px; bottom:12px;}
       .block {height:200px; background-color: #f0f0f0; margin-bottom:20px; border-radius: 4px;}
 
-      .tools {background-color:#EDF4FF; padding:16px 20px;}
+      .tools {background-color:#fff; padding:12px 20px; border-bottom:solid 1px #f0f0f0}
       .tools ul {overflow:hidden; padding:0}
       .tools ul li {list-style-type:none; float:left; width:33%; padding:0; margin:0; text-align:center;}
       .tools ul li a {font-weight:bold; font-size: 16px;}
+
+      .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
+.rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+.rating .stars {margin-top:1px} 
 
 
       @media only screen and (min-width: 500px) {
@@ -98,13 +105,13 @@
           <li><a href="#">Map</a></li>
         </ul>
       </div>
-      <div class="bags" style="padding:12px 20px; border-bottom:solid 1px #f0f0f0; position:relative">
+      <div class="bags" style="padding:8px; border:solid 1px #f0f0f0; margin:16px 20px 0px; border-radius:4px; position:relative">
         <img src="../img/icon-baggage.png" style="display:inline-block; vertical-align:top; margin-right:8px;"/>
         <div style="display:inline-block; vertical-align:top;">
           <div style="font-size:14px; font-weight:bold;">Add hold bags</div>
           <div style="font-size:12px;">Not all deals include bags</div>
         </div>
-        <select style="position:absolute; top:12px; right:20px; padding:6px 16px 6px 6px; border:solid 1px #f0f0f0; border-radius:4px;">
+        <select style="position:absolute; top:8px; right:20px; padding:6px 16px 6px 6px; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; font-weight: bold;">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -113,11 +120,29 @@
         </select>
       </div>
 
+      <style type="text/css">
+        .results-card {background-color: #fff; border: solid 1px #f0f0f0; margin-bottom: 24px;}
+        .results-card .photo {position:relative; height:180px; border-top-left-radius: 4px; border-top-right-radius: 4px;}
+        .results-card .content {padding:16px;}
+      </style>
 
       <div style="padding:20px;">
         <h1>198 holidays found</h1>
 
-          <div class="block"></div>
+          <div class="results-card" >
+            <div class="photo" style="background: url('img/iberostar.png'); no-repeat; background-size: cover;">
+            </div>
+            <div class="content">
+              <div class="name">Iberostar Selection Anthelia</div>
+              <div class="rating">
+                <div class="star">
+                  <span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span>
+                </div>
+              <img src="img/ta.png" class="ta"/>
+              <span class="reviews">2203 reviews</span>
+            </div>
+            </div>
+          </div>
           <div class="block"></div>
           <div class="block"></div>
           <div class="block"></div>
