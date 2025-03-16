@@ -51,8 +51,12 @@
       .rating .star {display:inline-block; margin-right:4px;}
       .rating .star .icon-star {font-size: 16px;}
       .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
-.rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
-.rating .stars {margin-top:1px} 
+      .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+      .rating .stars {margin-top:1px} 
+
+      .detail {margin-bottom:8px; position:relative; padding-left: 24px;}
+      .detail .icon {position:absolute; top:2px; left:0;}
+      .detail  {font-size: 14px!important; }
 
 
       @media only screen and (min-width: 500px) {
@@ -143,9 +147,17 @@
                 <div class="star">
                   <span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span>
                 </div>
-              <img src="img/ta.png" class="ta"/>
-              <span class="reviews">2203 reviews</span>
-            </div>
+                <img src="img/ta.png" class="ta"/>
+                <span class="reviews">2203 reviews</span>
+              </div>
+              <div class="detail" style="margin-top:8px;">
+                <img src="img/map.png" class="icon" />
+                <span class="inline">Costa Adeje, Tenerife Spain <br/> <a href="" class="map-link">View on map</a></span>
+              </div>
+              <div class="detail">
+                <img src="img/flight.png" class="icon" />
+                <span class="inline">London Gatwick</span>
+              </div>
             </div>
           </div>
           <div class="block"></div>
