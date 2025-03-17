@@ -62,8 +62,11 @@
       .detail a {font-weight: bold}
       .perk {color:#D91677; font-weight: bold;} 
       .perk .icon {height:20px;}
-      .perk .inline {padding-top:4px; display:inline-block;}
+      .perk .inline {padding-top:4px; display:inline-block; font-size: 14px!important;}
       a.inline-link {color:#313137; text-decoration: underline; text-decoration-style:dotted; text-decoration-color: #767676; font-weight: normal;}
+
+      .add-bags {position:absolute; top:8px; right:20px; padding:6px 16px 6px 6px; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; font-weight: bold;}
+      .add-bags:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
 
       @media only screen and (min-width: 500px) {
         .wrapper {width:380px; margin:0 auto; }
@@ -126,7 +129,7 @@
           <div style="font-size:14px; font-weight:bold;">Add hold bags</div>
           <div style="font-size:12px;">Not all deals include bags</div>
         </div>
-        <select style="position:absolute; top:8px; right:20px; padding:6px 16px 6px 6px; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; font-weight: bold;">
+        <select class="add-bags" style="">
           <option>0</option>
           <option>1</option>
           <option>2</option>
