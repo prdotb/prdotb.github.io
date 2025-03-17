@@ -16,7 +16,8 @@
       /* light blue #EDF4FF */
 
       * {margin:0; box-sizing: border-box;}
-      body {font-family:'Montserrat'; font-size:16px; background-color:#eee; color:#313137;}
+      body {  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ font-size:16px; background-color:#eee; color:#313137;}
       h2, h3 {font-size:20px;}
       h3 {margin-bottom:4px;}
       .wrapper {background-color: #fff; position:relative}
@@ -62,6 +63,7 @@
       .perk {color:#D91677; font-weight: bold;} 
       .perk .icon {height:20px;}
       .perk .inline {padding-top:4px; display:inline-block;}
+      a.inline-link {color:#313137; text-decoration: underline; text-decoration-style:dotted; text-decoration-color: #767676; font-weight: normal;}
 
       @media only screen and (min-width: 500px) {
         .wrapper {width:380px; margin:0 auto; }
@@ -171,7 +173,7 @@
               </div>
               <div class="detail">
                 <img src="img/flight.svg" class="icon" />
-                <span class="inline">Direct from London Gatwick</span>
+                <span class="inline"><a href="#" class="inline-link">Direct from London Gatwick</a></span>
               </div>
               <div class="detail">
                 <img src="img/board.svg" class="icon" />
@@ -179,7 +181,7 @@
               </div>
               <div class="detail">
                 <img src="img/bags.svg" class="icon" />
-                <span class="inline">Hold bags: 0</span>
+                <span class="inline"><a href="#" class="inline-link">Hold bags: 0</a></span>
               </div>
               <div class="detail perk">
                 <img src="img/perk-lounge.svg" class="icon" />
@@ -187,7 +189,7 @@
               </div>
               <div class="detail">
                 
-                <span class="inline">What's included</span>
+                <span class="inline"><a href="#" class="inline-link">What's included</a></span>
               </div>
               <div class="detail">
                 <span class="inline"><a href="#">Edit flights, dates and board</a></span>
