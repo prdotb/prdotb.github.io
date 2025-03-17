@@ -54,10 +54,14 @@
       .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
       .rating .stars {margin-top:1px} 
 
-      .detail {margin-bottom:12px; position:relative; padding-left: 24px;}
+      .detail {margin-bottom:12px; position:relative; padding-left: 32px;}
       .detail .icon {position:absolute; top:2px; left:0; height:16px;}
       .detail  {font-size: 14px!important; }
       .detail .map-link {font-weight: bold;}
+      .detail a {font-weight: bold}
+      .perk {color:#D91677; font-weight: bold;} 
+      .perk .icon {height:20px;}
+      .perk .inline {padding-top:4px; display:inline-block;}
 
       @media only screen and (min-width: 500px) {
         .wrapper {width:380px; margin:0 auto; }
@@ -133,6 +137,13 @@
         .results-card {background-color: #fff; border: solid 1px #f0f0f0; margin-bottom: 24px; border-radius:4px;}
         .results-card .photo {position:relative; height:200px; border-top-left-radius: 4px; border-top-right-radius: 4px;}
         .results-card .content {padding:16px;}
+        .results-card .action {margin-top:24px; overflow:hidden;}
+        .results-card .action > div {float:left; width:50%;}
+        
+        .results-card .action .from {color:#767676; font-size:12px; display: none}
+        .results-card .action .price-lead {font-size:32px; font-weight: bold;}
+        .results-card .action .price-secondary {font-size:14px;}
+        .results-card .action .cta .button {background-color:#FEDC07; color:#17317F; font-weight: bold; font-size: 14px; border-radius:4px; text-align:center; padding: 16px 0; margin-top:8px; } 
       </style>
 
       <div style="padding:20px;">
@@ -169,6 +180,28 @@
               <div class="detail">
                 <img src="img/bags.svg" class="icon" />
                 <span class="inline">Hold bags: 0</span>
+              </div>
+              <div class="detail perk">
+                <img src="img/perk-lounge.svg" class="icon" />
+                <span class="inline">FREE Lounge Access</span>
+              </div>
+              <div class="detail">
+                
+                <span class="inline">What's included</span>
+              </div>
+              <div class="detail">
+                <span class="inline"><a href="#">Edit flights, dates and board</a></span>
+              </div>
+
+              <div class="action">
+                <div class="price">
+                  <div class="from">Prices from</div>
+                  <div class="price-lead">£514<span>pp</span></div>
+                  <div class="price-secondary">£2,053 Total price</div>
+                </div>
+                <div class="cta">
+                  <div class="button">More details</div>
+                </div>
               </div>
             </div>
           </div>
