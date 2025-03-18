@@ -86,7 +86,15 @@
   <script>
       $(document).ready(function(){
         
-        
+        $("#link-filters").click(function(e){
+           e.preventDefault()
+           $("#filters").fadeIn(200);
+        });
+        $("#filters .close").click(function(e){
+           e.preventDefault()
+           $("#filters").fadeOut(200);
+        });
+
         
       });
   </script>
@@ -118,7 +126,7 @@
       </div>
       <div class="tools">
         <ul>
-          <li><a href="#">Filters</a></li>
+          <li><a href="#" id="link-filters">Filters</a></li>
           <li><a href="#">Sort</a></li>
           <li><a href="#">Map</a></li>
         </ul>
@@ -354,6 +362,7 @@
       <style type="text/css">
         
         #destination-selection {display:none}
+        #filters {display:none;}
 
         .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
@@ -367,16 +376,204 @@
         .item input {position:absolute; top:8px; left:16px;}
 
         .item-cb {position:relative; background-color: #ffffff; padding:8px 0; border-radius:8ps; border-radius:4px; }
-        .cb-container span {color:#313137; font-weight:bold; font-size:14px;}
+        .cb-container .label {color:#313137; font-size:14px; margin-left:36px;}
         .cb-container p {font-size: 13px; margin-top:4px; line-height: 20px;}
         
         .box {margin:0 20px; padding:20px 0;}
         .box > .item:first-child {margin-top:16px;}
         #search-input input {width:100%; border:solid 1px #ddd; border-radius:4px; font-size:16px; padding:16px 16px 16px 48px; background: url('img/search-icon.png') no-repeat 12px; background-size: 24px 24px;}
+
+        .filter-group {padding:16px 20px; border-bottom: solid 1px #f0f0f0}
+        .filter-group .icon-star {font-size: 18px;}
+        h2 {margin-bottom:16px;}
+        
         @media only screen and (min-width: 500px) {
           .modal-frame {width:380px; margin:0 auto; }
         }
       </style>
+
+      <div id="filters" class="modal-frame">
+        <div class="modal-header">
+          <h2>Filters</h2>
+          <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <div class="modal-options">
+          <div class="filter-group">
+            <h2>Board basis</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">All inclusive</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Bed & Breakfast</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Full board</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Half board</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Room only</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Self catering</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Star rating</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Budget</h2>
+          </div>
+
+          <div class="filter-group">
+            <h2>Destinations</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Costa Adeje</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Puerto De La Cruz</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Playa De Las Americas</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Trip Advisor score</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">5</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">4 & above</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">3 & above</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Hotel facilities</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Air conditioning</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Aqua park</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">By the beach</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Holiday type</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Adult only</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Good for families</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Lively</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="destination-selection" class="modal-frame">
           <div class="modal-header">
