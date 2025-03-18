@@ -94,6 +94,14 @@
            e.preventDefault()
            $("#filters").fadeOut(200);
         });
+        $("#link-sort").click(function(e){
+           e.preventDefault()
+           $("#sort").fadeIn(200);
+        });
+        $("#sort .close").click(function(e){
+           e.preventDefault()
+           $("#sort").fadeOut(200);
+        });
 
         
       });
@@ -127,7 +135,7 @@
       <div class="tools">
         <ul>
           <li><a href="#" id="link-filters">Filters</a></li>
-          <li><a href="#">Sort</a></li>
+          <li><a href="#" id="link-sort">Sort</a></li>
           <li><a href="#">Map</a></li>
         </ul>
       </div>
@@ -363,12 +371,19 @@
         
         #destination-selection {display:none}
         #filters {display:none;}
+        #sort {display:none;}
 
         .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
         .modal-header a.close {position:absolute; right:20px; top:12px;}
         .modal-options {position:absolute; top:50px; left:0; right:0; bottom:60px; overflow-y:scroll; padding-top:16px;}
         .modal-actions {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 1px #f0f0f0;}
+
+        .modal-actions > div {overflow:hidden;}
+        .modal-actions > div > div {float:left; width:50%; box-sizing: border-box; padding:12px;}
+        .modal-actions .secondary {text-align: center; border:solid 1px #1A73E8; padding:8px 0; border-radius:4px; color:#1A73E8; font-weight:bold;}
+        .modal-actions .primary {text-align: center; background-color:#FEDC07; padding:8px 0; border-radius:4px; color:#17317F; font-weight:bold;}
+
 
         .item {background-color: #ffffff; padding:12px 0; border-radius: 4px; position:relative;}
         .item a {margin-left:40px; font-weight:bold; color:#313137; font-size:14px; }
@@ -377,7 +392,7 @@
         .item input {position:absolute; top:8px; left:16px;}
 
         .item-cb {position:relative; background-color: #ffffff; padding:8px 0; border-radius:8ps; border-radius:4px; }
-        .cb-container .label {color:#313137; font-size:14px; margin-left:36px;}
+        .cb-container .label, .radio-container .label {color:#313137; font-size:14px; margin-left:36px;}
         .cb-container p {font-size: 13px; margin-top:4px; line-height: 20px;}
         
         .box {margin:0 20px; padding:20px 0;}
@@ -393,18 +408,72 @@
         }
       </style>
 
+      <div id="sort" class="modal-frame">
+        <div class="modal-header">
+          <h2>Sort</h2>
+          <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <div class="modal-actions">
+          <div>
+            <div>
+              
+            </div>
+            <div>
+              <div class="primary close">Apply</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-options" style="padding:20px;">
+          <div class="item-cb">
+            <label class="radio-container">
+              <div class="label">Recommended</div>
+            <input type="radio" checked="checked" name="radio">
+            <span class="radio-checkmark"></span>
+          </label>
+          </div>
+          <div class="item-cb">
+            <label class="radio-container">
+              <div class="label">Lowest price first</div>
+              <input type="radio" name="radio">
+              <span class="radio-checkmark"></span>
+            </label>
+          </div>
+          <div class="item-cb">
+            <label class="radio-container">
+              <div class="label">Highest price first</div>
+              <input type="radio" name="radio">
+              <span class="radio-checkmark"></span>
+            </label>
+          </div>
+          <div class="item-cb">
+            <label class="radio-container">
+              <div class="label">Star rating</div>
+              <input type="radio" name="radio">
+              <span class="radio-checkmark"></span>
+            </label>
+          </div>
+          <div class="item-cb">
+            <label class="radio-container">
+              <div class="label">Trip Advisor rating</div>
+              <input type="radio" name="radio">
+              <span class="radio-checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
       <div id="filters" class="modal-frame">
         <div class="modal-header">
           <h2>Filters</h2>
           <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
         </div>
         <div class="modal-actions">
-          <div style="overflow:hidden;">
-            <div style="float:left; width:50%; box-sizing: border-box; padding:12px;">
-              <div style="text-align: center; border:solid 1px #1A73E8; padding:8px 0; border-radius:4px; color:#1A73E8; font-weight:bold;">Clear</div>
+          <div>
+            <div>
+              <div class="secondary">Clear</div>
             </div>
-            <div style="float:left; width:50%; box-sizing: border-box; padding:12px;">
-              <div class="close" style="text-align: center; background-color:#FEDC07; padding:8px 0; border-radius:4px; color:#17317F; font-weight:bold;">Apply</div>
+            <div>
+              <div class="primary close">Apply</div>
             </div>
           </div>
         </div>
@@ -586,87 +655,7 @@
         </div>
       </div>
 
-      <div id="destination-selection" class="modal-frame">
-          <div class="modal-header">
-            <h2>Destination</h2>
-            <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
-          </div>
-          <div class="modal-options"> 
-              <div id="search-input" class="box">
-                <input type="text" name="destination-field" placeholder="Where to?" />
-              </div>
-              <div class="box" style="border-bottom:solid 1px #f0f0f0;">
-                <h3>Explore our best deals</h3>
-                <div class="item" style="margin-top:16px;"><span class="material-symbols-outlined icon">beach_access</span><a href="#">Beach holidays</a></div>
-                <div class="item"><span class="material-symbols-outlined icon"><span class="material-symbols-outlined">location_city</span></span><a href="#">City breaks</a></div>
-                <div class="item"><span class="material-symbols-outlined icon">globe</span><a href="#">Long haul destinations</a></div>
-              </div>
-
-              <div class="box">
-                <h3>Popular destinations</h3>
-                <div class="item-cb" style="margin-top:16px;">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Tenerife</span>
-                      <p>Playa De Las Americas, Costa Adeje, Los Cristianos</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="item-cb">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Dalaman</span>
-                      <p>Marmaris, Olu Deniz</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="item-cb">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Costa Del Sol</span>
-                      <p>Benalmadena, Fuengirola, Malaga, Marbella, Torremolinos</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="item-cb">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Majorca</span>
-                      <p>Alcudia, Magaluf, Palma Nova, Santa Ponsa, Mallorca</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="item-cb">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Costa Blanca</span>
-                      <p>Alicante, Benidorm</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="item-cb">
-                  <label class="cb-container">
-                    <div style="margin-left:40px;">
-                      <span class="dest-name">Antalya</span>
-                      <p>Alanya, Belek, Lara Beach, Side</p>
-                    </div>
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </div>
-          </div>
-      </div>
+      
 
 
 
@@ -728,5 +717,59 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border:solid 1px #1A73E8;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: #EDF4FF;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: #1A73E8;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
   </style>
 </html>
