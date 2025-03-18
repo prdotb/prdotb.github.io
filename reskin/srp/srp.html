@@ -362,12 +362,13 @@
       <style type="text/css">
         
         #destination-selection {display:none}
-        #filters {display:none;}
+        #filters {}
 
         .modal-frame {position:fixed; bottom:0; left:0; right:0; height:100%; background-color:#fff;}
         .modal-header {position:absolute; top:0; left:0; right:0; height:50px; border-bottom:#dddddd solid 1px; padding:12px 20px;}
         .modal-header a.close {position:absolute; right:20px; top:12px;}
-        .modal-options {position:absolute; top:50px; left:0; right:0; bottom:0px; overflow-y:scroll; padding-top:16px;}
+        .modal-options {position:absolute; top:50px; left:0; right:0; bottom:60px; overflow-y:scroll; padding-top:16px;}
+        .modal-actions {position:absolute; bottom:0; left:0; right:0; height:60px; border-top:solid 1px #f0f0f0;}
 
         .item {background-color: #ffffff; padding:12px 0; border-radius: 4px; position:relative;}
         .item a {margin-left:40px; font-weight:bold; color:#313137; font-size:14px; }
@@ -396,6 +397,16 @@
         <div class="modal-header">
           <h2>Filters</h2>
           <a href="#" class="close"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <div class="modal-actions">
+          <div style="overflow:hidden;">
+            <div style="float:left; width:50%; box-sizing: border-box; padding:12px;">
+              <div style="text-align: center; border:solid 1px #1A73E8; padding:8px 0; border-radius:4px; color:#1A73E8; font-weight:bold;">Clear</div>
+            </div>
+            <div style="float:left; width:50%; box-sizing: border-box; padding:12px;">
+              <div style="text-align: center; background-color:#FEDC07; padding:8px 0; border-radius:4px; color:#17317F; font-weight:bold;">Apply</div>
+            </div>
+          </div>
         </div>
         <div class="modal-options">
           <div class="filter-group">
