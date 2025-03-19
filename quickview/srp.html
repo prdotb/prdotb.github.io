@@ -43,333 +43,110 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="header" style="padding:12px 20px; position:relative;">
-        <img src="icons/logo.png" style="height:30px;"/>
-        <span style="position:absolute; right:20px; top:14px;" class="material-symbols-outlined">menu</span>
-      </div>
-      <div class="search" style="padding:12px 20px; color:#fff;">
-        <div style="font-weight:800; font-size:16px; ">Majorca</div>
-        <div style="font-size:13px;">July 2025 (7 nights) • 2 Adults, 1 room </div>
-        <div class="filters">
-          <div><span class="label">Board Basis</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-           <div><span class="label">Departure Date</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-          <div><span class="label">Rating</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-          <div><span class="label">Facilities</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-          <div><span class="label">Price</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-          <div><span class="label">Destinations</span> <span class="material-symbols-outlined icon">keyboard_arrow_down</span></div>
-         
+      
+      <div class="header" style="">
+        <img src="../img/logo.png" style="height:32px;"/>
+        <div style="position:absolute; right:22px; top:16px;">
+         <span class="material-symbols-outlined">person</span>
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+      </div>  
+
+      
+
+      <div class="searchform-wrapper">
+        <div class="searchform">
+          <div class="field" id="destination">
+            <div style="font-size: 16px; font-weight:bold; margin-bottom:4px;">Tenerife</div>
+            <div style="font-size:13px; color:#767676">5 Jul 2025 (7 nights), 4 Adult, 2 Room</div>
+            <div class="submit-button">
+              <span class="material-symbols-outlined">search</span>
+            </div>
+          </div>
+          
         </div>
       </div>
+      <div class="tools">
+        <ul>
+          <li><a href="#" id="link-filters">Filters</a></li>
+          <li><a href="#" id="link-sort">Sort</a></li>
+          <li><a href="#">Map</a></li>
+        </ul>
+      </div>
+      
       <div class="list">
-        <div style="overflow:hidden; padding-top:20px">
+        <div style="overflow:hidden; padding:20px 0">
           <div style="float:left; width:50%">
             <h1 style="font-size:20px;">393 holidays</h1>
           </div>
-          <div style="float:right; width:50%; text-align: right;">
-            <select>
-              <option>Recommended</option>
-              <option>Lowest Price First</option>
-              <option>Highest Price First</option>
-              <option>Star Rating</option>
-            </select>
-          </div>
+          
         </div>
 
-        <!-- card -->
-
-        <div class="card">
-          <div class="images" style="background-image: url('photos/innside/1.avif'); background-size:cover">
-            <!--<div class="perk">FREE Mobile Data</div>-->
-            <div class="save"><img src="icons/save.png" /></div>
-            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
-          </div>
-          <div class="content">
-            <div class="name"><a href="#" class="navy">INNSiDE by Melia Calvia Beach</a></div>
-            <div class="rating">
-              <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+        <div class="results-card" >
+            <div class="photo" style="background: url('photos/innside/1.avif'); no-repeat; background-size: cover;">
+              <div class="perk">FREE Lounge Access</div>
+              <div class="count">1 / 17</div>
+              <div class="save"><img src="img/heart.svg" /></div>
+              <div class="prev"><img src="img/chevron-left.svg" /></div>
+              <div class="next"><img src="img/chevron-right.svg" /></div>
+            </div>
+            <div class="content">
+              <div class="name">INNSiDE by Melia Calvia Beach</div>
+              <div class="rating">
+                <div class="star">
+                  <span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span>
+                </div>
+                <img src="img/ta.png" class="ta"/>
+                <span class="reviews">2203 reviews</span>
               </div>
-              
-              
-              <img src="icons/ta.png" class="ta"/><span class="reviews">722 reviews</span>
-            </div>
-            <div class="desc">Chic beachfront hotel with modern design and a rooftop pool offering stunning sea views.</div>
-            <div class="detail">
-              <img src="icons/map.png" class="icon" />
-              <a href="#" class="inline">Magaluf, Majorca</a>
-            </div>
-            <div class="detail">
-              <img src="icons/cal.png" class="icon" />
-              <span>2 Jul 2025 • 7 nights</span>
-            </div>
-            <div class="detail">
-              <img src="icons/flight.png" class="icon" />
-              <a href="#" class="inline">London Stansted</a>
-            </div>
-            <div class="detail">
-              <img src="icons/board.png" class="icon" />
-              Bed & Breakfast
-            </div>
-          </div>
-          <div class="price-block">
-            <div class="badges">
-              <div>Selling fast</div>
-              <div>24% below peak price</div>
-            </div>
-            <div class="data">
-              <div class="total">£1674</div>
-              <div class=pp>£837pp</div>
-            </div>
-
-          </div>
-
-          <style type="text/css">
-            .links {overflow:hidden; border-top: solid 1px #ddd; }
-            .links > div {float:left; width:50%; padding:12px 0; text-align:center;}
-            .links > div a {font-weight: bold;}
-          </style>
-
-          <div class="links">
-            <div class="quick"><a href="#">Quick view</a></div>
-            <div class="full"><a href="#">Full details</a></div>
-          </div>
-        </div>
-
-        <!-- card -->
-
-        <!-- card -->
-
-        <div class="card">
-          <div class="images" style="background-image: url('photos/melia/1.avif'); background-size:cover">
-            <!--<div class="perk">FREE Mobile Data</div>-->
-            <div class="save"><img src="icons/save.png" /></div>
-            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
-          </div>
-          <div class="content">
-            <div class="name"><a href="#" class="navy">Melia South Beach</a></div>
-            <div class="rating">
-              <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+              <div class="detail" style="margin-top:8px;">
+                <img src="img/map.svg" class="icon" />
+                <span class="inline">Magaluf, Majorca <br/> <a href="" class="map-link">View on map</a></span>
               </div>
-              
-              
-              <img src="icons/ta.png" class="ta"/><span class="reviews">1508 reviews</span>
-            </div>
-            <div class="desc">Stylish hotel with a vibrant atmosphere and direct access to the lively Nikki Beach.</div>
-            <div class="detail">
-              <img src="icons/map.png" class="icon" />
-              <a href="#" class="inline">Magaluf, Majorca</a>
-            </div>
-            <div class="detail">
-              <img src="icons/cal.png" class="icon" />
-              <span>9 Jul 2025 • 7 nights</span>
-            </div>
-            <div class="detail">
-              <img src="icons/flight.png" class="icon" />
-              <a href="#" class="inline">London Stansted</a>
-            </div>
-            <div class="detail">
-              <img src="icons/board.png" class="icon" />
-              Bed & Breakfast
-            </div>
-          </div>
-          <div class="price-block">
-            <div class="badges">
-              <div>28% below peak price</div>
-            </div>
-            <div class="data">
-              <div class="total">£1620</div>
-              <div class=pp>£810pp</div>
-            </div>
-
-          </div>
-
-          <div class="links">
-            <div class="quick"><a href="#">Quick view</a></div>
-            <div class="full"><a href="#">Full details</a></div>
-          </div>
-        </div>
-
-        <!-- card -->
-
-        <!-- card -->
-
-        <div class="card">
-          <div class="images" style="background-image: url('photos/elba/1.avif'); background-size:cover">
-            <!--<div class="perk">FREE Mobile Data</div>-->
-            <div class="save"><img src="icons/save.png" /></div>
-            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
-          </div>
-          <div class="content">
-            <div class="name"><a href="#" class="navy">Elba Sunset Mallorca Lifestyle & Thalasso Spa</a></div>
-            <div class="rating">
-              <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+              <div class="detail">
+                <img src="img/cal.svg" class="icon" />
+                <span class="inline" style="font-size:14px;">Tue 3 Jun 2025 - Fri 13 Jun 2025</span>
               </div>
-              
-              
-              <img src="icons/ta.png" class="ta"/><span class="reviews">894 reviews</span>
-            </div>
-            <div class="desc">Luxurious clifftop retreat with a serene spa, infinity pool, and panoramic sea views.</div>
-            <div class="detail">
-              <img src="icons/map.png" class="icon" />
-              <a href="#" class="inline">Torrenova, Majorca</a>
-            </div>
-            <div class="detail">
-              <img src="icons/cal.png" class="icon" />
-              <span>7 Jul 2025 • 7 nights</span>
-            </div>
-            <div class="detail">
-              <img src="icons/flight.png" class="icon" />
-              <a href="#" class="inline">London Stansted</a>
-            </div>
-            <div class="detail">
-              <img src="icons/board.png" class="icon" />
-              Bed & Breakfast
-            </div>
-          </div>
-          <div class="price-block">
-            <div class="badges">
-              <div>20% below peak price</div>
-            </div>
-            <div class="data">
-              <div class="total">£1696</div>
-              <div class=pp>£848pp</div>
-            </div>
-
-          </div>
-
-          <div class="links">
-            <div class="quick"><a href="#">Quick view</a></div>
-            <div class="full"><a href="#">Full details</a></div>
-          </div>
-        </div>
-
-        <!-- card -->
-
-        <!-- card -->
-
-        <div class="card">
-          <div class="images" style="background-image: url('photos/sol/1.avif'); background-size:cover">
-            <!--<div class="perk">FREE Mobile Data</div>-->
-            <div class="save"><img src="icons/save.png" /></div>
-            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
-          </div>
-          <div class="content">
-            <div class="name"><a href="#" class="navy">Sol Katmandu Park & Resort</a></div>
-            <div class="rating">
-              <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+              <div class="detail">
+                <img src="img/flight.svg" class="icon" />
+                <span class="inline"><a href="#" class="inline-link">Direct from London Gatwick</a></span>
               </div>
-              
-              
-              <img src="icons/ta.png" class="ta"/><span class="reviews">3359 reviews</span>
-            </div>
-            <div class="desc">Family-friendly resort featuring a unique adventure park and fun-filled entertainment for all ages.</div>
-            <div class="detail">
-              <img src="icons/map.png" class="icon" />
-              <a href="#" class="inline">Magaluf, Majorca</a>
-            </div>
-            <div class="detail">
-              <img src="icons/cal.png" class="icon" />
-              <span>2 Jul 2025 • 7 nights</span>
-            </div>
-            <div class="detail">
-              <img src="icons/flight.png" class="icon" />
-              <a href="#" class="inline">London Stansted</a>
-            </div>
-            <div class="detail">
-              <img src="icons/board.png" class="icon" />
-              All Inclusive
-            </div>
-          </div>
-          <div class="price-block">
-            <div class="badges">
-              <div>20% below peak price</div>
-            </div>
-            <div class="data">
-              <div class="total">£1554</div>
-              <div class=pp>£778pp</div>
-            </div>
-
-          </div>
-
-          <div class="links">
-            <div class="quick"><a href="#">Quick view</a></div>
-            <div class="full"><a href="#">Full details</a></div>
-          </div>
-        </div>
-
-        <!-- card -->
-
-        <!-- card -->
-
-        <div class="card">
-          <div class="images" style="background-image: url('photos/cook/1.avif'); background-size:cover">
-            <!--<div class="perk">FREE Mobile Data</div>-->
-            <div class="save"><img src="icons/save.png" /></div>
-            <div class="controls"><img src="icons/arrow-sm-left.png" /><span class="number">1/25</span><img src="icons/arrow-sm-right.png" /></div>
-          </div>
-          <div class="content">
-            <div class="name"><a href="#" class="navy">Cook's Club Calvia Beach</a></div>
-            <div class="rating">
-              <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+              <div class="detail">
+                <img src="img/board.svg" class="icon" />
+                <span class="inline">All Inclusive</span>
               </div>
-              
-              
-              <img src="icons/ta.png" class="ta"/><span class="reviews">204 reviews</span>
-            </div>
-            <div class="desc">Adults-only escape with a laid-back vibe, chic pool area, and live DJ sets by the beach.</div>
-            <div class="detail">
-              <img src="icons/map.png" class="icon" />
-              <a href="#" class="inline">Torrenova, Majorca</a>
-            </div>
-            <div class="detail">
-              <img src="icons/cal.png" class="icon" />
-              <span>2 Jul 2025 • 7 nights</span>
-            </div>
-            <div class="detail">
-              <img src="icons/flight.png" class="icon" />
-              <a href="#" class="inline">London Stansted</a>
-            </div>
-            <div class="detail">
-              <img src="icons/board.png" class="icon" />
-              Bed & Breakfast
-            </div>
-          </div>
-          <div class="price-block">
-            <div class="badges">
-              <div>Selling fast</div>
-              <div>30% below peak price</div>
-            </div>
-            <div class="data">
-              <div class="total">£1070</div>
-              <div class=pp>£535pp</div>
-            </div>
+              <div class="detail">
+                <img src="img/bags.svg" class="icon" />
+                <span class="inline"><a href="#" class="inline-link">Hold bags: 0</a></span>
+              </div>
+              <div class="detail perk">
+                <img src="img/perk-lounge.svg" class="icon" />
+                <span class="inline">FREE Lounge Access</span>
+              </div>
+              <!--<div class="detail">
+                <span class="inline"><a href="#" class="inline-link">What's included</a></span>
+              </div>
+              <div class="detail">
+                <span class="inline"><a href="#">Edit flights, dates and board</a></span>
+              </div>-->
 
+              <div class="action">
+                <div class="price">
+                  <div class="from">Prices from</div>
+                  <div class="price-lead">£514<span>pp</span></div>
+                  <div class="price-secondary">£2,053 Total Price</div>
+                </div>
+                <div class="cta">
+                  <div class="button">More details</div>
+                </div>
+              </div>
+              <div class="links">
+                <div class="quick"><a href="#">Quick view</a></div>
+              </div>
+            </div>
           </div>
 
-          <div class="links">
-            <div class="quick"><a href="#">Quick view</a></div>
-            <div class="full"><a href="#">Full details</a></div>
-          </div>
-        </div>
+        <!-- card -->
 
       </div>
       
@@ -380,11 +157,12 @@
         .overlay {position:absolute; top:0; left:0; bottom:0; right:0; background-color:#000; opacity:0.9}
         .qv-content {position:absolute;top:60px; left:0; bottom:72px; right:0; background-color:#fff; border-top-left-radius: 8px; border-top-right-radius:8px; overflow-y: scroll;}
         .qv-content .content {padding:20px}
-        .attributes {margin-bottom: 16px;}
+        .desc {margin-top:8px; line-height: 20px}
+        .attributes {margin-bottom: 24px;}
         .attributes > p { padding-left:28px; position:relative;}
-        .attributes > p .material-symbols-outlined {position:absolute; left:0; top:0; font-size:16px; color:#1A73E8}
-        .attributes h3 {margin-bottom: 8px;}
-        .attributes p {font-size:14px; line-height: 18px; margin-bottom:8px;}
+        .attributes > p .material-symbols-outlined {position:absolute; left:0; top:0; font-size:16px; color:#767676}
+        .attributes h3 {margin-bottom: 16px; font-size:20px;}
+        .attributes p {font-size:14px; line-height: 20px; margin-bottom:8px;}
         .qv-content .content .desc {margin-bottom:12px;}
         .images > div {background-size:cover; height: 200px;}
 
@@ -411,10 +189,10 @@
             <div class="name">INNSiDE by Melia Calvia Beach</div>
             <div class="rating">
               <div class="stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined icon-star">star</span>
+                <span class="material-symbols-outlined icon-star">star</span>
+                <span class="material-symbols-outlined icon-star">star</span>
+                <span class="material-symbols-outlined icon-star">star</span>
               </div>
               <img src="icons/ta.png" class="ta"/><span class="reviews">722 reviews</span>
             </div>
@@ -468,11 +246,11 @@
           
         <div class="qv-cta">
           <div class="qv-price">
-            <div>Prices from</div>
-            <div class="total" style="font-size:24px; font-weight:bold; color:#17317F">£1674 <span style="font-size:13px; color:#999;">/ £837pp</span></div>
+            <div class="total" style="font-size:24px; font-weight:bold; color:#313137">£514pp</div>
+            <div style="font-size:14px; color:#767676">£2,053 Total price</div>
           </div>
           <div>
-              <div class="button">Full details</div>   
+              <div class="button">More details</div>   
 
           </div>
           
