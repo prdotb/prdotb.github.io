@@ -46,10 +46,10 @@
       .item-cb {position:relative; background-color: #ffffff; padding:0px 0; margin-bottom: 8px;}
       .cb-container .label, .radio-container .label {color:#313137; font-size:14px; margin-left:36px; padding-top:6px;}
 
-       .add-bags {position:absolute; top:16px; right:16px; padding:6px 16px 6px 6px; border:solid 0px #f0f0f0; border-radius:4px; font-size: 20px; font-weight: bold;}
+       .add-bags {border:solid 0px #f0f0f0; border-radius:4px; font-size: 18px; font-weight: bold;}
       .add-bags:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
 
-      .dd-sort { padding:0; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; width:100%; font-weight: bold;color:#313137}
+      .dd-sort { padding:0; border:solid 0px #f0f0f0; border-radius:4px; font-size: 18px;  font-weight: bold;color:#313137}
       .dd-sort:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
 
 
@@ -94,43 +94,52 @@
       </div> 
     </div>
 
+    <style type="text/css">
+      .total-bar .wrapper {overflow:hidden;}
+      .total-bar .wrapper > div {padding:16px 0;}
+      .total-bar .total {font-size:18px; font-weight: bold; float:left;}
+      .total-bar .tool {float:right; border-left: solid 1px #f0f0f0; font-size: 18px; position:relative;}
+    </style>
+
+    <div class="total-bar" style="padding:0; border-bottom:solid 1px #f0f0f0;">
+      <div class="wrapper">
+        <div class="total">We've found you 211 holidays</div>
+        <div class="tool" style="padding:16px 16px 16px 56px;">
+          <img src="img/map-view.svg" style="position:absolute; left:20px; top:16px; height:20px;"/>
+          <a href="#" style="font-weight: bold;">View on map</a></div>
+        <div class="tool" style="padding:16px 16px 16px 56px;">
+          <img src="img/bags-big.svg" style="position:absolute; left:20px; top:14px; height:24px;"/>
+          <span>Add hold bags</span>
+          <select class="add-bags">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        
+        <div class="tool" style="padding:16px 16px 16px 56px;">
+          <img src="img/sort.svg" style="position:absolute; left:24px; top:14px; height:24px;"/>
+          <span>Sort by:</span>
+          <select class="dd-sort">
+            <option>Recommended</option>
+            <option>Lowest price first</option>
+                <option>Highest price first</option>
+                <option>Star rating</option>
+                <option>TripAdvisor rating</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <div class="content">
       <div class="wrapper">
         <div class="filters">
 
-          <div class="bags" style="padding:16px; border:solid 1px #f0f0f0; margin:16px 0px; border-radius:4px; position:relative">
-            <img src="img/bags-big.svg" style="display:inline-block; vertical-align:top; margin-right:8px;"/>
-              <div style="display:inline-block; vertical-align:top;">
-              <div style="font-size:16px; font-weight:bold; margin-bottom:4px;">Add hold bags</div>
-              <div style="font-size:12px;">Not all deals include bags</div>
-            </div>
-            <select class="add-bags" style="">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
 
-          <div class="sort" style="border:solid 1px #f0f0f0; padding:16px; border-radius: 4px; position:relative;">
-            <img src="img/sort.svg" style="position:absolute; top:8px; left:16px; height:40px" />
-            <div style="margin-left:48px;">
-              <div style="padding-left:4px; margin-bottom:4px; font-size:14px;  ">Sort by: </div>
-              <div style="">
-              <select class="dd-sort">
-                <option>Recommended</option>
-                <option>Lowest price first</option>
-                <option>Highest price first</option>
-                <option>Star rating</option>
-                <option>TripAdvisor rating</option>
-              </select>
-            </div>
-            </div>
-            
-          </div>
           
-          <div class="filter-group">
+          
+          <div class="filter-group" style="padding-top:0;">
             <h2>Board Basis</h2>
             <div class="item-cb">
               <label class="cb-container">
@@ -348,13 +357,7 @@
         </style>
 
         <div class="list">
-          <div class="context" style="position: relative;">
-            <h1>We've found you 211 holidays</h1>
-            <div style="position:absolute; right:0; top:0; border:solid 1px #f0f0f0; padding:16px; border-radius:4px;">
-              <img src="img/map-view.svg" style="position:absolute; left:16px; top:16px; height:20px;"/>
-              <a href="#" style="font-weight: bold; padding-left:32px;">View on map</a>
-            </div>
-          </div>
+          
           <div class="results-card">
             <div class="photo" style="background-image: url('img/iberostar.png');">
               <div class="perk">FREE Lounge Access</div>
