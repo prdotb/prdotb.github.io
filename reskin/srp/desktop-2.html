@@ -112,7 +112,7 @@
               <option>4</option>
             </select>
           </div>
-          
+
           <div class="sort" style="border:solid 1px #f0f0f0; padding:16px; border-radius: 4px; position:relative;">
             <img src="img/sort.svg" style="position:absolute; top:8px; left:16px; height:40px" />
             <div style="margin-left:48px;">
@@ -318,7 +318,7 @@
           .results-card .photo .save {border-radius:50%; background-color: #fff; padding:7px; position:absolute; top:8px; right:16px; width:28px; height:28px;}
           .results-card .photo .next {position:absolute; height:28px; width:28px; padding:5px 8px; border-radius:50%; background-color: #fff; right:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
           .results-card .photo .prev {position:absolute; height:28px; width:28px; padding:5px 7px; border-radius:50%; background-color: #fff; left:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
-          .results-card .content {margin-left:40%; padding:16px 24px 16px 24px;}
+          .results-card .content {margin-left:40%; padding:16px 24px 16px 24px; position:relative}
           .results-card .content .name {font-size: 20px; font-weight: bold}
 
           .rating {margin-top:4px;}
@@ -337,8 +337,9 @@
           .perk .inline {padding-top:4px; display:inline-block; font-size: 14px!important;}
           a.inline-link {color:#313137; text-decoration: underline; text-decoration-style:dotted; text-decoration-color: #767676; font-weight: normal;}
 
-          .results-card .action {margin-top:24px; overflow:hidden;}
-          .results-card .action > div {float:left; width:50%;}
+          .results-card .action {overflow:hidden; position:absolute; right:24px; bottom:24px;}
+          .results-card .action > div {}
+          .results-card .action > div.price {text-align: right; margin-bottom:16px;}
         
           .results-card .action .from {color:#767676; font-size:12px; display: none}
           .results-card .action .price-lead {font-size:32px; font-weight: bold;}
@@ -406,6 +407,7 @@
                 </div>
               </div>
             </div>
+
 
           </div>
 
