@@ -119,8 +119,24 @@
         </div>
       </div>
       
+      <style type="">
+        .hotel-gallery {position:relative;}
+        .hotel-gallery img {width:100%}
+        .hotel-gallery .perk {position:absolute; top:0px; left:8px; border-radius:4px; padding:4px 8px; background-color:#D91677; color:#fff; font-weight: bold; font-size: 14px;}
+        .hotel-gallery .count {position:absolute; bottom:16px; right:16px; font-size:12px; padding:4px 8px; background-color:#fff; border-radius:4px; font-weight: bold;}
+        .hotel-gallery .save {border-radius:50%; background-color: #fff; padding:7px; position:absolute; top:16px; right:16px; width:28px; height:28px;}
+        .hotel-gallery .next {position:absolute; height:28px; width:28px; padding:4px 8px; border-radius:50%; background-color: #fff; right:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+        .hotel-gallery .prev {position:absolute; height:28px; width:28px; padding:4px 7px; border-radius:50%; background-color: #fff; left:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+      </style>
+
       <div class="hotel-gallery">
-        <div><img src="img/iberostarselection.png" style="width:100%"/></div>
+        <img src="img/iberostarselection.png"/>
+        
+          <div class="count">1 / 17</div>
+          <div class="save"><img src="img/heart.svg" /></div>
+          <!--<div class="perk">FREE Lounge Access</div>-->
+          <div class="prev"><img src="img/chevron-left.svg" /></div>
+          <div class="next"><img src="img/chevron-right.svg" /></div>
         
       </div>
     
