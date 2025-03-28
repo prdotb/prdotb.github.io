@@ -219,7 +219,7 @@
             .customise {margin-top:32px; border-top: solid 1px #f0f0f0; padding-top:24px;}
             
             .dates {}
-            .dates .selected {overflow:hidden; margin-top: 16px;}
+            .dates .selected {overflow:hidden; margin-top: 16px; font-size: 16px;}
             .dates .selected > div {float:left; width:50%;}
             .label {font-weight: bold; margin-bottom:4px;}
           </style>
@@ -237,6 +237,187 @@
                   <div class="label">Return</div>
                   <div>12 July 2025</div>
                 </div>
+              </div>
+
+              <style type="text/css">
+                .calendar {border:solid 1px #f0f0f0; border-radius:4px; margin-top:16px;}
+                .calendar .message {padding:16px; font-size: 14px; background-color: #EDF4FF}
+                .calendar .date-selector {}
+                .months {padding:16px 0; text-align: center; font-weight: bold}
+                .days-of-week {display: flex; padding:0 4px}
+                .day-of-week {flex-grow: 1; flex-shrink: 1; flex-basis: 0; text-align: center; font-size: 12px; font-weight: bold; padding-bottom:16px;}
+                .day {flex-grow: 1; flex-shrink: 1; flex-basis: 0; text-align: center; padding:16px 0; margin-bottom: 4px}
+                .day .date {font-weight:bold; font-size: 12px; margin-bottom:4px;}
+                .day .price {font-size: 11px;}
+
+                .start-date {background-color:#1A73E8; color:#fff; border-top-left-radius: 4px; border-bottom-left-radius: 4px}
+                .end-date {background-color:#1A73E8; color:#fff; border-top-right-radius: 4px; border-bottom-right-radius: 4px}
+                .selected-date {background-color:#EDF4FF}
+                .cheapest-start-date {border:solid 1px #2C850D; border-radius: 4px}
+              </style>
+              <div class="calendar">
+                <div class="message">
+                  <div style="font-weight: bold; margin-bottom:4px;">Prices displayed are per person</div>
+                  <div style="font-size: 12px;">Prices shown are our cheapest deals. Board may vary. </div>
+                </div>
+                <div class="date-selector">
+                  <div class="months">July</div>
+                  <div class="days-of-week" style="border-bottom:solid 1px #f0f0f0; margin-bottom:8px;">
+                    <div class="day-of-week">M</div>
+                    <div class="day-of-week">T</div>
+                    <div class="day-of-week">W</div>
+                    <div class="day-of-week">T</div>
+                    <div class="day-of-week">F</div>
+                    <div class="day-of-week">S</div>
+                    <div class="day-of-week">S</div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day"></div>
+                    <div class="day cheapest-start-date">
+                      <div class="date">1</div>
+                      <div class="price">£5,542</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">2</div>
+                      <div class="price">£5,544</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">3</div>
+                      <div class="price">£6,331</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">4</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day start-date">
+                      <div class="date ">5</div>
+                      <div class="price">£6,416</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date ">6</div>
+                      <div class="price">£6,627</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day selected-date">
+                      <div class="date">7</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">8</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">9</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">10</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">11</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day end-date">
+                      <div class="date">12</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">13</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">14</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">15</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">16</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">17</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">18</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">19</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">20</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">21</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">22</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">23</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">24</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">25</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">26</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">27</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">28</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">29</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">30</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">31</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
               </div>
             </div>
           </div>
