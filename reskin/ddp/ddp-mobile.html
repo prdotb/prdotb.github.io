@@ -26,6 +26,8 @@
       a.close > span {color:#313137;}
 
       h1 {font-size:24px; margin-bottom:8px;}
+      p {line-height: 24px; font-size: 16px;}
+      p.sm {font-size: 14px; line-height: 20px;}
 
       .header {background-color:#1A73E8; padding:12px 20px 6px; position:relative; color:#fff;}
       .tabs {background-color:#ffffff; color:#1A73E8; padding:0 0 0 8px; border-bottom:solid 1px #f0f0f0; border-top-right-radius: 4px; border-top-left-radius: 4px;}
@@ -40,8 +42,7 @@
       .searchform .field .icon {color:#1A73E8; position:absolute; top:16px; left:16px; font-size: 22px;}
       .searchform .field .label {display:block;}
       .searchform .submit-button {display:inline-block; background-color:#FEDC07; border-radius:8px; padding:12px; text-align:center; color:#17317F; font-weight:bold; position:absolute; top:12px; right:12px; bottom:12px;}
-      .block {height:200px; background-color: #f0f0f0; margin-bottom:20px; border-radius: 4px;}
-
+    
       .tools {background-color:#fff; padding:12px 20px; border-bottom:solid 1px #f0f0f0}
       .tools ul {overflow:hidden; padding:0}
       .tools ul li {list-style-type:none; float:left; width:33%; padding:0; margin:0; text-align:center;}
@@ -148,9 +149,9 @@
         .perk > div {display: inline-block; vertical-align: top; margin-left:8px;}
         .perk .label {color:#767676; font-size:12px; font-weight: normal}
 
-        .description {margin-top:24px;}
-        .description h2 {margin-bottom: 16px;}
-        .description h3 {font-size:18px; margin-bottom: 16px;}
+        .block {margin-top:24px;}
+        .block h2 {margin-bottom: 16px;}
+        .block h3 {font-size:18px; margin-bottom: 16px;}
         .description p {line-height: 24px; font-size: 16px;}
 
 
@@ -189,7 +190,7 @@
           
         </div>
 
-        <div class="description">
+        <div class="description block">
           <h2>About this hotel</h2>
           <ul>
             <li>Close to multiple beaches</li>
@@ -202,7 +203,7 @@
           <p>The elegant and luxurious Iberostar Selection Anthelia has an enviable location right on the seafront, nestled between the two main beaches of Playa del Duque and Playa de Fanabe. Ideal for families who want it all, the property offers a romantic atmosphere for parents and entertaining activities for children, accompanied by a wide range of outstanding facilities and services.</p>
           <a href="#" class="more">Read full description </a>
 
-          <h3 style="margin-top:24px;">Hotel facilities</h2>
+          <h3 style="margin-top:24px;">Hotel facilities</h3>
           <ul class="two-col">
             <li>Air conditioning</li>
             <li>By the beach</li>
@@ -212,12 +213,32 @@
             <li>Spa</li>
           </ul>
           <a href="#" class="more">See all facilities</a>
+        </div>
 
           <style type="text/css">
             .customise {margin-top:32px; border-top: solid 1px #f0f0f0; padding-top:24px;}
+            
+            .dates {}
+            .dates .selected {overflow:hidden; margin-top: 16px;}
+            .dates .selected > div {float:left; width:50%;}
+            .label {font-weight: bold; margin-bottom:4px;}
           </style>
-          <div class="customise">
+          <div class="customise block">
             <h2>Customise your holiday</h2>
+            <div class="dates" style="margin-top: 16px;">
+              <h3>Your dates</h3>
+              <p class="sm">You may be able to save money on your holiday price by departing on a different date</p>
+              <div class="selected">
+                <div>
+                  <div class="label">Outbound</div>
+                  <div>5 July 2025</div>
+                </div>
+                <div>
+                  <div class="label">Return</div>
+                  <div>12 July 2025</div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
