@@ -151,7 +151,7 @@
         .perk > div {display: inline-block; vertical-align: top; margin-left:8px;}
         .perk .label {color:#767676; font-size:12px; font-weight: normal}
 
-        .block {margin-top:32px;}
+        .block {margin-top:32px; border-top:solid 1px #f0f0f0; padding-top: 24px;}
         .block h2 {margin-bottom: 16px;}
         .block h3 {margin-bottom: 16px;}
         .description p {line-height: 24px; font-size: 16px;}
@@ -192,7 +192,7 @@
           
         </div>
 
-        <div class="description block">
+        <div class="description block" style="border:0; padding-top:0;">
           <h2>About this hotel</h2>
           <ul>
             <li>Close to multiple beaches</li>
@@ -436,7 +436,7 @@
 
                 .button-secondary {border:solid 1px #1A73E8; padding:16px; text-align: center; font-weight: bold; border-radius:4px;}
               </style>
-              <div class="flights block" style="border-top:solid 1px #f0f0f0; padding-top: 24px;">
+              <div class="flights block" style="">
                 <h3>Your flights</h3>
                 <div>
                   <div class="context">Cheapest flights from this airport</div>
@@ -456,6 +456,10 @@
                   </div>
                 </div>
                 <div class="button-secondary"><a href="#">View alternative flights</a></div>
+              </div>
+              <div class="hold-bags block">
+                <h3>Add hold bags</h3>
+                <p style="font-size: 14px; line-height:18px;">Airlines may charge more if you choose to add bags on at a later date.</p>
               </div>
                 
               </div>
