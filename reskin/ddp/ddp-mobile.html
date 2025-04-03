@@ -464,21 +464,82 @@
                 <div style="font-size:14px; line-height:18px; background-color:#EDF4FF; padding:16px; margin-top:16px;">
                   <div style="font-weight: bold;">Included with your booking</div><div>1x small bag per person with a maximum size of 36x45x20cm which must fit under the seat in front of you.</div></div>
                 <div style="margin-top:16px;">
-                  <div style="font-weight:bold;">£50.06 per hold bag each way</div>
+                  <div style="font-weight:bold; margin-bottom:4px;">£50.06 per hold bag each way</div>
                   <div style="font-size: 14px;">Hold bag weight limit is 23kg</div>
                   <div style="overflow: hidden;  margin-top:16px">
                     <div style="float:left; width:50%;">
-                      <select style="padding:8px; border:solid #f0f0f0 1px; font-size: 20px; font-weight: bold; border-radius:4px;">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>3</option>
-                      </select>
+                      <div style="border:solid 1px #f0f0f0; display: inline-block; padding:0px 16px 0px 8px; border-radius:4px;">
+                        <select style="padding:8px; border:solid #f0f0f0 0px; font-size: 20px; font-weight: bold; border-radius:4px;">
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
                     </div>
                     <div style="float:left; width:50%; padding:8px; font-weight:bold">
                       <div style="text-align:right; font-size:20px; color:#17317F;">£0.00</div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <style type="text/css">
+                .board-type {border:solid 1px #f0f0f0; padding:16px; border-radius:4px; margin-bottom: 16px; position:relative;}
+                .board-type-selected {border:solid 1px #1A73E8;}
+                .board-name {font-size: 16px; font-weight: bold; margin-bottom:8px;}
+                .board-type li {font-size: 14px;}
+                .board-price {position:absolute; top:12px; right:16px; text-align: right;}
+                .board-price .board-selected {display: inline-block; padding:4px 8px; background-color: #1A73E8; color:#ffffff; font-weight: bold; font-size: 14px; border-radius:4px; margin-bottom: 8px;}
+                .board-price .price {font-weight: bold; font-size: 18px; color:#17317F}
+                .board-type-price {display: inline-block; padding:4px 8px; background-color: #f0f0f0; color:#1A73E8; font-weight: bold; font-size: 14px; border-radius:4px; margin-bottom: 8px;}
+              </style>
+
+              <div class="board block">
+                <h3>Your board</h3>
+
+                <div class="board-type board-type-selected">
+                  <div class="board-details">
+                    <div class="board-name">Bed & breakfast</div>
+                    <ul>
+                      <li>Breakfast</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-selected">Selected</div>
+                    <div class="price">£5,580.98</div>
+                  </div>
+                </div>
+
+                <div class="board-type">
+                  <div class="board-details">
+                    <div class="board-name">Half board</div>
+                    <ul>
+                      <li>Breakfast</li>
+                      <li>Evening meal</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-type-price">+ £1265</div>
+                    
+                  </div>
+                </div>
+
+                <div class="board-type">
+                  <div class="board-details">
+                    <div class="board-name">All inclusive</div>
+                    <ul>
+                      <li>Breakfast</li>
+                      <li>Lunch</li>
+                      <li>Evening meal</li>
+                      <li>Drinks</li>
+                      <li>Snacks</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-type-price">+ £3583</div>
+                    
                   </div>
                 </div>
               </div>
@@ -493,5 +554,74 @@
 
     </div>
   </body>
+
+  <style type="text/css">
+    /*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  border:solid 1px #f0f0f0;
+  border-radius:4px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+  border:solid 1px #f0f0f0;
+}
+
+.select-selected {
+  background-color: white;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 12px;
+  right: 14px;
+  width: 0;
+  height: 0;
+  border: solid #767676;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #313137;
+  padding: 8px 16px;
+  border: 1px solid #f0f0f0;
+  border-color: #f0f0f0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #ffffff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #f0f0f0;
+}
+  </style>
 
 </html>
