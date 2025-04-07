@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTB Prototypes</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+      * {margin:0; box-sizing: border-box;}
+      body { font-family: Montserrat; font-size:16px; background-color:#fff; color:#313137;}
+      
+      a {color:#1A73E8; text-decoration: none;}
+      h1 {font-size:32px; margin-bottom:8px; line-height: 36px; color:#17317F;}
+      h2 {font-size: 24px; color:#17317F;}
+      h3 {font-size: 20px; color:#17317F;}
+
+      .wrapper {max-width: 1280px; margin:0 auto; padding:0 40px;}
+    
+      .header {background-color:#1A73E8; color:#fff; padding:20px 0; overflow:hidden;}
+      .header .logo {float:left; width: 200px;}
+      .header .links {float:right; width:calc(100% - 200px) text-align:right; padding-top:12px;}
+      .header .links > div {display:inline-block; margin-left:24px; vertical-align: middle;}
+      .header a {color:#fff; font-weight: bold;}
+
+      .search-form {background-color:#1A73E8; padding-bottom:16px;}
+      .search-form .search {background-color:#fff; border-radius:8px; overflow:hidden;}
+      .search-form .search > div {float:left; }
+      .search-form .search .field {position:relative; width:21%; border-right:solid 1px #f0f0f0; padding:16px 16px 16px 48px; white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; font-size:14px; font-weight: bold;}
+      .search-form .search .field .icon {position:absolute; left:16px; top:12px; color:#1A73E8}
+      .search-form .search .submit {width:16%; position:relative;}
+      .search-form .search .submit > div {background-color:#ddd; font-weight: bold; position:absolute; left:8px; right:8px; top:8px; padding:8px; text-align: center; border-radius:4px; background-color:#FEDC07; color:#17317F;}
+
+      .content .wrapper {position:relative; margin-top:40px;}
+      .content .col-right {position:absolute; top:0; right:40px; width:360px}
+      .content .col-left {width:calc(100% - 400px); padding-bottom: 40px;}
+
+      .rating {margin-top:4px;}
+      .rating .star {display:inline-block; margin-right:24px; vertical-align: middle}
+      .rating .star .icon-star {font-size: 24px; color:#17317F;}
+      .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
+      .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+      .rating .stars {margin-top:1px} 
+
+      .ta {display: inline-block; vertical-align: top}
+      .ta img {display: inline-block; vertical-align: middle; height:24px; margin-right:8px;}
+      .ta .reviews {display: inline-block; vertical-align: middle; color:#767676;}
+
+      .location {margin-top:16px; font-weight: bold;}
+
+      .block {margin-top:40px; border-top:solid 1px #cccccc; padding-top: 32px;}
+        .block h2 {margin-bottom: 16px;}
+        .block h3 {margin-bottom: 16px;}
+
+        ul {margin:0; padding:0 0 0 20px;}
+        ul li { margin-bottom:8px; }
+
+        ul.two-col {overflow:hidden;}
+        ul.two-col li {float:left; width:50%;}
+
+        p {line-height:1.4}
+
+        .more {font-weight: bold; font-size:16px; display:inline-block; margin-top:8px; padding-right:20px; background:url('img/chevron-down.svg') no-repeat; background-position: right}
+
+      .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+    </style>
+
+  </head>
+  <body>
+  	<div class="header">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="../img/logo.svg" style="height:50px;"/>
+        </div> 
+        <div class="links">
+          <div><a href="#">Log in</a></div>
+          <div><a href="#">My Bookings</a></div>
+          <div><a href="#">Saved Holidays</a></div>
+          <div><a href="#">Previous Searches</a></div>
+          <div><a href="#"><span class="material-symbols-outlined">menu</span></a></div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="search-form">
+      <div class="wrapper">
+        <div class="search">
+          <div class="field"><span class="material-symbols-outlined icon">location_on</span>Tenerife</div>
+          <div class="field"><span class="material-symbols-outlined icon">travel</span>London Gatwick</div>
+          <div class="field"><span class="material-symbols-outlined icon">calendar_today</span>3 Jun 2025 • 10 nights</div>
+          <div class="field"><span class="material-symbols-outlined icon">group</span>2 Adults, 2 Child, 2 Rooms</div>
+          <div class="submit">
+            <div>Search</div>
+          </div>
+        </div> 
+      </div> 
+    </div>
+
+    <div class="content">
+      <div class="wrapper">
+        
+        <div class="col-left">
+
+          <h1>Iberostar Selection Anthelia</h1>
+          
+          <div class="rating">
+            <div class="star">
+              <span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span>
+            </div>
+            <div class="ta">
+              <img src="img/ta-desktop.svg"  />
+              <span class="reviews">2203 reviews</span>
+            </div>
+          </div>
+
+          <div class="location">
+            <a href="#">
+              <span><img src="img/map-view.svg" style="height:16px; display: inline-block; vertical-align: middle; margin-right: 4px;"/></span> 
+              <span style="display: inline-block; vertical-align: middle; font-size:16px;">Costa Adeje, Tenerife, Spain</span>
+            </a>
+          </div>
+
+          <style type="text/css">
+            .gallery {margin-top:24px; position:relative;}
+            .gallery img {width:100%; border-radius:8px;}
+            .gallery .perk {position:absolute; top:0px; left:8px; border-radius:4px; padding:4px 8px; background-color:#D91677; color:#fff; font-weight: bold; font-size: 14px;}
+            .gallery .count {position:absolute; bottom:16px; right:16px; font-size:14px; padding:4px 8px; background-color:#fff; border-radius:4px; font-weight: bold;}
+            .gallery .save {border-radius:50%; background-color: #fff; padding:8px 7px; position:absolute; top:16px; right:16px; width:32px; height:32px;}
+            .gallery .next {position:absolute; height:32px; width:32px; padding:7px 8px; border-radius:50%; background-color: #fff; right:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+            .gallery .prev {position:absolute; height:32px; width:32px; padding:7px 8px; border-radius:50%; background-color: #fff; left:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+
+            .perk {border:solid 0px #FFDBEA; padding:16px; margin-top:24px; border-radius:8px; background-color: #FDF3F7}
+            .perk img {height:40px; display: inline-block; vertical-align: top;}
+            .perk > div {display: inline-block; vertical-align: top; margin-left:8px;}
+            .perk .label {color:#767676; font-size:14px; font-weight: normal}
+            .perk .type {font-size:18px; font-weight: bold; color:#D91677;}
+          </style>
+
+
+          <div class="gallery">
+            <img src="img/hero.avif"/>
+            <div class="count">1 / 17</div>
+          <div class="save"><img src="img/heart.svg" /></div>
+          <!--<div class="perk">FREE Lounge Access</div>-->
+          <div class="prev"><img src="img/chevron-left.svg" /></div>
+          <div class="next"><img src="img/chevron-right.svg" /></div>
+          </div>
+
+          <div class="perk">
+            <img src="img/perk-lounge.svg" />
+            <div>
+              <div class="label">Included Perk</div>
+              <div class="type">Free Lounge Access</div>
+            </div>
+          </div>
+
+          <div class="hotel-details block"  style="border:0; padding-top:0;">
+            <h2>About this hotel</h2>
+            <ul>
+              <li>Close to multiple beaches</li>
+              <li>Five restaurants to choose from</li>
+              <li>Six pools, including a kids’ pool</li>
+            </ul>
+
+            <h3 style="margin-top:32px;">Overview</h3>
+
+            <p>The elegant and luxurious Iberostar Selection Anthelia has an enviable location right on the seafront, nestled between the two main beaches of Playa del Duque and Playa de Fanabe. Ideal for families who want it all, the property offers a romantic atmosphere for parents and entertaining activities for children, accompanied by a wide range of outstanding facilities and services.</p>
+            <a href="#" class="more">Read full description </a>
+
+            <h3 style="margin-top:32px;">Hotel facilities</h3>
+            <ul class="two-col">
+              <li>Air conditioning</li>
+              <li>By the beach</li>
+              <li>Entertainment</li>
+              <li>Gym</li>
+              <li>Golf</li>
+              <li>Spa</li>
+            </ul>
+            <a href="#" class="more">See all facilities</a>
+          </div>
+
+
+          <style type="text/css">
+            .customise {margin-top:32px; border-top: solid 1px #cccccc; padding-top:24px;}
+            
+            .dates {}
+            .dates .selected {overflow:hidden; margin-top: 16px; font-size: 16px;}
+            .dates .selected > div {float:left; width:50%;}
+            .label {font-weight: bold; margin-bottom:4px;}
+          </style>
+
+          <div class="customise block">
+            <h2>Customise your holiday</h2>
+
+            <div class="dates" style="margin-top: 32px;">
+              <h3>Your dates</h3>
+              <p class="sm">You may be able to save money on your holiday price by departing on a different date</p>
+              <div class="selected">
+                <div>
+                  <div class="label">Outbound</div>
+                  <div>5 July 2025</div>
+                </div>
+                <div>
+                  <div class="label">Return</div>
+                  <div>12 July 2025</div>
+                </div>
+              </div>
+
+              <style type="text/css">
+                .calendar {border:solid 1px #cccccc; border-radius:8px; margin-top:24px;}
+                .calendar .message {padding:16px; font-size: 14px; background-color: #EDF4FF; border-top-left-radius: 8px; border-top-right-radius: 8px;}
+                .calendar .date-selector {}
+                .months {padding:16px 0; text-align: center; font-weight: bold}
+                .days-of-week {display: flex; padding:0 4px}
+                .day-of-week {flex-grow: 1; flex-shrink: 1; flex-basis: 0; text-align: center; font-size: 12px; font-weight: bold; padding-bottom:16px;}
+                .day {flex-grow: 1; flex-shrink: 1; flex-basis: 0; text-align: center; padding:16px 0; margin-bottom: 4px}
+                .day .date {font-weight:bold; font-size: 14px; margin-bottom:4px;}
+                .day .price {font-size: 14px;}
+
+                .start-date {background-color:#1A73E8; color:#fff; border-top-left-radius: 4px; border-bottom-left-radius: 4px}
+                .end-date {background-color:#1A73E8; color:#fff; border-top-right-radius: 4px; border-bottom-right-radius: 4px}
+                .selected-date {background-color:#EDF4FF}
+                .cheapest-start-date {border:solid 1px #2C850D; border-radius: 4px}
+              </style>
+
+              <div class="calendar">
+                <div class="message">
+                  <div style="font-weight: bold; margin-bottom:4px;">Prices displayed are per person</div>
+                  <div style="font-size: 12px;">Prices shown are our cheapest deals. Board may vary. </div>
+                </div>
+                <div class="date-selector">
+                  <div class="months">July</div>
+                  <div class="days-of-week" style="border-bottom:solid 1px #cccccc; margin-bottom:8px;">
+                    <div class="day-of-week">M</div>
+                    <div class="day-of-week">T</div>
+                    <div class="day-of-week">W</div>
+                    <div class="day-of-week">T</div>
+                    <div class="day-of-week">F</div>
+                    <div class="day-of-week">S</div>
+                    <div class="day-of-week">S</div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day"></div>
+                    <div class="day cheapest-start-date">
+                      <div class="date">1</div>
+                      <div class="price">£5,542</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">2</div>
+                      <div class="price">£5,544</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">3</div>
+                      <div class="price">£6,331</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">4</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day start-date">
+                      <div class="date ">5</div>
+                      <div class="price">£6,416</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date ">6</div>
+                      <div class="price">£6,627</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day selected-date">
+                      <div class="date">7</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">8</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">9</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">10</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day selected-date">
+                      <div class="date">11</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day end-date">
+                      <div class="date">12</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">13</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">14</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">15</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">16</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">17</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">18</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">19</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">20</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">21</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">22</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">23</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">24</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">25</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">26</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">27</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                  </div>
+                  <div class="days-of-week">
+                    <div class="day">
+                      <div class="date">28</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">29</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">30</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      <div class="date">31</div>
+                      <div class="price">£6,510</div>
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                    <div class="day">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <style type="text/css">
+                .flights .context {background-color:#1A73E8; color:#fff; font-weight:bold; padding:8px 16px; border-top-right-radius: 8px; border-top-left-radius: 8px;}
+                .flights .flight-details {border-radius:8px; border:solid 1px #cccccc; margin-bottom: 16px; border-top-right-radius: 0px; border-top-left-radius: 0px; overflow:hidden;}
+                .flights .flight-details > div {padding:16px; float:left; width:50%;}
+                .flights .flight-details > div > div {margin-bottom:8px;}
+                .flights .flight-details .outbound {border-right: solid 1px #cccccc;}
+                .flights .flight-details .airline {font-size:12px;}
+                .flights .flight-details .airline img {display:inline-block; vertical-align: middle; margin-right:8px;}
+                .flights .flight-details .airline span {display:inline-block; vertical-align: middle;}
+                .flights .flight-details .date {font-size:14px;}
+                .flights .flight-details .time {font-size:20px; font-weight: bold;}
+                .flights .flight-details .duration {font-size: 14px; font-weight:normal; color:#767676;}
+                .flights .flight-details .airport {font-size:14px;}
+
+                .button-secondary {border:solid 1px #1A73E8; padding:16px; text-align: center; font-weight: bold; border-radius:4px;}
+              </style>
+
+              <div class="flights block" style="">
+                <h3>Your flights</h3>
+                <div>
+                  <div class="context">Cheapest flights from this airport</div>
+                  <div class="flight-details">
+                    <div class="outbound">
+                      <div class="airline"><img src="img/airline-ba.svg" style="height:20px;" /> <span>(BA 2505)</span></div>
+                      <div class="date">Sat 5th July 2025</div>
+                      <div class="time">16:50 <img src="img/chevron-right-grey.svg" /> 21:20 <span class="duration">(4h 30m)</span></div>
+                      <div class="airport">London Gatwick <img src="img/chevron-right-grey.svg" style="height:10px;"/> Tenerife South</div>
+                    </div>
+                    <div class="inbound">
+                      <div class="airline"><img src="img/airline-ba.svg" style="height:20px;" /> <span>(BA 2505)</span></div>
+                      <div class="date">Sat 12th July 2025</div>
+                      <div class="time">18:25 <img src="img/chevron-right-grey.svg" /> 22:40 <span class="duration">(4h 15m)</span></div>
+                      <div class="airport">Tenerife South <img src="img/chevron-right-grey.svg" style="height:10px;"/> London Gatwick</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-secondary"><a href="#">View alternative flights</a></div>
+              </div>
+
+              <div class="hold-bags block">
+                <h3>Add hold bags</h3>
+                <p style="font-size: 14px; line-height:18px;">Airlines may charge more if you choose to add bags on at a later date.</p>
+                <div style="font-size:14px; line-height:18px; background-color:#EDF4FF; padding:16px; margin-top:24px;">
+                  <div style="font-weight: bold;">Included with your booking</div><div>1x small bag per person with a maximum size of 36x45x20cm which must fit under the seat in front of you.</div></div>
+                <div style="margin-top:24px;">
+                  <div style="font-weight:bold; margin-bottom:4px;">£50.06 per hold bag each way</div>
+                  <div style="font-size: 14px;">Hold bag weight limit is 23kg</div>
+                  <div style="overflow: hidden;  margin-top:16px">
+                    <div style="float:left; width:50%;">
+                      <div style="border:solid 1px #f0f0f0; display: inline-block; padding:0px 16px 0px 8px; border-radius:4px;">
+                        <select style="padding:8px; border:solid #f0f0f0 0px; background-color:#ffffff; font-size: 20px; font-weight: bold; border-radius:4px;">
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div style="float:left; width:50%; padding:8px; font-weight:bold">
+                      <div style="text-align:right; font-size:18px; color:#17317F;">£0.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <style type="text/css">
+                .board-type {border:solid 1px #cccccc; padding:24px; border-radius:8px; margin-bottom: 16px; position:relative;}
+                .board-type-selected {border:solid 2px #1A73E8;}
+                .board-name {font-size: 16px; font-weight: bold; margin-bottom:8px;}
+                .board-type ul {overflow: hidden;}
+                .board-type li {font-size: 14px; float:left; margin-right:32px; }
+                .board-price {position:absolute; top:20px; right:24px; text-align: right;}
+                .board-price .board-selected {display: inline-block; padding:8px 16px; background-color: #1A73E8; color:#ffffff; font-weight: bold; font-size: 16px; border-radius:4px; margin-bottom: 8px;}
+                .board-price .price {font-weight: bold; font-size: 20px; color:#17317F}
+                .board-type-price {display: inline-block; padding:8px 16px; background-color: #ffffff; color:#1A73E8; font-weight: bold; font-size: 16px; border-radius:4px; margin-bottom: 8px; border:solid 1px #1A73E8}
+              </style>
+
+              <div class="board block">
+                <h3>Your board</h3>
+
+                <div class="board-type board-type-selected">
+                  <div class="board-details">
+                    <div class="board-name">Bed & breakfast</div>
+                    <ul>
+                      <li>Breakfast</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-selected">Selected</div>
+                    <div class="price">£5,580.98</div>
+                  </div>
+                </div>
+
+                <div class="board-type">
+                  <div class="board-details">
+                    <div class="board-name">Half board</div>
+                    <ul>
+                      <li>Breakfast</li>
+                      <li>Evening meal</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-type-price">+ £1265</div>
+                    
+                  </div>
+                </div>
+
+                <div class="board-type">
+                  <div class="board-details">
+                    <div class="board-name">All inclusive</div>
+                    <ul>
+                      <li>Breakfast</li>
+                      <li>Lunch</li>
+                      <li>Evening meal</li>
+                      <li>Drinks</li>
+                      <li>Snacks</li>
+                    </ul>
+                  </div>
+                  <div class="board-price">
+                    <div class="board-type-price">+ £3583</div>
+                    
+                  </div>
+                </div>
+
+
+              </div>
+
+              <style type="text/css">
+                .room-type {border:solid 1px #cccccc; border-radius:8px; margin-bottom: 16px; height:180px; overflow:hidden; position:relative;}
+                .room-type .thumbnail {width:35%; float:left; height:178px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+                .room-type .thumbnail img {max-width:100%; b }
+                .room-type .details {padding:16px; width:35%; float:left;}
+                .room-type .details p {font-weight: bold; line-height: 20px;}
+                .room-type-selected {border:solid 2px #1A73E8}
+                .room-selected {position:absolute; top:16px; right:16px; padding:8px 16px; background-color: #1A73E8; color:#ffffff; font-weight: bold; font-size: 16px; border-radius:4px; margin-bottom: 8px;}
+                .room-type-price {position:absolute; top:16px; right:16px;  padding:8px 16px; background-color: #ffffff; color:#1A73E8; font-weight: bold; font-size: 16px; border-radius:4px; margin-bottom: 8px; border:solid 1px #1A73E8}
+              </style>
+
+              
+
+              <div class="room block">
+                <h3>Your room</h3>
+                
+
+                <div class="room-type room-type-selected">
+                  <div class="thumbnail" style="background:url('img/room1.avif') no-repeat; background-size: cover; background-position: bottom;">
+                  </div>
+                  <div class="details">
+                    <p>Priority Location Double Room with Side Sea View and Balcony or Terrace</p>
+                  </div>
+                  <div class="room-selected">Selected</div>
+                </div>
+
+                <div class="room-type">
+                  <div class="thumbnail" style="background:url('img/room2.avif') no-repeat; background-size: cover; background-position: bottom;">
+                  </div>
+                  <div class="details">
+                    <p>Double or Twin Bed Room with Garden View</p>
+                  </div>
+                  <div class="room-type-price">+ £89</div>
+                </div>
+
+                <div class="room-type">
+                  <div class="thumbnail" style="background:url('img/room3.avif') no-repeat; background-size: cover; background-position: bottom;">
+                  </div>
+                  <div class="details">
+                    <p>Double Room with Garden View and Balcony or Terrace</p>
+                  </div>
+                  <div class="room-type-price">+ £238</div>
+                </div>
+
+              </div>
+
+              <style type="text/css">
+                .fine-print {margin-top:32px;}
+                .fine-print > div {background-color:#f0f0f0; padding:16px;  border-radius:8px; margin-bottom: 16px;}
+                .fine-print > div > div {font-weight: bold; font-size: 14px; margin-bottom: 8px;}
+                .fine-print > div > p {font-size: 12px; line-height: 16px;}
+              </style>
+
+              <div class="fine-print" style="margin-bottom:80px;">
+                <div>
+                  <div>Free cancellation on this hotel</div>
+                  <p>If you cancel your hotel stay more than 28 days before you travel you won't pay any cancellation fees for this part of the booking. On the Beach administration fees will apply and cancellation fees may apply to the flight element of your booking, please see Terms & Conditions for more information.<p>
+                </div>
+
+                <div>
+                  <div>ATOL Protected Holidays</div>
+                  <p>When you book a flight-inclusive package holiday through On the Beach, you can do so with confidence knowing your money is fully protected by the ATOL scheme. Please read the protection information carefully before you make your booking.<p>
+                </div>
+                
+              </div>
+
+          </div>
+
+        </div>
+        <div class="col-right">
+          <div style="border:solid 1px #cccccc; padding:16px 16px 16px 48px; border-radius: 8px; font-size: 14px; margin-bottom: 32px; position:relative">
+            <div style="font-weight:bold; margin-bottom:4px;">London Gatwick to Tenerife South</div>
+            <div>4 Adults - Sunday 6 July 2025 (10 nights)</div>
+            <img src="img/flight-navy.svg" style="position:absolute; top:16px; left:16px; height:20px;" />
+          </div>
+
+          <div style="border:solid 1px #cccccc; border-radius: 8px; padding:16px; margin-bottom:32px;">
+            <div style="font-weight:bold; font-size: 32px; color:#17317F; margin-bottom:8px;">£5,914</div>
+            <div style="font-size:16px; margin-bottom:16px;">£1,479 per person</div>
+            <div style="font-weight:bold; padding:16px 0; margin-bottom:8px; background-color:#FEDC07; color:#17317F; text-align:center; border-radius:8px;">Book Holiday</div>
+            <div style="text-align: center; font-weight:bold; font-size:14px; color:#DE1682">Secure your holiday for just £30pp</div>
+          </div>
+
+          <div style="background-color:#DE1682; padding:16px; color:#fff; border-radius:8px;">
+            <h3 style="color:#fff; margin-bottom:16px;">Send to my inbox</h3>
+            <div style="overflow: hidden; margin-bottom:16px;">
+              <div style="float:left; width:calc(75% - 8px); margin-right:8px; padding:16px; color:#cccccc; background-color:#ffffff; border-radius:4px;">example@me.com</div>
+              <div style="float:left; width:25%; padding:16px; background-color:#FEDC07; color:#17317F; border-radius:4px; text-align: center; font-weight:bold;">Send</div>
+            </div>
+            <div style="overflow:hidden;">
+              <div style="float:left; background-color:#fff; height:16px; width:16px; border-radius:4px; margin-right:16px;"></div>
+              <div style="float:left; width:calc(100% - 32px); font-size:14px;">We'd like to share news, deals and holiday inspiration with you from time to time. If you'd rather not receive marketing communications, tick here</div>
+            </div>
+          </div>
+
+          <style type="text/css">
+            .ta-block {background-color:#f0f0f0; padding:16px; border-radius:8px; margin-top: 32px}
+            .rating-item {margin-top: 8px;}
+            .rating-item > img {display:inline-block; vertical-align: middle; margin-right: 8px;}
+            .rating-item > div {display:inline-block; vertical-align: middle;}
+          </style>
+
+          <div class="ta-block">
+            <img src="img/ta-header.svg" style="height:30px;" />
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div><span style="font-weight:bold;">4.2 / 5</span>  &nbsp;&nbsp; <span style="color:#767676; font-size: 14px;">2203 reviews</span></div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Location</div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Sleep quality</div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Rooms</div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Service</div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Value</div>
+            </div>
+            <div class="rating-item">
+              <img src="img/ta-circles.svg" />
+              <div>Cleanliness</div>
+            </div>
+            <div style="text-align: right; border-top: solid 1px #cccccc; margin-top:16px; padding-top:8px;">
+              <a href="#" style="font-weight: bold;"><span style="display:inline-block; vertical-align: top; margin-right:4px;">All 2203 reviews</span> <img src="img/arrow-right.svg" style="height:16px; display:inline-block; vertical-align: middle;"/></a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+  </body>
+
+</html>
