@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".monthly-view").click(function(event){
+          event.preventDefault();
+          $(".dates-weekly").hide();
+          $(".calendar").show();
+        });
+        $(".seven-day-view").click(function(event){
+          event.preventDefault();
+          $(".dates-weekly").show();
+          $(".calendar").hide();
+        });
+      });
+    </script>
 
     <style type="text/css">
 
@@ -240,7 +254,7 @@
               <h3>Prices and availability</h3>
               
               <style type="text/css">
-                .calendar {border:solid 1px #cccccc; border-radius:8px; margin-top:24px; display: none;}
+                .calendar {border:solid 1px #cccccc; border-radius:8px;  display: none;}
                 .calendar .message {padding:16px; font-size: 14px; background-color: #EDF4FF; border-top-left-radius: 8px; border-top-right-radius: 8px;}
                 .calendar .date-selector {}
                 .months {padding:16px 0; text-align: center; font-weight: bold}
@@ -255,15 +269,15 @@
                 .selected-date {background-color:#EDF4FF}
                 .cheapest-start-date {border:solid 1px #2C850D; border-radius: 4px}
 
-                .dates-weekly {border:solid 1px #f0f0f0; padding:8px 0; border-radius:8px;}
-                .dates-wrapper {white-space:nowrap; overflow-x: scroll; margin-top:16px;}
+                .dates-weekly {border:solid 1px #f0f0f0; padding:0 0 0; border-radius:8px;}
+                .dates-wrapper {white-space:nowrap; overflow-x: scroll; margin-top:16px; padding-bottom:16px;}
                 .dates-wrapper .item {height:50px; position:relative; display: inline-block; width:43px;}
                 .dates-wrapper .item .bar {background-color:#EDF4FF; position:absolute; bottom:0; left:0; right:0;}
                 .dates-wrapper .item .selected-date {background-color:#1A73E8;}
                 .dates-wrapper .item .price {text-align: center; font-size: 12px;}
                 .dates-wrapper .item .date {text-align: center; font-size: 12px; font-weight: bold; margin-top:4px;}
 
-                .toggle {text-align: right;}
+                .toggle {text-align: right; padding-right: 8px; margin:16px 0;}
                 .toggle > div {display: inline-block; margin-right:8px; font-size: 14px; font-weight:bold;}
                 .toggle > div a.toggle-selected {color:#313137}
               </style>
@@ -273,7 +287,7 @@
                 <div class="toggle">
                   <div><a href="#" class="toggle-selected">+/- 7 days</a></div>
                   <div>|</div>
-                  <div><a href="#">Monthly</a></div>
+                  <div><a href="#" class="monthly-view">Monthly</a></div>
                 </div>
                 <div class="dates-wrapper">
                   <div class="item">
@@ -374,10 +388,12 @@
 
 
               <div class="calendar">
-                <div class="message">
-                  <div style="font-weight: bold; margin-bottom:4px;">Prices displayed are per person</div>
-                  <div style="font-size: 12px;">Prices shown are our cheapest deals. Board may vary. </div>
+                <div class="toggle">
+                  <div><a href="#" class="seven-day-view">+/- 7 days</a></div>
+                  <div>|</div>
+                  <div><a href="#" class="toggle-selected monthly-view">Monthly</a></div>
                 </div>
+                
                 <div class="date-selector">
                   <div class="months">July</div>
                   <div class="days-of-week" style="border-bottom:solid 1px #cccccc; margin-bottom:8px;">
