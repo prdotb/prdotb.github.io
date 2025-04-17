@@ -11,7 +11,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+
+      
+
       $(document).ready(function(){
+        $("#date-scroller").scrollLeft(170);
+
         $(".monthly-view").click(function(event){
           event.preventDefault();
           $(".dates-weekly").hide();
@@ -269,7 +274,7 @@
                 .selected-date {background-color:#EDF4FF}
                 .cheapest-start-date {border:solid 1px #2C850D; border-radius: 4px}
 
-                .dates-weekly {border:solid 1px #f0f0f0; padding:0 0 0; border-radius:8px;}
+                .dates-weekly {border:solid 1px #cccccc; padding:0 0 0; border-radius:8px;}
                 .dates-wrapper {white-space:nowrap; overflow-x: scroll; margin-top:16px; padding-bottom:16px;}
                 .dates-wrapper .item {height:50px; position:relative; display: inline-block; width:43px;}
                 .dates-wrapper .item .bar {background-color:#EDF4FF; position:absolute; bottom:0; left:0; right:0;}
@@ -289,7 +294,28 @@
                   <div>|</div>
                   <div><a href="#" class="monthly-view">Monthly</a></div>
                 </div>
-                <div class="dates-wrapper">
+                <div id="date-scroller" class="dates-wrapper">
+                  <div class="item">
+                    <div class="block">
+                      <div class="bar" style="height:70%"></div>
+                    </div>
+                    <div class="price">£2639</div>
+                    <div class="date">22</div>
+                  </div>
+                  <div class="item">
+                    <div class="block">
+                      <div class="bar" style="height:74%"></div>
+                    </div>
+                    <div class="price">£695</div>
+                    <div class="date">23</div>
+                  </div>
+                  <div class="item">
+                    <div class="block">
+                      <div class="bar" style="height:78%"></div>
+                    </div>
+                    <div class="price">£2875</div>
+                    <div class="date">24</div>
+                  </div>
                   <div class="item">
                     <div class="block">
                       <div class="bar" style="height:78%"></div>
@@ -374,13 +400,7 @@
                     <div class="price">£3092</div>
                     <div class="date">5</div>
                   </div>
-                  <div class="item">
-                    <div class="block">
-                      <div class="bar" style="height:96%"></div>
-                    </div>
-                    <div class="price">£3020</div>
-                    <div class="date">28</div>
-                  </div>
+                  
 
                 </div>
 
