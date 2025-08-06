@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTB Prototypes</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="search-list.js"></script>
+
+    <script>
+      
+      $(document).ready(function(){
+
+        $("#f-destinations .filter-sub-group[rel='short-haul'] .item-cb:gt(4)").hide()
+        $("#f-destinations .filter-sub-group[rel='long-haul'] .item-cb:gt(4)").hide()
+
+        $(".dest-filter-ctrl[rel='open']").click(function(e){
+          e.preventDefault();
+          var group = $(this).find("a").attr("rel");
+          $(".filter-sub-group[rel='" + group + "'] .item-cb:gt(4)").show(); 
+          $(this).hide();
+          $(this).siblings(".dest-filter-ctrl[rel='close']").show(); 
+        });
+
+        $(".dest-filter-ctrl[rel='close']").click(function(e){
+          e.preventDefault();
+          var group = $(this).find("a").attr("rel");
+          $(".filter-sub-group[rel='" + group + "'] .item-cb:gt(4)").hide(); 
+          $(this).hide();
+          $(this).siblings(".dest-filter-ctrl[rel='open']").show();
+        });
+
+        $(".overlay").click(function(e){
+          e.preventDefault()
+          $(".overlay").hide();
+          $(".modal-dest-filter").hide()
+        });
+
+
+
+        var hotelData = "hotels.json"; 
+        $.getJSON("hotels.js", function (data){
+          
+          buildSearchList(data)
+          
+        }).fail(function(data){
+            console.log("fail");
+        }).always(function(data){
+          
+        });
+      })
+    </script>
+
+
+                
+              
+         
+
+    <style>
+      * {margin:0; box-sizing: border-box;}
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ font-size:16px; background-color:#fff; color:#313137;}
+      
+      a {color:#1A73E8; text-decoration: none;}
+
+      .wrapper {max-width: 1400px; margin:0 auto; padding:0 40px;}
+    
+      .header {background-color:#1A73E8; color:#fff; padding:20px 0; overflow:hidden;}
+      .header .logo {float:left; width: 200px;}
+      .header .links {float:right; width:calc(100% - 200px) text-align:right; padding-top:12px;}
+      .header .links > div {display:inline-block; margin-left:24px; vertical-align: middle;}
+      .header a {color:#fff; font-weight: bold;}
+
+      .search-form {background-color:#1A73E8; padding-bottom:16px;}
+      .search-form .search {background-color:#fff; border-radius:4px; overflow:hidden;}
+      .search-form .search > div {float:left; }
+      .search-form .search .field {position:relative; width:21%; border-right:solid 1px #f0f0f0; padding:16px 16px 16px 48px; white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; font-size:14px; font-weight: bold;}
+      .search-form .search .field .icon {position:absolute; left:16px; top:12px; color:#1A73E8}
+      .search-form .search .submit {width:16%; position:relative;}
+      .search-form .search .submit > div {background-color:#ddd; font-weight: bold; position:absolute; left:8px; right:8px; top:8px; padding:8px; text-align: center; border-radius:4px; background-color:#FEDC07; color:#17317F;}
+
+      .content .wrapper {position:relative; margin-top:40px;}
+      .content .filters {position:absolute; top:0; left:40px; width:240px}
+      .content .list {margin-left:280px;}
+
+      .filter-group {padding:16px 0; border-bottom: solid 1px #f0f0f0}
+      .filter-group .icon-star {font-size: 18px;}
+      .filter-group  h2 {margin-bottom:16px; font-size: 20px}
+      .filter-group  h3 {margin-bottom:8px; font-size: 16px}
+      .filter-sub-group {margin-bottom: 24px;}
+      .filter-sub-group:last-child {margin-bottom: 0}
+      .item-cb {position:relative; background-color: #ffffff; padding:0px 0; margin-bottom: 8px;}
+      .cb-container .label, .radio-container .label {color:#313137; font-size:14px; margin-left:36px; padding-top:6px;}
+
+       .add-bags {border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; font-weight: bold;}
+      .add-bags:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
+
+      .dd-sort { padding:0; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px;  font-weight: bold;color:#313137}
+      .dd-sort:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
+
+
+      .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+    </style>
+
+  </head>
+  <body>
+  	<div class="header">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="../img/logo.svg" style="height:50px;"/>
+        </div> 
+        <div class="links">
+          <div><a href="#">Log in</a></div>
+          <div><a href="#">My Bookings</a></div>
+          <div><a href="#">Saved Holidays</a></div>
+          <div><a href="#">Previous Searches</a></div>
+          <div><a href="#"><span class="material-symbols-outlined">menu</span></a></div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="search-form">
+      <div class="wrapper">
+        <div class="search">
+          <div class="field"><span class="material-symbols-outlined icon">location_on</span>Anywhere</div>
+          <div class="field"><span class="material-symbols-outlined icon">travel</span>London Airports</div>
+          <div class="field"><span class="material-symbols-outlined icon">calendar_today</span>Jun 2026</div>
+          <div class="field"><span class="material-symbols-outlined icon">group</span>2 Adults, 1 Room</div>
+          <div class="submit">
+            <div>Search</div>
+          </div>
+        </div> 
+      </div> 
+    </div>
+
+
+    
+
+    <div class="content">
+      <div class="wrapper">
+        <div class="filters">
+
+          <div class="bags" style="padding:12px; border:solid 1px #f0f0f0; margin:0 0 16px; border-radius:4px; position:relative">
+            <img src="img/bags-big.svg" style="display:inline-block; height:20px; vertical-align:top; margin-right:8px;"/>
+              <div style="display:inline-block; vertical-align:top;">
+              <div style="font-size:16px; font-weight:bold; margin-top:2px;">Add hold bags</div>
+            </div>
+            <select class="add-bags" style="position:absolute; right:16px">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          
+          
+          
+          
+          <div class="filter-group" style="padding-top:0;">
+            <h2>Board Basis</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">All inclusive</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Bed & Breakfast</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Full board</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Half board</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Room only</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Self catering</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Star rating</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label"><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span><span class="material-symbols-outlined fill icon-star">star</span></div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Budget</h2>
+          </div>
+
+
+          <div id="f-destinations" class="filter-group">
+            <h2>Destinations</h2>
+            <div class="filter-sub-group" rel="short-haul">
+
+              <h3>Short Haul</h3>
+              <div class="detail">
+                <img src='img/flight.svg' class='icon' />
+                <span style="color:#767676; font-size:13px;">2 -  6 hrs </span>
+              </div>
+              
+              <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Canary Islands</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Spain</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Greece</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Turkey</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Balearics</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Portugal</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Egypt</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Italy</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Cyprus</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Tunisia</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Morocco</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Malta</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Croatia</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Cape Verde</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Bulgaria</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Madeira</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+
+              <div class="dest-filter-ctrl" rel="open">
+                <a href="#" rel="short-haul">See more</a>
+              </div>
+              <div class="dest-filter-ctrl" rel="close"  style="display:none;">
+                <a href="#" rel="short-haul">See less</a>
+              </div>
+            </div>
+            
+            <div class="filter-sub-group" rel="long-haul" style="margin-bottom: 0;"> 
+              <h3>Long Haul</h3>
+              <div class="detail">
+                <img src='img/flight.svg' class='icon' />
+                <span style="color:#767676; font-size:13px;">6+ hrs </span>
+              </div>
+              <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">United Arab Emirates</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Mexico</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Thailand</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Caribbean</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Maldives</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Mauritius</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Sri Lanka</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Bali</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+              <div class="dest-filter-ctrl" rel="open">
+                <a href="#" rel="long-haul">See more</a>
+              </div>
+              <div class="dest-filter-ctrl" rel="close" style="display:none;">
+                <a href="#" rel="long-haul">See less</a>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+
+            <style type="text/css">
+              .dest-filter-ctrl {margin-top:16px; font-size:14px;}
+            </style>
+
+            
+ 
+
+          </div>
+
+          <div class="filter-group">
+            <h2>Trip Advisor score</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">5</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">4 & above</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">3 & above</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Hotel facilities</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Air conditioning</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Aqua park</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">By the beach</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Holiday type</h2>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Adult only</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Good for families</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="item-cb">
+              <label class="cb-container">
+                <div class="label">Lively</div>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <style type="text/css">
+          .context {padding:16px 0 32px;}
+          .context h1 {font-size:28px;}
+          .results-card {background-color: #fff; border: solid 1px #f0f0f0; margin-bottom: 24px; border-radius:4px; min-height:260px; position: relative;}
+          .results-card .photo {background-size: cover; position:absolute; top:0; left:0; bottom:0; width:40%; background-color: #eee; background-repeat: no-repeat; border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+          .results-card .photo .perk {position:absolute; top:8px; left:8px; border-radius:4px; padding:4px 8px; background-color:#D91677; color:#fff; font-weight: bold; font-size: 14px;}
+          .results-card .photo .count {position:absolute; bottom:8px; right:16px; font-size:12px; padding:4px 8px; background-color:#fff; border-radius:4px; font-weight: bold;}
+          .results-card .photo .save {border-radius:50%; background-color: #fff; padding:7px; position:absolute; top:8px; right:16px; width:28px; height:28px;}
+          .results-card .photo .next {position:absolute; height:28px; width:28px; padding:5px 8px; border-radius:50%; background-color: #fff; right:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+          .results-card .photo .prev {position:absolute; height:28px; width:28px; padding:5px 7px; border-radius:50%; background-color: #fff; left:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+          .results-card .content {margin-left:40%; padding:16px 24px 16px 24px; position:relative}
+          .results-card .content .name {font-size: 20px; font-weight: bold; color:#17317F;}
+
+          .rating {margin-top:4px;}
+          .rating .star {display:inline-block; margin-right:4px;}
+          .icon-star {font-size: 20px; color:#17317F}
+          .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
+          .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+          .rating .stars {margin-top:1px} 
+          .detail {margin-bottom:12px; position:relative; padding-left: 32px;}
+          .detail .icon {position:absolute; top:2px; left:0; height:16px;}
+          .detail  {font-size: 14px!important; }
+          .detail .map-link {font-weight: bold;}
+          .detail a {font-weight: bold}
+          .perk {color:#D91677; font-weight: bold;} 
+          .perk .icon {height:20px;}
+          .perk .inline {padding-top:4px; display:inline-block; font-size: 14px!important;}
+          a.inline-link {color:#313137; text-decoration: underline; text-decoration-style:dotted; text-decoration-color: #767676; font-weight: normal;}
+
+          .results-card .action {overflow:hidden; position:absolute; right:24px; bottom:24px;}
+          .results-card .action > div {}
+          .results-card .action > div.price {text-align: right; margin-bottom:16px;}
+        
+          .results-card .action .from {color:#767676; font-size:12px; display: none}
+          .results-card .action .price-lead {font-size:32px; font-weight: bold; color:#17317F}
+          .results-card .action .price-secondary {font-size:14px;}
+          .results-card .action .cta .button {background-color:#FEDC07; color:#17317F; font-weight: bold; font-size: 14px; border-radius:4px; text-align:center; padding: 16px 0; margin-top:8px; } 
+        </style>
+
+        <div class="list">
+
+          <div style="padding:12px 0 32px; position:relative">
+            <h1 style="font-size:24px;">We've found you 19188 holidays</h1>
+            
+            
+
+
+            <div style="position:absolute; right:0; top:0; padding: 12px 16px 12px 48px; border:solid 1px #f0f0f0; border-radius:4px;">
+              <img src="img/sort.svg" style="position:absolute; left:16px; top:12px; height:20px;"/>
+              <span>Sort by:</span>
+              <select class="dd-sort">
+                <option>Recommended</option>
+                <option>Lowest price first</option>
+                <option>Highest price first</option>
+                <option>Star rating</option>
+                <option>TripAdvisor rating</option>
+              </select>
+            </div>
+          </div>
+          <div class="hotel-list"></div>
+          
+
+
+
+          
+
+          
+
+          
+          <!--<div class="results-card"></div>-->
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlays + Modals -->
+
+    <div class="overlay"></div>
+    <div class="modal-dest-filter">
+      <div class="modal-content">
+        
+      </div>
+    </div>
+    
+  </body>
+   <style type="text/css">
+
+
+    .overlay {position:fixed; top:0; left:0; right:0; bottom:0; background-color: #313137; opacity:0.9; display:none;}
+    .modal-dest-filter {position:fixed; width:800px; height:600px; left:50%; top:50%; margin-left:-400px; margin-top:-300px; background-color: #fff; display:none; border-radius:8px;}
+    .modal-content {}
+
+   
+
+.cb-container:hover {
+  cursor: pointer;
+}
+
+    .cb-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+    /* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  height: 20px;
+  width: 21px;
+  background-color: #fff;
+  border-radius:4px;
+  border:solid 1px #1A73E8;
+}
+
+/* On mouse-over, add a grey background color */
+.cb-container:hover input ~ .checkmark {
+  background-color: #EDF4FF;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb-container input:checked ~ .checkmark {
+  background-color: #1A73E8;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.cb-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb-container .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border:solid 1px #1A73E8;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: #EDF4FF;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: #1A73E8;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+  </style>
+</html>
