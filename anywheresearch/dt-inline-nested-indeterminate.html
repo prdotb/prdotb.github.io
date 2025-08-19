@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTB Prototypes</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans:400,800,900' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="search-list.js"></script>
+
+    <script>
+      
+      $(document).ready(function(){
+
+        $(".countries > li > a").click(function(e){
+      e.preventDefault(); 
+      $(this).siblings(".islands").toggle();
+      $(this).toggleClass("up");
+    });
+
+
+    // control check box interaction  
+    
+    $('input[type="checkbox"]').change(function(e) {
+
+      var checked = $(this).prop("checked"),
+        container = $(this).parent(),
+        siblings = container.siblings();
+
+      container.find('input[type="checkbox"]').prop({
+        indeterminate: false,
+        checked: checked
+      });
+
+  function checkSiblings(el) {
+
+    var parent = el.parent().parent(),
+        all = true;
+
+    el.siblings().each(function() {
+      let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+      return returnValue;
+    });
+    
+    if (all && checked) {
+
+      parent.children('input[type="checkbox"]').prop({
+        indeterminate: false,
+        checked: checked
+      });
+
+      checkSiblings(parent);
+
+    } else if (all && !checked) {
+
+      parent.children('input[type="checkbox"]').prop("checked", checked);
+      parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+      checkSiblings(parent);
+
+    } else {
+
+      el.parents("li").children('input[type="checkbox"]').prop({
+        indeterminate: true,
+        checked: false
+      });
+
+    }
+
+  }
+
+  checkSiblings(container);
+});
+
+
+
+
+        // Build hotel list 
+        var hotelData = "hotels.json"; 
+        $.getJSON("hotels.js", function (data){
+          
+          buildSearchList(data)
+          
+        }).fail(function(data){
+            console.log("fail");
+        }).always(function(data){
+          
+        });
+      })
+    </script>
+
+
+                
+              
+         
+
+    <style>
+      * {margin:0; box-sizing: border-box;}
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ font-size:16px; background-color:#fff; color:#313137;}
+      
+      a {color:#1A73E8; text-decoration: none;}
+
+      .wrapper {max-width: 1400px; margin:0 auto; padding:0 40px;}
+
+      .page-header {background-color:#1A73E8; color:#fff; padding:20px 0; overflow:hidden;}
+      .page-header .logo {float:left; width: 200px;}
+      .page-header .links {float:right; width:calc(100% - 200px) text-align:right; padding-top:12px;}
+      .page-header .links > div {display:inline-block; margin-left:24px; vertical-align: middle;}
+      .page-header a {color:#fff; font-weight: bold;}
+  
+
+      .search-form {background-color:#1A73E8; padding-bottom:16px;}
+      .search-form .search {background-color:#fff; border-radius:4px; overflow:hidden;}
+      .search-form .search > div {float:left; }
+      .search-form .search .field {position:relative; width:21%; border-right:solid 1px #f0f0f0; padding:16px 16px 16px 48px; white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; font-size:14px; font-weight: bold;}
+      .search-form .search .field .icon {position:absolute; left:16px; top:12px; color:#1A73E8}
+      .search-form .search .submit {width:16%; position:relative;}
+      .search-form .search .submit > div {background-color:#ddd; font-weight: bold; position:absolute; left:8px; right:8px; top:8px; padding:8px; text-align: center; border-radius:4px; background-color:#FEDC07; color:#17317F;}
+
+      .content .wrapper {position:relative; margin-top:40px;}
+      .content .filters {position:absolute; top:0; left:40px; width:240px}
+      .content .list {margin-left:280px;}
+
+      .filter-group {padding:16px 0; border-bottom: solid 2px #f0f0f0}
+      .filter-group .icon-star {font-size: 18px;}
+      .filter-group  h2 {margin-bottom:16px; font-size: 18px}
+      
+
+       .add-bags {border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px; font-weight: bold;}
+      .add-bags:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
+
+      .dd-sort { padding:0; border:solid 0px #f0f0f0; border-radius:4px; font-size: 16px;  font-weight: bold;color:#313137}
+      .dd-sort:focus, .add-bags:hover, .add-bags:active, .add-bags:checked {border:solid 0px #f0f0f0; box-shadow: none;}
+
+      ul.destinations {margin:0; padding:0; font-size: 14px;}
+
+      .filter-group > ul {margin:0; padding:0;}
+      .filter-group li {list-style-type:none; font-size: 14px; margin:8px 0 8px 0}
+      
+      ul.destinations li {position:relative; list-style-type:none; margin:8px 0 8px 0}
+      
+      img.down {}
+
+      ul.islands {display:none;}
+      ul.countries {margin:0 0 0 16px; padding:0}
+      ul.islands {margin:0 0 16px 16px; padding:0}
+
+      .countries > li > a {height:12px; width:16px; position:absolute; top:4px; right:0; background:url('img/chevron-down.svg') no-repeat; background-size: 12px 12px;}
+      .countries > li > a.up {background:url('img/chevron-up.svg') no-repeat; background-size: 12px 12px;} 
+
+
+      .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+    </style>
+
+  </head>
+  <body>
+  	<div class="page-header">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="../img/logo.svg" style="height:50px;"/>
+        </div> 
+        <div class="links">
+          <div><a href="#">Log in</a></div>
+          <div><a href="#">My Bookings</a></div>
+          <div><a href="#">Saved Holidays</a></div>
+          <div><a href="#">Previous Searches</a></div>
+          <div><a href="#"><span class="material-symbols-outlined">menu</span></a></div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="search-form">
+      <div class="wrapper">
+        <div class="search">
+          <div class="field"><span class="material-symbols-outlined icon">location_on</span>Anywhere</div>
+          <div class="field"><span class="material-symbols-outlined icon">travel</span>London Airports</div>
+          <div class="field"><span class="material-symbols-outlined icon">calendar_today</span>Jun 2026</div>
+          <div class="field"><span class="material-symbols-outlined icon">group</span>2 Adults, 1 Room</div>
+          <div class="submit">
+            <div>Search</div>
+          </div>
+        </div> 
+      </div> 
+    </div>
+
+
+    
+
+    <div class="content">
+      <div class="wrapper">
+        <div class="filters">
+
+          <div class="bags" style="padding:12px; border:solid 1px #f0f0f0; margin:0 0 16px; border-radius:4px; position:relative">
+            <img src="img/bags-big.svg" style="display:inline-block; height:20px; vertical-align:top; margin-right:8px;"/>
+              <div style="display:inline-block; vertical-align:top;">
+              <div style="font-size:16px; font-weight:bold; margin-top:2px;">Add hold bags</div>
+            </div>
+            <select class="add-bags" style="position:absolute; right:16px">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          
+          
+          
+          
+          <div class="filter-group" style="padding-top:0;">
+            <h2>Board Basis</h2>
+            <ul>
+              <li>
+                <input type="checkbox" name="All-Inclusive" id="All-Inclusive">
+                <label for="All-Inclusive">All Inclusive</label>
+              </li>
+              <li>
+                <input type="checkbox" name="Full-Board" id="Full-Board">
+                <label for="Full-Board">Full Board</label>
+              </li>
+              <li>
+                <input type="checkbox" name="Half-Board" id="Half-Board">
+                <label for="Half-Board">Half Board</label>
+              </li>
+              <li>
+                <input type="checkbox" name="bb" id="bb">
+                <label for="bb">Bed & Breakfast</label>
+              </li>
+              <li>
+                <input type="checkbox" name="room" id="room">
+                <label for="room">Room Only</label>
+              </li>
+              <li>
+                <input type="checkbox" name="self" id="self">
+                <label for="self">Self Catering</label>
+              </li>
+            </ul>
+            
+          </div>
+
+          
+
+          <style type="text/css">
+            
+          </style>
+
+
+          <div id="f-destinations" class="filter-group">
+            <h2>Destinations</h2>
+            <ul class="destinations">
+  <li>
+    <input type="checkbox" name="short-haul" id="short-haul">
+    <label for="short-haul" style="font-weight:bold;">Short Haul</label>
+   
+
+    <ul class="countries" style="margin-top:12px;">
+      <li>
+        <input type="checkbox" name="Canary-Islands" id="Canary-Islands">
+        <label for="Canary-Islands">Canary Islands</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Tenerife" id="Tenerife" style="border-color: #eee;">
+              <label for="Tenerife">Tenerife</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Gran-Canaria" id="Gran-Canaria">
+              <label for="Gran-Canaria">Gran Canaria </label>
+          </li>
+          <li>
+            <input type="checkbox" name="Fuertaventura" id="Fuertaventura">
+              <label for="Fuertaventura">Fuertaventura</label>
+          </li>
+          <li>
+            <input type="checkbox" name="La-Palma" id="La-Palma">
+              <label for="La-Palma">La Palma</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Lanzarote " id="Lanzarote ">
+              <label for="Lanzarote ">Lanzarote </label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="tall-2" id="tall-2">
+        <label for="tall-2">Spain</label>
+        <a class="control" href="#"></a>
+
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Costa-Almeria" id="Costa-Almeria">
+            <label for="Costa-Almeria">Costa Almeria</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Blanca" id="Costa-Blanca">
+            <label for="Costa-Blanca">Costa Blanca</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Brava" id="Costa-Brava">
+            <label for="Costa-Brava">Costa Brava</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Calida" id="Costa-Calida">
+            <label for="Costa-Calida">Costa Calida</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-de-la-Luz" id="Costa-de-la-Luz">
+            <label for="Costa-de-la-Luz">Costa de la Luz</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Del-Azahar" id="Costa-Del-Azahar">
+            <label for="Costa-Del-Azahar">Costa Del Azahar</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-del-Sol" id="Costa-del-Sol">
+            <label for="Costa-del-Sol">Costa del Sol</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Dorada" id="Costa-Dorada">
+            <label for="Costa-Dorada">Costa Dorada</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="tall-3" id="tall-3">
+        <label for="tall-3">Greece</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Corfu" id="Corfu">
+            <label for="Corfu">Corfu</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Blanca" id="Crete">
+            <label for="Crete">Crete</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Halkidiki" id="Halkidiki">
+            <label for="Halkidiki">Halkidiki</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Kefalonia" id="Kefalonia">
+            <label for="Kefalonia">Kefalonia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Kos" id="Kos">
+            <label for="Kos">Kos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Mykonos" id="Mykonos">
+            <label for="Mykonos">Mykonos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Peloponnese" id="Peloponnese">
+            <label for="Peloponnese">Peloponnese</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Preveza-Area" id="Preveza-Area">
+            <label for="Preveza-Area">Preveza Area</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Rhodes" id="Rhodes">
+            <label for="Rhodes">Rhodes</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Samos" id="Samos">
+            <label for="Samos">Samos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Santorini" id="Santorini">
+            <label for="Santorini">Santorini</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Skiathos" id="Skiathos">
+            <label for="Skiathos">Skiathos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Thessaloniki" id="Thessaloniki">
+            <label for="Thessaloniki">Thessaloniki</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Zante" id="Zante">
+            <label for="Zante">Zante</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Turkey" id="Turkey">
+        <label for="Turkey">Turkey</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Antalya" id="Antalya">
+              <label for="Antalya">Antalya</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Bodrum" id="Bodrum">
+              <label for="Bodrum">Bodrum</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Cappadocia" id="Cappadocia">
+              <label for="Cappadocia">Cappadocia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Dalaman" id="Dalaman">
+              <label for="La-Palma">Dalaman</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Istanbul" id="Istanbul">
+              <label for="Istanbul">Istanbul</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Izmir-area" id="Izmir-area">
+              <label for="Izmir-area">Izmir area</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Balearics" id="Balearics">
+        <label for="Balearics">Balearics</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+
+          <li>
+            <input type="checkbox" name="Ibiza" id="Ibiza">
+              <label for="Ibiza">Ibiza</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Majorca" id="Majorca">
+              <label for="Majorca">Majorca</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Menorca" id="Menorca">
+              <label for="Menorca">Menorca</label>
+          </li>
+
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Portugal" id="Portugal">
+        <label for="Portugal">Portugal</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Alentejo" id="Alentejo">
+              <label for="Alentejo">Alentejo </label>
+          </li>
+          <li>
+            <input type="checkbox" name="Algarve" id="Algarve">
+              <label for="Algarve">Algarve</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Egypt" id="Egypt">
+        <label for="Egypt">Egypt</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Luxor" id="Luxor">
+              <label for="Luxor">Luxor</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Hurhgada" id="Hurhgada">
+              <label for="Hurhgada">Red Sea - Hurhgada</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Marsa-Alam" id="Marsa-Alam">
+              <label for="Marsa-Alam">Red Sea - Marsa Alam</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Sharm-El-Sheikh" id="Sharm-El-Sheikh">
+              <label for="Hurhgada">Red Sea - Sharm El Sheikh</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Italy" id="Italy">
+        <label for="Italy">Italy</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Puglia" id="Puglia">
+              <label for="Puglia">Puglia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Rimini" id="Rimini">
+              <label for="Rimini">Rimini</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Sardinia" id="Sardinia">
+              <label for="Sardinia">Sardinia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Sicily" id="Sicily">
+              <label for="Sicily">Sicily</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Sorrento" id="Sorrento">
+              <label for="Sorrento">Sorrento & Amalfi Coast</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Cyprus" id="Cyprus">
+        <label for="Cyprus">Cyprus</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Larnaca" id="Larnaca">
+              <label for="Larnaca">Larnaca (Ayia Napa)</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Limassol" id="Limassol">
+              <label for="Limassol">Limassol Area </label>
+          </li>
+          <li>
+            <input type="checkbox" name="Paphos" id="Paphos">
+              <label for="Paphos">Paphos</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Tunisia<" id="Tunisia">
+        <label for="Tunisia<">Tunisia</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Djerba" id="Djerba">
+              <label for="Djerba">Djerba Area</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Tunis" id="Tunis">
+              <label for="Tunis">Tunis and Cathege Coast </label>
+          </li>
+          <li>
+            <input type="checkbox" name="Tunisia-area" id="Tunisia-area">
+              <label for="Tunisia-area">Tunisia area</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Morocco" id="Morocco">
+        <label for="Morocco">Morocco</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Agadir" id="Agadir">
+              <label for="Agadir">Agadir</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Essaouira" id="Essaouira">
+              <label for="Essaouira">Essaouira</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Fez" id="Fez">
+              <label for="Fez">Fez</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Rabat" id="Rabat">
+              <label for="Rabat">Rabat</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Tangier" id="Tangier">
+              <label for="Tangier">Tangier</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Malta" id="Malta">
+        <label for="Malta">Malta</label>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Croatia" id="Croatia">
+        <label for="Croatia">Croatia</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Dalmatian" id="Dalmatian">
+              <label for="Dalmatian">Dalmatian coast</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Dubrovnik" id="Dubrovnik">
+              <label for="Dubrovnik">Dubrovnik Riviera</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Istrian" id="Istrian">
+              <label for="Istrian">Istrian Riviera</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Cape-Verde" id="Cape-Verde">
+        <label for="Cape-Verde">Cape Verde</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Sal-Island" id="Sal-Island">
+              <label for="Sal-Island">Sal Island</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Bulgari" id="Bulgari">
+        <label for="Bulgari">Bulgaria</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Bourgas" id="Bourgas">
+              <label for="Bourgas">Bourgas (Sunny Beach)</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Varna" id="Varna">
+              <label for="Varna">Varna (Golden Sands)</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Madiera" id="Madiera">
+        <label for="Madiera">Madiera</label>
+      </li>
+
+    </ul>
+  </li>
+  <li style="margin-top:20px;">
+    <input type="checkbox" name="short" id="short">
+    <label for="short" style="font-weight:bold;">Long Haul</label>
+
+    <ul class="countries" style="margin-top:12px;">
+      <li>
+        <input type="checkbox" name="uae" id="uae">
+        <label for="uae">United Arab Emirates</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Abu-Dhabi" id="Abu-Dhabi">
+              <label for="Bourgas">Abu Dhabi</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Dubai" id="Dubai">
+              <label for="Dubai">Dubai</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Mexico" id="Mexico">
+        <label for="Mexico">Mexico</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Maya" id="Maya">
+              <label for="Maya">Riviera Maya</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Thailand" id="Thailand">
+        <label for="Thailand">Thailand</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Bangkok" id="Bangkok">
+              <label for="Bangkok">Bangkok</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Hua-Hin" id="Hua-Hin">
+              <label for="Hua-Hin">Hua Hin</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Khao-Lak" id="Khao-Lak">
+              <label for="Khao-Lak">Khao Lak</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Koh-Samui" id="Koh-Samui">
+              <label for="Koh-Samui">Koh Samui</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Krabi" id="Krabi">
+              <label for="Krabi">Krabi</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Pattaya" id="Pattaya">
+              <label for="Pattaya">Pattaya</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Phuket" id="Phuket">
+              <label for="Phuket">Phuket</label>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Carribean" id="Carribean">
+        <label for="Carribean">Carribean</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Antigua" id="Antigua">
+              <label for="Antigua">Antigua</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Bahamas" id="Bahamas">
+              <label for="Bahamas">Bahamas</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Barbados" id="Barbados">
+              <label for="Barbados">Barbados</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Dominican-Republic" id="Dominican-Republic">
+              <label for="Dominican-Republic">Dominican Republic</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Grenada" id="Grenada">
+              <label for="Grenada">Grenada</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Jamaica" id="Jamaica">
+              <label for="Jamaica">Jamaica</label>
+          </li>
+          <li>
+            <input type="checkbox" name="St-Lucia" id="St-Lucia">
+              <label for="St-Lucia">St Lucia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Tobago" id="Tobago">
+              <label for="Tobago">Tobago</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Maldives" id="Maldives">
+        <label for="Maldives">Maldives</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Mauritius" id="Mauritius">
+        <label for="Mauritius">Mauritius</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Sri-Lanka" id="Sri-Lanka">
+        <label for="Sri-Lanka">Sri Lanka</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Bali" id="Bali">
+        <label for="Bali">Bali</label>
+      </li>
+
+    </ul>
+  </li>
+</ul>
+
+            
+
+          </div>
+
+          <div class="filter-group">
+            <h2>Star rating</h2>
+            
+          </div>
+
+          <div class="filter-group">
+            <h2>Budget</h2>
+          </div>
+
+          <div class="filter-group">
+            <h2>Trip Advisor score</h2>
+            
+          </div>
+
+          <div class="filter-group">
+            <h2>Hotel facilities</h2>
+            
+          </div>
+
+          <div class="filter-group">
+            <h2>Holiday type</h2>
+            
+          </div>
+
+        </div>
+
+        <style type="text/css">
+          .context {padding:16px 0 32px;}
+          .context h1 {font-size:28px;}
+          .results-card {background-color: #fff; border: solid 1px #f0f0f0; margin-bottom: 24px; border-radius:4px; min-height:260px; position: relative;}
+          .results-card .photo {background-size: cover; position:absolute; top:0; left:0; bottom:0; width:40%; background-color: #eee; background-repeat: no-repeat; border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+          .results-card .photo .perk {position:absolute; top:8px; left:8px; border-radius:4px; padding:4px 8px; background-color:#D91677; color:#fff; font-weight: bold; font-size: 14px;}
+          .results-card .photo .count {position:absolute; bottom:8px; right:16px; font-size:12px; padding:4px 8px; background-color:#fff; border-radius:4px; font-weight: bold;}
+          .results-card .photo .save {border-radius:50%; background-color: #fff; padding:7px; position:absolute; top:8px; right:16px; width:28px; height:28px;}
+          .results-card .photo .next {position:absolute; height:28px; width:28px; padding:5px 8px; border-radius:50%; background-color: #fff; right:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+          .results-card .photo .prev {position:absolute; height:28px; width:28px; padding:5px 7px; border-radius:50%; background-color: #fff; left:16px; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);}
+          .results-card .content {margin-left:40%; padding:16px 24px 16px 24px; position:relative}
+          .results-card .content .name {font-size: 20px; font-weight: bold; color:#17317F;}
+
+          .rating {margin-top:4px;}
+          .rating .star {display:inline-block; margin-right:4px;}
+          .icon-star {font-size: 20px; color:#17317F}
+          .rating > img {display: inline-block; margin-right:8px; vertical-align: top}
+          .rating > span {display: inline-block; vertical-align: top; font-size:12px; color:#666;}
+          .rating .stars {margin-top:1px} 
+          .detail {margin-bottom:12px; position:relative; padding-left: 32px;}
+          .detail .icon {position:absolute; top:2px; left:0; height:16px;}
+          .detail  {font-size: 14px!important; }
+          .detail .map-link {font-weight: bold;}
+          .detail a {font-weight: bold}
+          .perk {color:#D91677; font-weight: bold;} 
+          .perk .icon {height:20px;}
+          .perk .inline {padding-top:4px; display:inline-block; font-size: 14px!important;}
+          a.inline-link {color:#313137; text-decoration: underline; text-decoration-style:dotted; text-decoration-color: #767676; font-weight: normal;}
+
+          .results-card .action {overflow:hidden; position:absolute; right:24px; bottom:24px;}
+          .results-card .action > div {}
+          .results-card .action > div.price {text-align: right; margin-bottom:16px;}
+        
+          .results-card .action .from {color:#767676; font-size:12px; display: none}
+          .results-card .action .price-lead {font-size:32px; font-weight: bold; color:#17317F}
+          .results-card .action .price-secondary {font-size:14px;}
+          .results-card .action .cta .button {background-color:#FEDC07; color:#17317F; font-weight: bold; font-size: 14px; border-radius:4px; text-align:center; padding: 16px 0; margin-top:8px; } 
+        </style>
+
+        <div class="list">
+
+          <div style="padding:12px 0 32px; position:relative">
+            <h1 style="font-size:24px;">We've found you 19188 holidays</h1>
+            
+            
+
+
+            <div style="position:absolute; right:0; top:0; padding: 12px 16px 12px 48px; border:solid 1px #f0f0f0; border-radius:4px;">
+              <img src="img/sort.svg" style="position:absolute; left:16px; top:12px; height:20px;"/>
+              <span>Sort by:</span>
+              <select class="dd-sort">
+                <option>Recommended</option>
+                <option>Lowest price first</option>
+                <option>Highest price first</option>
+                <option>Star rating</option>
+                <option>TripAdvisor rating</option>
+              </select>
+            </div>
+          </div>
+          <div class="hotel-list"></div>
+          
+
+
+
+          
+
+          
+
+          
+          <!--<div class="results-card"></div>-->
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlays + Modals -->
+
+    <div class="overlay"></div>
+    <div class="modal-dest-filter">
+      <div class="modal-content">
+        
+      </div>
+    </div>
+    
+  </body>
+   <style type="text/css">
+
+
+    .overlay {position:fixed; top:0; left:0; right:0; bottom:0; background-color: #313137; opacity:0.9; display:none;}
+    .modal-dest-filter {position:fixed; width:800px; height:600px; left:50%; top:50%; margin-left:-400px; margin-top:-300px; background-color: #fff; display:none; border-radius:8px;}
+    .modal-content {}
+
+
+  </style>
+</html>

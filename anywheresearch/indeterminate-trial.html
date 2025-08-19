@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTB Prototypes</title>
+
+    <style type="text/css">
+    	body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+ font-size:16px; background-color:#fff; color:#313137;}
+
+ 		ul.destinations {width:260px; font-size:14px;}
+    	ul.destinations li {position:relative; list-style-type:none; margin:8px 0 8px -17px}
+    	
+    	img.down {}
+
+    	ul.islands {display:none;}
+
+    	.countries > li > a {height:12px; width:16px; position:absolute; top:4px; right:0; background:url('img/chevron-down.svg') no-repeat; background-size: 12px 12px;}
+    	.countries > li > a.up {background:url('img/chevron-up.svg') no-repeat; background-size: 12px 12px;} 
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <script>
+
+  	$(document).ready(function(){
+
+  	// show + hide sections 
+
+  	$(".countries > li > a").click(function(e){
+  		e.preventDefault(); 
+  		$(this).siblings(".islands").toggle();
+  		$(this).toggleClass("up");
+  	});
+
+
+  	// control check box interaction 	
+  	
+  	$('input[type="checkbox"]').change(function(e) {
+
+  		var checked = $(this).prop("checked"),
+      	container = $(this).parent(),
+      	siblings = container.siblings();
+
+  		container.find('input[type="checkbox"]').prop({
+    		indeterminate: false,
+    		checked: checked
+  		});
+
+  function checkSiblings(el) {
+
+    var parent = el.parent().parent(),
+        all = true;
+
+    el.siblings().each(function() {
+      let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+      return returnValue;
+    });
+    
+    if (all && checked) {
+
+      parent.children('input[type="checkbox"]').prop({
+        indeterminate: false,
+        checked: checked
+      });
+
+      checkSiblings(parent);
+
+    } else if (all && !checked) {
+
+      parent.children('input[type="checkbox"]').prop("checked", checked);
+      parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+      checkSiblings(parent);
+
+    } else {
+
+      el.parents("li").children('input[type="checkbox"]').prop({
+        indeterminate: true,
+        checked: false
+      });
+
+    }
+
+  }
+
+  checkSiblings(container);
+});
+});
+  </script>
+
+  <body>
+
+
+<h1>Indeterminate Checkboxes</h1>
+
+<ul class="destinations">
+  <li>
+    <input type="checkbox" name="short-haul" id="short-haul">
+    <label for="short-haul" style="font-weight:bold;">Short Haul</label>
+   
+
+    <ul class="countries" style="margin-top:12px;">
+      <li>
+        <input type="checkbox" name="Canary-Islands" id="Canary-Islands">
+        <label for="Canary-Islands">Canary Islands</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Tenerife" id="Tenerife" style="border-color: #eee;">
+            	<label for="Tenerife">Tenerife</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Gran-Canaria" id="Gran-Canaria">
+            	<label for="Gran-Canaria">Gran Canaria </label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Fuertaventura" id="Fuertaventura">
+            	<label for="Fuertaventura">Fuertaventura</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="La-Palma" id="La-Palma">
+            	<label for="La-Palma">La Palma</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Lanzarote " id="Lanzarote ">
+            	<label for="Lanzarote ">Lanzarote </label>
+        	</li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="tall-2" id="tall-2">
+        <label for="tall-2">Spain</label>
+        <a class="control" href="#"></a>
+
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Costa-Almeria" id="Costa-Almeria">
+            <label for="Costa-Almeria">Costa Almeria</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Blanca" id="Costa-Blanca">
+            <label for="Costa-Blanca">Costa Blanca</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Brava" id="Costa-Brava">
+            <label for="Costa-Brava">Costa Brava</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Calida" id="Costa-Calida">
+            <label for="Costa-Calida">Costa Calida</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-de-la-Luz" id="Costa-de-la-Luz">
+            <label for="Costa-de-la-Luz">Costa de la Luz</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Del-Azahar" id="Costa-Del-Azahar">
+            <label for="Costa-Del-Azahar">Costa Del Azahar</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-del-Sol" id="Costa-del-Sol">
+            <label for="Costa-del-Sol">Costa del Sol</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Dorada" id="Costa-Dorada">
+            <label for="Costa-Dorada">Costa Dorada</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="tall-3" id="tall-3">
+        <label for="tall-3">Greece</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+          <li>
+            <input type="checkbox" name="Corfu" id="Corfu">
+            <label for="Corfu">Corfu</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Costa-Blanca" id="Crete">
+            <label for="Crete">Crete</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Halkidiki" id="Halkidiki">
+            <label for="Halkidiki">Halkidiki</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Kefalonia" id="Kefalonia">
+            <label for="Kefalonia">Kefalonia</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Kos" id="Kos">
+            <label for="Kos">Kos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Mykonos" id="Mykonos">
+            <label for="Mykonos">Mykonos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Peloponnese" id="Peloponnese">
+            <label for="Peloponnese">Peloponnese</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Preveza-Area" id="Preveza-Area">
+            <label for="Preveza-Area">Preveza Area</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Rhodes" id="Rhodes">
+            <label for="Rhodes">Rhodes</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Samos" id="Samos">
+            <label for="Samos">Samos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Santorini" id="Santorini">
+            <label for="Santorini">Santorini</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Skiathos" id="Skiathos">
+            <label for="Skiathos">Skiathos</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Thessaloniki" id="Thessaloniki">
+            <label for="Thessaloniki">Thessaloniki</label>
+          </li>
+          <li>
+            <input type="checkbox" name="Zante" id="Zante">
+            <label for="Zante">Zante</label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Turkey" id="Turkey">
+        <label for="Turkey">Turkey</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Antalya" id="Antalya">
+            	<label for="Antalya">Antalya</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Bodrum" id="Bodrum">
+            	<label for="Bodrum">Bodrum</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Cappadocia" id="Cappadocia">
+            	<label for="Cappadocia">Cappadocia</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Dalaman" id="Dalaman">
+            	<label for="La-Palma">Dalaman</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Istanbul" id="Istanbul">
+            	<label for="Istanbul">Istanbul</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Izmir-area" id="Izmir-area">
+            	<label for="Izmir-area">Izmir area</label>
+        	</li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Balearics" id="Balearics">
+        <label for="Balearics">Balearics</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+
+        	<li>
+        		<input type="checkbox" name="Ibiza" id="Ibiza">
+            	<label for="Ibiza">Ibiza</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Majorca" id="Majorca">
+            	<label for="Majorca">Majorca</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Menorca" id="Menorca">
+            	<label for="Menorca">Menorca</label>
+        	</li>
+
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Portugal" id="Portugal">
+        <label for="Portugal">Portugal</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Alentejo" id="Alentejo">
+            	<label for="Alentejo">Alentejo </label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Algarve" id="Algarve">
+            	<label for="Algarve">Algarve</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Egypt" id="Egypt">
+        <label for="Egypt">Egypt</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Luxor" id="Luxor">
+            	<label for="Luxor">Luxor</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Hurhgada" id="Hurhgada">
+            	<label for="Hurhgada">Red Sea - Hurhgada</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Marsa-Alam" id="Marsa-Alam">
+            	<label for="Marsa-Alam">Red Sea - Marsa Alam</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Sharm-El-Sheikh" id="Sharm-El-Sheikh">
+            	<label for="Hurhgada">Red Sea - Sharm El Sheikh</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Italy" id="Italy">
+        <label for="Italy">Italy</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Puglia" id="Puglia">
+            	<label for="Puglia">Puglia</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Rimini" id="Rimini">
+            	<label for="Rimini">Rimini</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Sardinia" id="Sardinia">
+            	<label for="Sardinia">Sardinia</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Sicily" id="Sicily">
+            	<label for="Sicily">Sicily</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Sorrento" id="Sorrento">
+            	<label for="Sorrento">Sorrento & Amalfi Coast</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Cyprus" id="Cyprus">
+        <label for="Cyprus">Cyprus</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Larnaca" id="Larnaca">
+            	<label for="Larnaca">Larnaca (Ayia Napa)</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Limassol" id="Limassol">
+            	<label for="Limassol">Limassol Area </label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Paphos" id="Paphos">
+            	<label for="Paphos">Paphos</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Tunisia<" id="Tunisia">
+        <label for="Tunisia<">Tunisia</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Djerba" id="Djerba">
+            	<label for="Djerba">Djerba Area</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Tunis" id="Tunis">
+            	<label for="Tunis">Tunis and Cathege Coast </label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Tunisia-area" id="Tunisia-area">
+            	<label for="Tunisia-area">Tunisia area</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Morocco" id="Morocco">
+        <label for="Morocco">Morocco</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Agadir" id="Agadir">
+            	<label for="Agadir">Agadir</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Essaouira" id="Essaouira">
+            	<label for="Essaouira">Essaouira</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Fez" id="Fez">
+            	<label for="Fez">Fez</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Rabat" id="Rabat">
+            	<label for="Rabat">Rabat</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Tangier" id="Tangier">
+            	<label for="Tangier">Tangier</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Malta" id="Malta">
+        <label for="Malta">Malta</label>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Croatia" id="Croatia">
+        <label for="Croatia">Croatia</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Dalmatian" id="Dalmatian">
+            	<label for="Dalmatian">Dalmatian coast</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Dubrovnik" id="Dubrovnik">
+            	<label for="Dubrovnik">Dubrovnik Riviera</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Istrian" id="Istrian">
+            	<label for="Istrian">Istrian Riviera</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Cape-Verde" id="Cape-Verde">
+        <label for="Cape-Verde">Cape Verde</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Sal-Island" id="Sal-Island">
+            	<label for="Sal-Island">Sal Island</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Bulgari" id="Bulgari">
+        <label for="Bulgari">Bulgaria</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Bourgas" id="Bourgas">
+            	<label for="Bourgas">Bourgas (Sunny Beach)</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Varna" id="Varna">
+            	<label for="Varna">Varna (Golden Sands)</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Madiera" id="Madiera">
+        <label for="Madiera">Madiera</label>
+      </li>
+
+    </ul>
+  </li>
+  <li style="margin-top:20px;">
+    <input type="checkbox" name="short" id="short">
+    <label for="short" style="font-weight:bold;">Long Haul</label>
+
+    <ul class="countries" style="margin-top:12px;">
+      <li>
+        <input type="checkbox" name="uae" id="uae">
+        <label for="uae">United Arab Emirates</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Abu-Dhabi" id="Abu-Dhabi">
+            	<label for="Bourgas">Abu Dhabi</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Dubai" id="Dubai">
+            	<label for="Dubai">Dubai</label>
+        	</li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Mexico" id="Mexico">
+        <label for="Mexico">Mexico</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Maya" id="Maya">
+            	<label for="Maya">Riviera Maya</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Thailand" id="Thailand">
+        <label for="Thailand">Thailand</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Bangkok" id="Bangkok">
+            	<label for="Bangkok">Bangkok</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Hua-Hin" id="Hua-Hin">
+            	<label for="Hua-Hin">Hua Hin</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Khao-Lak" id="Khao-Lak">
+            	<label for="Khao-Lak">Khao Lak</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Koh-Samui" id="Koh-Samui">
+            	<label for="Koh-Samui">Koh Samui</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Krabi" id="Krabi">
+            	<label for="Krabi">Krabi</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Pattaya" id="Pattaya">
+            	<label for="Pattaya">Pattaya</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Phuket" id="Phuket">
+            	<label for="Phuket">Phuket</label>
+        	</li>
+        </ul>
+      </li>
+
+      <li>
+        <input type="checkbox" name="Carribean" id="Carribean">
+        <label for="Carribean">Carribean</label>
+        <a class="control" href="#"></a>
+        <ul class="islands">
+        	<li>
+        		<input type="checkbox" name="Antigua" id="Antigua">
+            	<label for="Antigua">Antigua</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Bahamas" id="Bahamas">
+            	<label for="Bahamas">Bahamas</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Barbados" id="Barbados">
+            	<label for="Barbados">Barbados</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Dominican-Republic" id="Dominican-Republic">
+            	<label for="Dominican-Republic">Dominican Republic</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Grenada" id="Grenada">
+            	<label for="Grenada">Grenada</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Jamaica" id="Jamaica">
+            	<label for="Jamaica">Jamaica</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="St-Lucia" id="St-Lucia">
+            	<label for="St-Lucia">St Lucia</label>
+        	</li>
+        	<li>
+        		<input type="checkbox" name="Tobago" id="Tobago">
+            	<label for="Tobago">Tobago</label>
+        	</li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" name="Maldives" id="Maldives">
+        <label for="Maldives">Maldives</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Mauritius" id="Mauritius">
+        <label for="Mauritius">Mauritius</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Sri-Lanka" id="Sri-Lanka">
+        <label for="Sri-Lanka">Sri Lanka</label>
+      </li>
+      <li>
+        <input type="checkbox" name="Bali" id="Bali">
+        <label for="Bali">Bali</label>
+      </li>
+
+    </ul>
+  </li>
+</ul>
+
+</body>
+
+</html>
