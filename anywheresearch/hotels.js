@@ -10,7 +10,8 @@
 			"destination" : {
 				"resort": "Cala D Or,", 
 				"region" : "Majorca,",
-				"country" : "Spain"
+				"country" : "Spain", 
+				"geogId" : "cala-d-or"
 			}, 
 			"flight" : {
 				"departureAirport": "London Gatwick", 
@@ -36,7 +37,8 @@
 			"destination" : {
 				"resort": "Hurghada,", 
 				"region" : "",
-				"country" : "Egypt"
+				"country" : "Egypt",
+				"geogId" : "hurghada"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -62,7 +64,8 @@
 			"destination" : {
 				"resort": "Benidorm,", 
 				"region" : "Costa Blanca,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "benidorm"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -88,7 +91,8 @@
 			"destination" : {
 				"resort": "Playa De Las Americas,", 
 				"region" : "Tenerife,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "playa-de-las-america"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -114,7 +118,8 @@
 			"destination" : {
 				"resort": "Ixia,", 
 				"region" : "Rhodes,",
-				"country" : "Greece"
+				"country" : "Greece",
+				"geogId" : "ixia"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -140,7 +145,8 @@
 			"destination" : {
 				"resort": "Costa Teguise,", 
 				"region" : " Lanzarote,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "costa-teguise"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Luton", 
@@ -166,7 +172,8 @@
 			"destination" : {
 				"resort": "Marmaris,", 
 				"region" : " Dalaman,",
-				"country" : "Turkey"
+				"country" : "Turkey",
+				"geogId" : "marmaris"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Luton", 
@@ -192,7 +199,8 @@
 			"destination" : {
 				"resort": "Sarigerme,", 
 				"region" : " Dalaman,",
-				"country" : "Turkey"
+				"country" : "Turkey",
+				"geogId" : "sarigerme"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -218,7 +226,8 @@
 			"destination" : {
 				"resort": "Lloret De Mar,", 
 				"region" : "Costa Brava,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "lloret-de-mar"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Luton", 
@@ -244,7 +253,8 @@
 			"destination" : {
 				"resort": "Fuengirola,", 
 				"region" : "Costa del Sol,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "fuengirola"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -270,7 +280,8 @@
 			"destination" : {
 				"resort": "San Antonio,", 
 				"region" : "Ibiza,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "san-antonio"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -296,7 +307,8 @@
 			"destination" : {
 				"resort": "Side,", 
 				"region" : "Antalya,",
-				"country" : " Turkey"
+				"country" : " Turkey",
+				"geogId" : "side"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -322,7 +334,8 @@
 			"destination" : {
 				"resort": "Torremolinos,", 
 				"region" : "Costa del Sol,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "torremolinos"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -348,7 +361,8 @@
 			"destination" : {
 				"resort": "Analipsis,", 
 				"region" : "Crete,",
-				"country" : "Greece"
+				"country" : "Greece",
+				"geogId" : "analipsis"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -374,7 +388,8 @@
 			"destination" : {
 				"resort": "Hisaronu (Marmaris),", 
 				"region" : "Dalaman,",
-				"country" : "Turkey"
+				"country" : "Turkey",
+				"geogId" : "hisaronu"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
@@ -400,7 +415,8 @@
 			"destination" : {
 				"resort": "Magaluf,", 
 				"region" : "Majorca,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "magaluf"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Stansted", 
@@ -426,7 +442,8 @@
 			"destination" : {
 				"resort": "Costa Teguise,", 
 				"region" : "Lanzarote,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "costa-teguise"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Luton", 
@@ -452,7 +469,8 @@
 			"destination" : {
 				"resort": "Costa Adeje,", 
 				"region" : "Tenerife,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "costa-adeje"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Luton", 
@@ -478,7 +496,8 @@
 			"destination" : {
 				"resort": "Palma Nova,", 
 				"region" : "Majorca,",
-				"country" : "Spain"
+				"country" : "Spain",
+				"geogId" : "palma-nova"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Stansted", 
@@ -504,7 +523,8 @@
 			"destination" : {
 				"resort": "Analipsis,", 
 				"region" : "Crete,",
-				"country" : "Greece"
+				"country" : "Greece",
+				"geogId" : "analipsis"
 			}, 
 			"flight" : {
 				"departureAirport" : "London Gatwick", 
