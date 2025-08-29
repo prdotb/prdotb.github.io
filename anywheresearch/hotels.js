@@ -190,33 +190,6 @@
 
 		}, 
 		{
-			"name":"X Life Hotel - Adults Only (15+)", 
-			"starRating": 4,
-			"ta" : {
-				"taRating": 3.5, 
-				"taReviewsNum": 363
-			}, 
-			"destination" : {
-				"resort": "Sarigerme,", 
-				"region" : " Dalaman,",
-				"country" : "Turkey",
-				"geogId" : "sarigerme"
-			}, 
-			"flight" : {
-				"departureAirport" : "London Gatwick", 
-				"direct" : "Direct",
-				"holdBags" : 0
-			},
-			"boardBasis" : "All Inclusive", 
-			"dateRange" : "Thu 11 Jun 2026 - Thu 18 Jun 2026", 
-			"price" : {
-				"totalPrice" : "1,275", 
-				"pricePerPerson" : "638"
-			}, 
-			"images" : "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1400,quality=70,fit=cover,format=auto/m/286b2d2c6df8b2f5/original/XL-Sarigerme-ex-Castle-Resort-Adults-Only.jpg" 
-
-		},
-		{
 			"name":"BLUESEA Montevista Hawaii", 
 			"starRating": 3,
 			"ta" : {
@@ -433,33 +406,6 @@
 
 		},
 		{
-			"name":"Barcelo Teguise Beach - Adults Only", 
-			"starRating": 4,
-			"ta" : {
-				"taRating": 4.5, 
-				"taReviewsNum": 9348
-			}, 
-			"destination" : {
-				"resort": "Costa Teguise,", 
-				"region" : "Lanzarote,",
-				"country" : "Spain",
-				"geogId" : "costa-teguise"
-			}, 
-			"flight" : {
-				"departureAirport" : "London Luton", 
-				"direct" : "Direct",
-				"holdBags" : 0
-			},
-			"boardBasis" : "All Inclusive", 
-			"dateRange" : "Tue 2 Jun 2026 - Tue 9 Jun 2026", 
-			"price" : {
-				"totalPrice" : "1,503", 
-				"pricePerPerson" : "752"
-			}, 
-			"images" : "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1400,quality=70,fit=cover,format=auto/m/727fe277152e81e9/original/Barcelo-Teguise-Beach-Adults-Only.jpg" 
-
-		},
-		{
 			"name":"Laguna Park II", 
 			"starRating": 2,
 			"ta" : {
@@ -511,33 +457,6 @@
 				"pricePerPerson" : "565"
 			}, 
 			"images" : "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1180,quality=70,fit=cover,format=auto/m/36e28c6327c07daa/original/Sol-Palmanova.jpg" 
-
-		},
-		{
-			"name":"Stella Blue Seaside Resort - Adults Only (12+)", 
-			"starRating": 4,
-			"ta" : {
-				"taRating": 4.5, 
-				"taReviewsNum": 57
-			}, 
-			"destination" : {
-				"resort": "Analipsis,", 
-				"region" : "Crete,",
-				"country" : "Greece",
-				"geogId" : "analipsis"
-			}, 
-			"flight" : {
-				"departureAirport" : "London Gatwick", 
-				"direct" : "Direct",
-				"holdBags" : 0
-			},
-			"boardBasis" : "All Inclusive", 
-			"dateRange" : "Thu 11 Jun 2026 - Thu 18 Jun 2026", 
-			"price" : {
-				"totalPrice" : "2,079", 
-				"pricePerPerson" : "1,040"
-			}, 
-			"images" : "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1180,quality=70,fit=cover,format=auto/m/462f4603a1373574/original/Stella-Blue-Seaside-Resort.jpg" 
 
 		}
 	]
