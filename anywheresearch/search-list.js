@@ -193,5 +193,60 @@ function buildDestinationListDesktop (data, mapBoxToken) {
 
 }
 
+function buildDestinationListGallery(data, mapBoxToken) {
+  
+  $.each(data.destinations, function(i, obj){
+    var region = ""
+    if (obj.region != null) {
+      region = obj.region + ","
+    }
+
+    var destHighlightsList = ""
+    var galleryList = ""
+
+    for (let i in obj.description.highlights) {
+      destHighlightsList += "<li>" + obj.description.highlights[i] + "</li>";
+    }
+
+    for (let i in obj.images) {
+      galleryList += "<div><img src='des-photos/" + obj.images[i] + "'/></div>";
+    }
+
+    $(".dest-list").append(
+      "<div id='" + obj.id + "' class='dest-card'>"
+        + "<div class='content-container'>"
+          + "<div class='dest-content'>"
+            + "<div class='name'>" + obj.name + "</div>"
+            + "<div class='location'>" + region + " " + obj.country + "</div>"
+            + "<div class='data-points'>"
+              + "<div><span class='label'>Average temp:</span> <span class='value'>" + obj.aveTemperature.june + "&#176C</span></div>"
+              + "<div><span class='label'>Flight Time:</span> <span class='value'>" + obj.flightTime + "</span></div>"
+              + "<div><span class='label'>Transfer Time:</span> <span class='value'>" + obj.transferTime + "</span></div>"
+            + "</div>"
+            + "<div class='description'>"
+              + "<p>" + obj.description.snippet + "</p>"
+              + "<ul>" + destHighlightsList + "</ul>"
+              + "<div class='long-description'>" + obj.description.longer + "</div>"
+            + "</div>"
+          + "</div>"
+        + "</div>"
+        + "<div class='map-container'>"
+          + "<div class='tabs'>"
+            + "<div class='gallery-tab selected'><a href='#'>Photo gallery</a></div>"
+            + "<div class='map-tab'><a href='#'>Map view</a></div>"
+          + "</div>"
+          + "<div class='gallery-view'>" + galleryList
+          + "</div>"
+          + "<div class='map-view'>" 
+            + "<iframe src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=false&access_token=" + mapBoxToken + "#" + obj.location.zoom + "/" + obj.location.lat + "/" + obj.location.lon + "/0/0'></iframe>"
+          + "</div>"
+        + "</div>"
+      + "</div>"
+    )
+
+  })
+
+}
+
 
 

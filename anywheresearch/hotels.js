@@ -325,33 +325,6 @@
 
 		},
 		{
-			"name":"Stella Island Luxury Resort & Spa - Adults Only", 
-			"starRating": 5,
-			"ta" : {
-				"taRating": 4.5, 
-				"taReviewsNum": 1794
-			}, 
-			"destination" : {
-				"resort": "Analipsis,", 
-				"region" : "Crete,",
-				"country" : "Greece",
-				"geogId" : "analipsis"
-			}, 
-			"flight" : {
-				"departureAirport" : "London Gatwick", 
-				"direct" : "Direct",
-				"holdBags" : 0
-			},
-			"boardBasis" : "All Inclusive", 
-			"dateRange" : "Tue 16 Jun 2026 - Tue 23 Jun 2026", 
-			"price" : {
-				"totalPrice" : "2,683", 
-				"pricePerPerson" : "1,342"
-			}, 
-			"images" : "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1400,quality=70,fit=cover,format=auto/m/70e76cd80fe4d3ef/original/Stella-Island-Luxury-Resort-Spa-Adults-Only.jpg" 
-
-		},
-		{
 			"name":"Voxx Marmaris Beach Resort (Adults Only 16+)", 
 			"starRating": 4,
 			"ta" : {

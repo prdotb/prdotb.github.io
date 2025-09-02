@@ -17,11 +17,15 @@
 				"zoom" : 12
 			},
 			"images" : [
-				"cala-dor.png"
+				"cala-dor.png", 
+				"cala-dor-2.jpg", 
+				"cala-dor-3.jpg", 
+				"cala-dor-4.jpg", 
+				"cala-dor-5.avif"
 			],
 			"description" : {
         		"snippet" : "Crystal waters, year-round warmth and bars that create a buzzing atmosphere along the marina. You can see why couples and families love Cala d’Or.",
-        		"longer" : "",
+        		"longer" : "<h3>Be free as a bird</h3><p>We’ve mentioned why you’ll want to visit Mondragó Natural Park on beach holidays in Cala d’Or, but the bays aren’t all it has to offer. You can easily spend a day hiking through its many trees and remains of historical buildings. Or you can spot the many rare birds as they migrate to the wetland area, making it a great place to test your wildlife photography skills as well.</p><h3>Get under the surface</h3><p>There are always places you can learn to dive at coastal resorts, but they’re not always as well-reviewed as Acqua Life Dive Center. Not only will you get the chance to see unusual sea creatures up close, you’ll also be coached by a funny and caring team that make sure you’re in safe hands as you take the plunge.</p><h3>Full steam ahead!</h3><p>For a fun and low-cost way to get around the area, hop on the Minitrenit. This little train is ideal for families, or anyone who would like to take in the sights without too much walking in between. It can be a bit of a bumpy ride, but that’s all part of the charm!</p><h3>Get the massage</h3><p>To take your destressing to the next level, book yourself in with Quincho Massages for a solo or couple’s treatment. They work their magic in a truly relaxing setting with natural beauty all around, and they’re super friendly too.</p>",
         		"highlights" : [
           			"Warm weather all year", 
           			"Crystal-clear sea",
@@ -47,11 +51,16 @@
 				"zoom" : 12	
 			},
 			"images" : [
-				"hurghada.png"
+				"hurghada.png",
+				"hurghada-2.jpg",
+				"hurghada-3.webp",
+				"hurghada-4.jpg",
+				"hurghada-5.jpg",
+				"hurghada-6.jpg"
 			],
 			"description" : {
 				"snippet" : "Grab your snorkel and your waterproof GoPro, because Hurghada’s swanky beaches offer just as much to explore underwater as they do on land.",
-				"longer" : "Egypt's buzzing Red Sea resort serves up spectacular underwater adventures alongside proper gorgeous coastline, with stunning coral reefs perfect for snorkelling enthusiasts. From the historic old town up north to swanky new developments with luxury shopping down south, plus the brilliantly chaotic town centre at Sakalla that pulses with energy day and night - this Red Sea gem delivers underwater wonders, beachside bliss, and non-stop entertainment in spectacular style.",
+				"longer" : "<p>Egypt's buzzing Red Sea resort serves up spectacular underwater adventures alongside proper gorgeous coastline, with stunning coral reefs perfect for snorkelling enthusiasts. From the historic old town up north to swanky new developments with luxury shopping down south, plus the brilliantly chaotic town centre at Sakalla that pulses with energy day and night - this Red Sea gem delivers underwater wonders, beachside bliss, and non-stop entertainment in spectacular style.</p>",
 				"highlights" : [
           			"Sizzlin' sunshine all year", 
           			"Budget-friendly luxury",
@@ -77,7 +86,12 @@
 				"zoom" : 12
 			},
 			"images" : [
-				"benidorm.png"
+				"benidorm.png",
+				"benidorm-2.jpg",
+				"benidorm-3.webp",
+				"benidorm-4.webp",
+				"benidorm-5.webp",
+				"benidorm-6.jpg"
 			],
 			"description" : {
 				"snippet" : "The famous Spanish resort that's home to the best beaches, entertainment, nightlife and has an atmosphere like no other.",
@@ -107,7 +121,10 @@
 				"zoom" : 14
 			},
 			"images" : [
-				"playa-de-las-americas.avif"
+				"playa-de-las-americas.avif",
+				"playa-dla-2.jpg",
+				"playa-dla-3.jpg",
+				"playa-dla-4.jpg"
 			],
 			"description" : {
 				"snippet" : "Playa de las Americas holidays - from chilling by the sea to partying right on the sand, it's always beach time here.",
@@ -137,7 +154,10 @@
 				"zoom" : 14
 			},
 			"images" : [
-				"ixia.avif"
+				"ixia.avif",
+				"ixia-2.jpg",
+				"ixia-3.jpg",
+				"ixia-4.jpg"
 			],
 			"description" : {
 				"snippet" : "Located on the northwest coast, it is a hugely popular purposely-developed holiday location for tourists, but it remains distinguishable from the better-known locations though because of its remarkable atmosphere. Ixia is noticeably laid back, which makes it an ideal holiday choice for families or elderly visitors looking to get away from it all.",
@@ -162,7 +182,11 @@
 				"zoom" : 14
 			},
 			"images" : [
-				"costa-teguise.avif"
+				"costa-teguise.avif",
+				"costa-t-2.jpg",
+				"costa-t-3.jpg",
+				"costa-t-4.jpg",
+				"costa-t-5.jpg"
 			],
 			"description" : {
 				"snippet" : "This purpose-built destination was designed from the ground up to be the perfect family holiday spot, and honestly, they absolutely nailed it! If you're travelling with kids, love water sports, or just prefer your holidays to come with a bit more organisation, then Costa Teguise is going to be your new favourite place on earth.",
@@ -187,7 +211,11 @@
         		"zoom" : 13
       		},
       		"images" : [
-        		"marmaris.avif"
+        		"marmaris.avif",
+        		"marmaris-2.jpg",
+        		"marmaris-3.jpg",
+        		"marmaris-4.jpg",
+        		"marmaris-5.jpg"
       		],
       		"description" : {
         		"snippet" : "In Marmaris, you can dive into Turkish delights by day, and dance the night away with stars as your disco ball!",
@@ -217,7 +245,11 @@
         		"zoom" : 13
       		},
       		"images" : [
-        		"lloret-de-mar.avif"
+        		"lloret-de-mar.avif",
+        		"lloret-de-mar-2.webp",
+        		"lloret-de-mar-3.jpg",
+        		"lloret-de-mar-4.jpg",
+        		"lloret-de-mar-5.jpg"
       		],
       		"description" : {
         		"snippet" : "",
@@ -247,7 +279,11 @@
         		"zoom" : 13
       		},
       		"images" : [
-        		"fuengirola.avif"
+        		"fuengirola.avif",
+        		"fuengirola-2.jpg",
+        		"fuengirola-3.jpg",
+        		"fuengirola-4.jpg",
+        		"fuengirola-5.jpg"
       		],
       		"description" : {
         		"snippet" : "What makes Fuengirola special is how it balances traditional Spanish culture with family-friendly attractions – you can explore the historic Sohail Castle, enjoy authentic tapas in local bars, then spend the afternoon at Bioparc zoo or relaxing on the beach.",
@@ -277,7 +313,11 @@
         		"zoom" : 13
       		},
       		"images" : [
-        		"san-antonio.avif"
+        		"san-antonio.avif",
+        		"san-antonio-2.avif",
+        		"san-antonio-3.avif",
+        		"san-antonio-4.jpg",
+        		"san-antonio-5.webp"
       		],
       		"description" : {
         		"snippet" : "When most people think of a holiday to Ibiza, their first thoughts are of hot nightlife, and parties that last well past midnight. San Antonio holidays epitomise the party spirit of Ibiza, with streets that light up when the sun goes down, and party animals from around the world that never sleep. If you like the idea of letting your hair down a bit, a holiday to San Antonio is perfect for your Balearics holidays!",
@@ -302,7 +342,12 @@
         		"zoom" : 13
       		},
       		"images" : [
-        		"side.avif"
+        		"side.avif",
+        		"side-2.jpg",
+        		"side-3.webp",
+        		"side-4.jpg",
+        		"side-5.jpg",
+        		"side-6.jpg"
       		],
       		"description" : {
         		"snippet" : "The white sands of Side are home to one of the most ancient cities you’ll find on your Turkey holidays, with ruins scattered along the pine-strewn peninsular beaches. This beautiful resort has been host in it’s time to the victorious armies of Alexander the Great, as well as visiting Romans, and of course, tourists!",
@@ -327,7 +372,11 @@
             	"zoom" : 13
           	},
           	"images" : [
-            	"Torremolinos.avif"
+            	"torremolinos.avif",
+            	"torremolinos-2.jpg",
+            	"torremolinos-3.jpg",
+            	"torremolinos-4.jpg",
+            	"torremolinos-5.jpg"
           	],
           	"description" : {
             	"snippet" : "Torremolinos is the ultimate fun-filled family resort that knows how to party! This vibrant beach town has been welcoming holidaymakers since the 1950s when Hollywood stars like Frank Sinatra and Grace Kelly made it their playground. Today it's one of the Costa del Sol's most popular destinations, offering 6km of gorgeous beaches, incredible water parks, and nightlife that goes on until dawn.",
@@ -352,7 +401,11 @@
             	"zoom" : 13
           	},
           	"images" : [
-            	"magaluf.avif"
+            	"magaluf.avif",
+            	"magaluf-2.jpg",
+            	"magaluf-3.jpg",
+            	"magaluf-4.webp",
+            	"magaluf-5.jpg"
           	],
           	"description" : {
             	"snippet" : "Magaluf is an ICON of beach party holidays and with good reason, too. Beautiful beaches, budget-friendly hotels and clubs that will keep you dancing all night long.",
@@ -382,7 +435,11 @@
             	"zoom" : 13
           	},
           	"images" : [
-            	"costa-adeje.avif"
+            	"costa-adeje.avif",
+            	"costa-adeje-2.jpg",
+            	"costa-adeje-3.jpg",
+            	"costa-adeje-4.jpg",
+            	"costa-adeje-5.jpg"
           	],
           	"description" : {
             	"snippet" : "Costa Adeje is where Tenerife puts on its posh frock and shows just how sophisticated a Tenerife holiday can be! This resort offers gorgeous beaches, year-round sunshine, and brilliant facilities without sacrificing style or breaking the bank (well, not completely anyway).",
@@ -412,7 +469,12 @@
             	"zoom" : 13
           	},
           	"images" : [
-            	"costa-adeje.avif"
+            	"palma-nova.avif",
+            	"palma-nova-2.jpg",
+            	"palma-nova-3.jpg",
+            	"palma-nova-4.jpg",
+            	"palma-nova-5.jpg",
+            	"palma-nova-6.jpg"
           	],
           	"description" : {
             	"snippet" : "A tourist hub of Majorca, Palma Nova has it all. A great choice of hotels, activities for the whole family and a number of restaurants and bars.",
@@ -442,7 +504,11 @@
               "zoom" : 13
             },
             "images" : [
-              "hisaronu.avif"
+              "hisaronu.avif",
+              "hisaronu-2.avif",
+              "hisaronu-3.webp",
+              "hisaronu-4.avif",
+              "hisaronu-5.jpg"
             ],
             "description" : {
               "snippet" : "On a mountainside in southwest Turkey, the small but established resort of Hisaronu overlooks the country’s turquoise coast. A host of entertainment options can be found around every corner, along with eclectic restaurants and bars scattered throughout. The ideal destination for those seeking a lively holiday within easy reach of the sea and a fun nightlife scene.",
