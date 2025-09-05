@@ -21,7 +21,9 @@
 				"cala-dor-2.jpg", 
 				"cala-dor-3.jpg", 
 				"cala-dor-4.jpg", 
-				"cala-dor-5.avif"
+				"cala-dor-5.avif", 
+				"cala-dor-6.jpg", 
+				"cala-dor-7.jpg"
 			],
 			"description" : {
         		"snippet" : "Crystal waters, year-round warmth and bars that create a buzzing atmosphere along the marina. You can see why couples and families love Cala d’Or.",
@@ -56,7 +58,11 @@
 				"hurghada-3.webp",
 				"hurghada-4.jpg",
 				"hurghada-5.jpg",
-				"hurghada-6.jpg"
+				"hurghada-6.jpg", 
+				"hurghada-7.webp",
+				"hurghada-8.jpg",
+				"hurghada-9.jpg",
+				"hurghada-10.webp"
 			],
 			"description" : {
 				"snippet" : "Grab your snorkel and your waterproof GoPro, because Hurghada’s swanky beaches offer just as much to explore underwater as they do on land.",
@@ -91,7 +97,11 @@
 				"benidorm-3.webp",
 				"benidorm-4.webp",
 				"benidorm-5.webp",
-				"benidorm-6.jpg"
+				"benidorm-6.jpg", 
+				"benidorm-7.jpg",
+				"benidorm-8.avif", 
+				"benidorm-9.webp",
+				"benidorm-10.avif"
 			],
 			"description" : {
 				"snippet" : "The famous Spanish resort that's home to the best beaches, entertainment, nightlife and has an atmosphere like no other.",
@@ -124,7 +134,12 @@
 				"playa-de-las-americas.avif",
 				"playa-dla-2.jpg",
 				"playa-dla-3.jpg",
-				"playa-dla-4.jpg"
+				"playa-dla-4.jpg", 
+				"playa-dla-5.jpg",
+				"playa-dla-6.jpg",
+				"playa-dla-7.jpg",
+				"playa-dla-8.jpeg",
+				"playa-dla-9.jpeg"
 			],
 			"description" : {
 				"snippet" : "Playa de las Americas holidays - from chilling by the sea to partying right on the sand, it's always beach time here.",
@@ -157,7 +172,10 @@
 				"ixia.avif",
 				"ixia-2.jpg",
 				"ixia-3.jpg",
-				"ixia-4.jpg"
+				"ixia-4.jpg",
+				"ixia-5.jpg",
+				"ixia-6.avif",
+				"ixia-7.avif"
 			],
 			"description" : {
 				"snippet" : "Located on the northwest coast, it is a hugely popular purposely-developed holiday location for tourists, but it remains distinguishable from the better-known locations though because of its remarkable atmosphere. Ixia is noticeably laid back, which makes it an ideal holiday choice for families or elderly visitors looking to get away from it all.",
@@ -215,7 +233,12 @@
         		"marmaris-2.jpg",
         		"marmaris-3.jpg",
         		"marmaris-4.jpg",
-        		"marmaris-5.jpg"
+        		"marmaris-5.jpg", 
+        		"marmaris-6.jpg",
+        		"marmaris-7.jpg",
+        		"marmaris-9.jpg",
+        		"marmaris-10.jpg",
+        		"marmaris-11.jpg"
       		],
       		"description" : {
         		"snippet" : "In Marmaris, you can dive into Turkish delights by day, and dance the night away with stars as your disco ball!",
@@ -249,7 +272,11 @@
         		"lloret-de-mar-2.webp",
         		"lloret-de-mar-3.jpg",
         		"lloret-de-mar-4.jpg",
-        		"lloret-de-mar-5.jpg"
+        		"lloret-de-mar-5.jpg",
+        		"lloret-de-mar-6.jpg",
+        		"lloret-de-mar-7.avif",
+        		"lloret-de-mar-8.avif",
+        		"lloret-de-mar-9.jpg"
       		],
       		"description" : {
         		"snippet" : "",
@@ -283,7 +310,10 @@
         		"fuengirola-2.jpg",
         		"fuengirola-3.jpg",
         		"fuengirola-4.jpg",
-        		"fuengirola-5.jpg"
+        		"fuengirola-5.jpg",
+        		"fuengirola-6.jpg",
+        		"fuengirola-7.jpg",
+        		"fuengirola-8.webp"
       		],
       		"description" : {
         		"snippet" : "What makes Fuengirola special is how it balances traditional Spanish culture with family-friendly attractions – you can explore the historic Sohail Castle, enjoy authentic tapas in local bars, then spend the afternoon at Bioparc zoo or relaxing on the beach.",
@@ -317,7 +347,11 @@
         		"san-antonio-2.avif",
         		"san-antonio-3.avif",
         		"san-antonio-4.jpg",
-        		"san-antonio-5.webp"
+        		"san-antonio-5.webp", 
+        		"san-antonio-6.jpg",
+        		"san-antonio-7.jpg",
+        		"san-antonio-8.jpg", 
+        		"san-antonio-9.jpg"
       		],
       		"description" : {
         		"snippet" : "When most people think of a holiday to Ibiza, their first thoughts are of hot nightlife, and parties that last well past midnight. San Antonio holidays epitomise the party spirit of Ibiza, with streets that light up when the sun goes down, and party animals from around the world that never sleep. If you like the idea of letting your hair down a bit, a holiday to San Antonio is perfect for your Balearics holidays!",
@@ -347,7 +381,9 @@
         		"side-3.webp",
         		"side-4.jpg",
         		"side-5.jpg",
-        		"side-6.jpg"
+        		"side-6.jpg",
+        		"side-7.jpg",
+        		"side-8.webp"
       		],
       		"description" : {
         		"snippet" : "The white sands of Side are home to one of the most ancient cities you’ll find on your Turkey holidays, with ruins scattered along the pine-strewn peninsular beaches. This beautiful resort has been host in it’s time to the victorious armies of Alexander the Great, as well as visiting Romans, and of course, tourists!",
@@ -376,7 +412,9 @@
             	"torremelinos-2.jpg",
             	"torremelinos-3.webp",
             	"torremelinos-4.jpg",
-            	"torremelinos-5.jpg"
+            	"torremelinos-5.jpg", 
+            	"torremelinos-6.webp",
+            	"torremelinos-7.jpg"
           	],
           	"description" : {
             	"snippet" : "Torremolinos is the ultimate fun-filled family resort that knows how to party! This vibrant beach town has been welcoming holidaymakers since the 1950s when Hollywood stars like Frank Sinatra and Grace Kelly made it their playground. Today it's one of the Costa del Sol's most popular destinations, offering 6km of gorgeous beaches, incredible water parks, and nightlife that goes on until dawn.",
@@ -405,7 +443,11 @@
             	"magaluf-2.jpg",
             	"magaluf-3.jpg",
             	"magaluf-4.webp",
-            	"magaluf-5.jpg"
+            	"magaluf-5.jpg",
+            	"magaluf-6.jpg",
+            	"magaluf-7.jpg",
+            	"magaluf-8.jpg",
+            	"magaluf-9.jpg"
           	],
           	"description" : {
             	"snippet" : "Magaluf is an ICON of beach party holidays and with good reason, too. Beautiful beaches, budget-friendly hotels and clubs that will keep you dancing all night long.",
@@ -439,7 +481,10 @@
             	"costa-adeje-2.jpg",
             	"costa-adeje-3.jpg",
             	"costa-adeje-4.jpg",
-            	"costa-adeje-5.jpg"
+            	"costa-adeje-5.jpg",
+            	"costa-adeje-6.jpg",
+            	"costa-adeje-7.jpg",
+            	"costa-adeje-8.jpg"
           	],
           	"description" : {
             	"snippet" : "Costa Adeje is where Tenerife puts on its posh frock and shows just how sophisticated a Tenerife holiday can be! This resort offers gorgeous beaches, year-round sunshine, and brilliant facilities without sacrificing style or breaking the bank (well, not completely anyway).",
@@ -474,7 +519,11 @@
             	"palma-nova-3.jpg",
             	"palma-nova-4.jpg",
             	"palma-nova-5.jpg",
-            	"palma-nova-6.jpg"
+            	"palma-nova-6.jpg",
+            	"palma-nova-7.avif",
+            	"palma-nova-8.jpg",
+            	"palma-nova-9.jpg",
+            	"palma-nova-10.jpg"
           	],
           	"description" : {
             	"snippet" : "A tourist hub of Majorca, Palma Nova has it all. A great choice of hotels, activities for the whole family and a number of restaurants and bars.",
@@ -508,7 +557,9 @@
               "hisaronu-2.avif",
               "hisaronu-3.webp",
               "hisaronu-4.avif",
-              "hisaronu-5.jpg"
+              "hisaronu-5.jpg", 
+              "hisaronu-6.avif",
+              "hisaronu-7.jpg"
             ],
             "description" : {
               "snippet" : "On a mountainside in southwest Turkey, the small but established resort of Hisaronu overlooks the country’s turquoise coast. A host of entertainment options can be found around every corner, along with eclectic restaurants and bars scattered throughout. The ideal destination for those seeking a lively holiday within easy reach of the sea and a fun nightlife scene.",
