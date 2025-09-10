@@ -150,6 +150,8 @@ function buildDestinationListDesktop (data, mapBoxToken) {
   $.each(data.destinations, function(i, obj){
     console.log(obj.id); 
 
+    //"mapImgUrl" : "https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/0.1234,38.5412,6/500x300",
+
     var region = ""
     if (obj.region != null) {
       region = obj.region + ","
@@ -183,7 +185,7 @@ function buildDestinationListDesktop (data, mapBoxToken) {
           + "</div>"
         + "</div>"
         + "<div class='map-container'>"
-          + "<iframe src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=false&access_token=" + mapBoxToken + "#" + obj.location.zoom + "/" + obj.location.lat + "/" + obj.location.lon + "/0/0'></iframe>"
+          + "<img class='map' src='https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/" + obj.location.lon + "," + obj.location.lat + "," + obj.location.zoom + "/1000x1000?access_token=" + mapBoxToken + "' />"
         + "</div>"
         
       + "</div>"
@@ -238,7 +240,7 @@ function buildDestinationListGallery(data, mapBoxToken) {
           + "<div class='gallery-view'>" + galleryList
           + "</div>"
           + "<div class='map-view'>" 
-            + "<iframe src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=false&access_token=" + mapBoxToken + "#" + obj.location.zoom + "/" + obj.location.lat + "/" + obj.location.lon + "/0/0'></iframe>"
+            + "<img class='map' src='https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/" + obj.location.lon + "," + obj.location.lat + "," + obj.location.zoom + "/1000x1000?access_token=" + mapBoxToken + "' />"
           + "</div>"
         + "</div>"
       + "</div>"
