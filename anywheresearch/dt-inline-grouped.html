@@ -40,6 +40,26 @@
           $(".modal-dest-filter").hide()
         });
 
+        var toastOn = true;
+
+        $(".cb-container").click(function(){
+          $(".hotel-list").fadeOut(100);
+          $(".toast").hide();
+          setTimeout(function(){
+            $(".hotel-list").fadeIn(100);
+            if(toastOn == true){
+              $(".toast").slideDown();
+            }
+            
+          }, 1500)
+        })
+
+        $(".toast a").click(function(e){
+          e.preventDefault()
+          $(".toast").slideUp();
+          toastOn = false; 
+        })
+
 
 
         var hotelData = "hotels.json"; 
@@ -117,6 +137,14 @@
 
   </head>
   <body>
+
+    <style type="text/css">
+      .toast {position:fixed; bottom:20px; left:340px; width:900px; padding:20px; font-size:24px; z-index:10000; background-color:#FFCACA; border:solid 4px #A60800; border-radius:4px; display:none;}
+    </style>
+    <div class="toast">
+      <div>This is a non-functional prototype. The search results do not update after filters have been selected. <a href="#">Close this message</a></div>
+    </div>
+
   	<div class="header">
       <div class="wrapper">
         <div class="logo">
