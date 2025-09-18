@@ -16,9 +16,6 @@
       
       $(document).ready(function(){
 
-        var destField = ""
-        var destFieldArr = new Array(); 
-
         $("#f-destinations .filter-sub-group[rel='short-haul'] .item-cb:gt(4)").hide()
         $("#f-destinations .filter-sub-group[rel='long-haul'] .item-cb:gt(4)").hide()
 
@@ -43,57 +40,6 @@
           $(".overlay").hide();
           $(".modal-dest-filter").hide()
         });
-
-
-        $("#field-destination").click(function(e){
-          e.preventDefault();
-          $(".dest-dd").show();
-        });
-
-        $(document).mouseup(function(e){
-          var container = $(".dest-dd");
-
-          // if the target of the click isn't the container nor a descendant of the container
-          if (!container.is(e.target) && container.has(e.target).length === 0) 
-          {
-            container.hide();
-          }
-        });
-
-        $(".icon-item").click(function(e){
-          var i = $(this).attr("rel");
-          $("#field-destination > span.value").removeClass("default").text(i);
-          $(".dest-dd").hide();
-          destField = i;
-        })
-
-        $(".cb-container").click(function(e){
-          e.preventDefault(); 
-          var checkedStatus = $(this).find("input").is(":checked");
-          var thisRel = $(this).attr("rel")
-          console.log(checkedStatus)
-          if (checkedStatus == false) {
-            $(this).find("input").prop("checked", true);
-            destFieldArr.push(thisRel);
-            console.log(destFieldArr.toString());
-            $("#field-destination > span.value").removeClass("default").text(destFieldArr.toString())
-          } else if (checkedStatus == true && destFieldArr.length > 1) {
-            $(this).find("input").prop("checked", false);
-            var index = destFieldArr.indexOf(thisRel);
-            console.log(index);
-            destFieldArr.splice(index, 1);
-            console.log(destFieldArr.toString());
-            $("#field-destination > span.value").removeClass("default").text(destFieldArr.toString())
-          } else if (checkedStatus == true && destFieldArr.length == 1) {
-            $(this).find("input").prop("checked", false);
-            destFieldArr = [];
-            console.log(destFieldArr);
-            $("#field-destination > span.value").addClass("default").text("Select destination")
-          };
-           
-          
-
-        })
 
 
 
@@ -136,14 +82,15 @@
       .search-form .search .field {position:relative; width:21%; border-right:solid 1px #f0f0f0; padding:16px 16px 16px 48px; white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; font-size:14px; font-weight: bold;}
-      .field:hover {cursor: pointer}
       .search-form .search .field .icon {position:absolute; left:16px; top:12px; color:#1A73E8}
       .search-form .search .submit {width:16%; position:relative;}
       .search-form .search .submit > a {display:block; background-color:#ddd; font-weight: bold; position:absolute; left:8px; right:8px; top:8px; padding:8px; text-align: center; border-radius:4px; background-color:#FEDC07; color:#17317F;}
 
-      .default {color:#999999}
-
-      
+      .dest-dd {position:absolute; top:52px; left:40px; width:300px; height:200px; background-color: #fff; border:solid 1px #eee; border-radius:4px; padding: 12px; display:none;
+        box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
+        -webkit-box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
+      }
 
       .content .wrapper {position:relative; margin-top:40px;}
       .content .filters {position:absolute; top:40px; left:40px; width:240px }
@@ -179,11 +126,10 @@
     <div class="search-form">
       <div class="wrapper">
         <div class="search" style="position:relative;">
-          <div id="field-destination" class="field">
-            <span class="material-symbols-outlined icon">location_on</span><span class="default value">Select destination</span>
+          <div class="field"><span class="material-symbols-outlined icon">location_on</span>Anywhere
             
           </div>
-          <div class="field"><span class="material-symbols-outlined icon">travel</span>All Airports</div>
+          <div class="field"><span class="material-symbols-outlined icon">travel</span>London Airports</div>
           <div class="field"><span class="material-symbols-outlined icon">calendar_today</span>Jun 2026</div>
           <div class="field"><span class="material-symbols-outlined icon">group</span>2 Adults, 1 Room</div>
           <div class="submit">
@@ -191,105 +137,14 @@
           </div>
           
         </div> 
-
-
-        <style type="text/css">
-          .dest-dd {position:absolute; top:52px; left:40px; width:300px; max-height:400px; background-color: #fff; border:solid 1px #eee; border-radius:4px; padding:0 0 12px 0; overflow-y: scroll; display:none;
-            box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
-            -webkit-box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
-            -moz-box-shadow: 2px 4px 3px 0px rgba(0,0,0,0.25);
-            z-index:1000;
-          }
-          .dest-dd .dest-search {padding:12px;}
-          .dest-dd input {width:100%; padding:12px; border:solid 1px #ddd; border-radius:4px;}
-          .dest-dd .dest-options {}
-          .dest-dd .dest-options > div {padding:12px 16px; position:relative;}
-          .dest-dd .dest-options > div:hover {background-color:#EDF4FF; cursor:pointer;}
-          .dest-dd .dest-options .icon-item > span {display: inline-block; vertical-align: top;}
-          .dest-dd .dest-options .icon-item > span.icon {margin-right:8px; color:#1A73E8;}
-          .dest-dd .dest-options .icon-item > span.label {padding-top:2px}
-          .cb-container .label {padding-left:32px; }
-        </style>
-
         <div class="dest-dd">
-          <div class="dest-search">
-            <input type="text/css" />
-          </div>
-          
+          <div><input type="text/css" /></div>
           <div class="dest-options">
-            <div class="icon-item" rel="Anywhere">
-              <span class="icon material-symbols-outlined">globe</span><span class="label">Anywhere</span>
-            </div>
-            <div class="icon-item" rel="Beach Holidays">
-              <span class="icon material-symbols-outlined"><span class="material-symbols-outlined">beach_access</span></span><span class="label">Beach Holidays</span>
-            </div>
-            <div class="icon-item" rel="City Breaks">
-              <span class="icon material-symbols-outlined"><span class="material-symbols-outlined">location_city</span></span><span class="label">City Breaks</span>
-            </div>
-            <span style="display: block; border-top:solid 1px #ddd; margin:8px 16px;"></span>
-            <div>
-              <label rel="Canary Islands" class="cb-container">
-                <div class="label">Canary Islands</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Turkey" class="cb-container">
-                <div class="label">Turkey</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Spain" class="cb-container">
-                <div class="label">Spain</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Greece" class="cb-container">
-                <div class="label">Greece</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Balearic Islands" class="cb-container">
-                <div class="label">Balearic Islands</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Portugal" class="cb-container">
-                <div class="label">Portugal</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="Egypt" class="cb-container">
-                <div class="label">Egypt</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="United Arab Emirates" class="cb-container">
-                <div class="label">United Arab Emirates</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div>
-              <label rel="USA" class="cb-container">
-                <div class="label">USA</div>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
+            <div>Anywhere</div>
+            <div>Long Haul Destinaitons</div>
+            <div>Winter Sun Destinations</div>
+            <div>City Breaks</div>
+            <div>Long Haul Destinaitons</div>
           </div>
         </div>
       </div> 
@@ -304,7 +159,8 @@
         <img style="margin-left: 50%;
 transform: translateX(-52%);" src="https://bynder.onthebeach.co.uk/cdn-cgi/image/quality=60,fit=cover,format=auto/m/69fee3d2dc3201b8/original/easyJet-Flights-PDP-Homepage-Banner.png" />
       </div>
-      <style type="text/css">
+      
+     <style type="text/css">
         .three-col {display: grid; grid-template-columns: 1fr 1fr 1fr; margin: 0 -16px}
         .three-col > div {margin:0 16px}
         .promo img {width:100%}
@@ -336,7 +192,7 @@ transform: translateX(-52%);" src="https://bynder.onthebeach.co.uk/cdn-cgi/image
    <style type="text/css">
 
    
-.cb-containter {display:block;}
+
 .cb-container:hover {
   cursor: pointer;
 }
@@ -347,13 +203,12 @@ transform: translateX(-52%);" src="https://bynder.onthebeach.co.uk/cdn-cgi/image
   cursor: pointer;
   height: 0;
   width: 0;
-  left:16px;
 }
     /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 12px;
-  left: 16px;
+  top: 4px;
+  left: 0px;
   height: 20px;
   width: 21px;
   background-color: #fff;
